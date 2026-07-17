@@ -1,0 +1,153 @@
+Two-page report test run — 2026-07-17
+
+$ node tests/unit/twopage.test.js
+  ok  Nayla sample calculates without errors
+[difficulty normalization]
+  ok  lowercase values normalize unchanged
+  ok  legacy capitalization normalizes
+  ok  unknown/missing values normalize to null
+[category calculations]
+  ok  English counts match manual recount
+  ok  Math counts match manual recount
+  ok  English accuracy = correct/total
+  ok  Math accuracy = correct/total
+  ok  Section totals cover all administered questions
+  ok  four modules produced in fixed order
+  ok  module counts sum to section counts
+  ok  module Reading and Writing · Module 1 correct/total match
+  ok  module Reading and Writing · Module B correct/total match
+  ok  module Math · Module 1 correct/total match
+  ok  module Math · Module B correct/total match
+[difficulty performance]
+  ok  difficulty data available for the sample
+  ok  all labelled records counted (legacy capitalization merged, none dropped)
+  ok  easy counts match case-insensitive recount
+  ok  medium counts match case-insensitive recount
+  ok  hard counts match case-insensitive recount
+  ok  title-case and lowercase are NOT separate categories
+  ok  no difficulty data -> available=false, no NaN accuracies
+[strengths & priorities]
+  ok  three strengths returned
+  ok  three priorities returned
+  ok  all ranked areas meet the 2-question minimum sample rule
+  ok  strengths sorted by accuracy desc
+  ok  priorities sorted by accuracy asc
+  ok  strengths and priorities do not overlap
+  ok  ranking is stable across calls
+  ok  equal accuracy prefers more questions; single-question lesson excluded
+[section x difficulty heat map]
+  ok  matrix available with 2 rows x 3 columns
+  ok  matrix cell totals sum to all labelled records
+  ok  matrix english/easy matches case-insensitive recount
+  ok  matrix english/medium matches case-insensitive recount
+  ok  matrix english/hard matches case-insensitive recount
+  ok  matrix math/easy matches case-insensitive recount
+  ok  matrix math/medium matches case-insensitive recount
+  ok  matrix math/hard matches case-insensitive recount
+  ok  matrix column totals equal difficulty-chart totals
+  ok  matrix unavailable without difficulty labels, empty cells NaN-free
+[report data & filename]
+  ok  student name carried through
+  ok  attempt number read from diagnostic.attempt_number
+  ok  scores carried through unmodified
+  ok  filename uses lowercase hyphens + attempt
+  ok  filename helper handles missing attempt
+  ok  filename helper handles missing name
+  ok  summary text generated (2-3 sentences, cautious)
+  ok  exactly three recommendations
+  ok  recommendations avoid course hours/schedules
+[validation]
+  ok  missing case rejected with the required message
+  ok  group results rejected with an explanation
+  ok  case without answers rejected
+  ok  valid individual case accepted
+[rendered HTML]
+  ok  valid document shell
+  ok  exactly two page containers
+  ok  page 1 breaks, page 2 does not add a trailing break
+  ok  title equals the download filename
+  ok  score cards present
+  ok  section, module and difficulty charts present
+  ok  heat map rendered with grayscale-safe cell text
+  ok  strengths, priorities and next steps present
+  ok  footer identifies student, attempt and page count
+  ok  no leaked placeholder values
+  ok  no course-roadmap content (hours/schedule) in the report
+[missing-data handling]
+  ok  sparse case still calculates
+  ok  missing scores -> 'Not provided'
+  ok  missing attempt -> 'Attempt not provided'
+  ok  missing date -> 'Date not provided'
+  ok  missing name -> 'Student' fallback
+  ok  no difficulty -> unavailable message instead of empty chart
+  ok  no difficulty -> heat map omitted entirely
+  ok  sparse render leaks no placeholders
+  ok  sparse render still has exactly two pages
+
+==== 73 passed, 0 failed ====
+
+$ node tests/integration/pipeline.test.js
+[individual demo pipeline]
+  ok  individual demo calculates without errors
+  ok  all 28 lessons present, none at 0 h
+  ok  final component total within 14-35 h
+  ok  declared major foundational gap governs Nonlinear Eq & Systems
+  ok  view model derives gap from supplied scores
+  ok  curve checkpoints avoid invented score predictions
+  ok  order of attack contains all 8 units exactly once
+  ok  order of attack contains all 28 existing lessons exactly once
+  ok  order of attack adds no synthetic lesson chips
+  ok  individual roadmap: has doctype + closes html
+  ok  individual roadmap: no unresolved template tokens
+  ok  individual roadmap: no leftover Karl content
+  ok  roadmap has exactly 7 page sections
+  ok  individual report: has doctype + closes html
+  ok  individual report: no unresolved template tokens
+  ok  individual report: no leftover Karl content
+  ok  report contains audit example calculations
+  ok  main application does not label the result as clamped
+  ok  generated report does not present an above-35 total as a headline
+[two-page diagnostic report]
+  ok  Nayla sample (98 answers with lowercase difficulties) calculates
+  ok  two-page validation accepts the individual case
+  ok  two-page validation rejects group results
+  ok  two-page report: has doctype + closes html
+  ok  two-page report: no unresolved template tokens
+  ok  two-page report: no leftover Karl content
+  ok  two-page report has exactly two page sections
+  ok  page 1 carries score summary + section + module charts
+  ok  page 2 carries difficulty + strengths + priorities + next steps
+  ok  two-page report excludes course-hour/schedule content
+  ok  two-page report (no difficulty data): has doctype + closes html
+  ok  two-page report (no difficulty data): no unresolved template tokens
+  ok  two-page report (no difficulty data): no leftover Karl content
+  ok  difficulty fallback shown when the case has no difficulty labels
+[two-page report UI wiring]
+  ok  index.html loads twopage.js after report.js
+  ok  button label is exactly 'Create two page report'
+  ok  button connected to createTwoPageReport handler
+  ok  handler validates before rendering
+  ok  group mode keeps a disabled explanatory button
+  ok  existing report buttons unchanged
+[group demo pipeline]
+  ok  group demo calculates without errors
+  ok  3 individual calculations produced first
+  ok  group lessons preserve core minimum and externalize any excess individual need
+  ok  3-student min/max = 16/38
+  ok  group report: has doctype + closes html
+  ok  group report: no unresolved template tokens
+  ok  group report: no leftover Karl content
+  ok  group report shows the corrected minimum
+  ok  group roadmap Rami_Khoury: has doctype + closes html
+  ok  group roadmap Rami_Khoury: no unresolved template tokens
+  ok  group roadmap Rami_Khoury: no leftover Karl content
+  ok  group roadmap Lina_Sarkis: has doctype + closes html
+  ok  group roadmap Lina_Sarkis: no unresolved template tokens
+  ok  group roadmap Lina_Sarkis: no leftover Karl content
+  ok  group roadmap Omar_Fares: has doctype + closes html
+  ok  group roadmap Omar_Fares: no unresolved template tokens
+  ok  group roadmap Omar_Fares: no leftover Karl content
+  ok  Rami (target 1420) gets no high-target addition without distinct advanced evidence
+  ok  Lina and Omar (targets < 1400) receive none
+
+==== 58 passed, 0 failed ====

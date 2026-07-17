@@ -1,0 +1,582 @@
+{
+  "schema_version": "2.4",
+  "lessons": [
+    {
+      "lesson_id": "ENG_CROSS_TEXT_CONNECTIONS",
+      "section": "english",
+      "lesson_name": "Cross-Text Connections",
+      "reference_base_hours": 0.64,
+      "rubric": {
+        "breadth": 1,
+        "concept_difficulty": 3,
+        "sat_strategy_load": 2,
+        "calibrated_base_hours": 0.64
+      },
+      "is_broad_lesson": false,
+      "unit_id": "ENG_CRAFT_STRUCTURE",
+      "unit_name": "Craft and Structure",
+      "unit_order": 1,
+      "lesson_order_within_unit": 1
+    },
+    {
+      "lesson_id": "ENG_TEXT_STRUCTURE_PURPOSE",
+      "section": "english",
+      "lesson_name": "Text Structure and Purpose",
+      "reference_base_hours": 0.64,
+      "rubric": {
+        "breadth": 2,
+        "concept_difficulty": 2,
+        "sat_strategy_load": 2,
+        "calibrated_base_hours": 0.64
+      },
+      "is_broad_lesson": false,
+      "unit_id": "ENG_CRAFT_STRUCTURE",
+      "unit_name": "Craft and Structure",
+      "unit_order": 1,
+      "lesson_order_within_unit": 2
+    },
+    {
+      "lesson_id": "ENG_WORDS_IN_CONTEXT",
+      "section": "english",
+      "lesson_name": "Words in Context",
+      "reference_base_hours": 0.52,
+      "rubric": {
+        "breadth": 2,
+        "concept_difficulty": 3,
+        "sat_strategy_load": 2,
+        "calibrated_base_hours": 0.52
+      },
+      "is_broad_lesson": false,
+      "unit_id": "ENG_CRAFT_STRUCTURE",
+      "unit_name": "Craft and Structure",
+      "unit_order": 1,
+      "lesson_order_within_unit": 3
+    },
+    {
+      "lesson_id": "ENG_RHETORICAL_SYNTHESIS",
+      "section": "english",
+      "lesson_name": "Rhetorical Synthesis",
+      "reference_base_hours": 0.16,
+      "rubric": {
+        "breadth": 2,
+        "concept_difficulty": 1,
+        "sat_strategy_load": 2,
+        "calibrated_base_hours": 0.16
+      },
+      "is_broad_lesson": true,
+      "unit_id": "ENG_EXPRESSION_IDEAS",
+      "unit_name": "Expression of Ideas",
+      "unit_order": 2,
+      "lesson_order_within_unit": 1
+    },
+    {
+      "lesson_id": "ENG_TRANSITIONS",
+      "section": "english",
+      "lesson_name": "Transitions",
+      "reference_base_hours": 0.32,
+      "rubric": {
+        "breadth": 1,
+        "concept_difficulty": 1,
+        "sat_strategy_load": 2,
+        "calibrated_base_hours": 0.32
+      },
+      "is_broad_lesson": false,
+      "unit_id": "ENG_EXPRESSION_IDEAS",
+      "unit_name": "Expression of Ideas",
+      "unit_order": 2,
+      "lesson_order_within_unit": 2
+    },
+    {
+      "lesson_id": "ENG_CENTRAL_IDEAS_DETAILS",
+      "section": "english",
+      "lesson_name": "Central Ideas and Details",
+      "reference_base_hours": 0.32,
+      "rubric": {
+        "breadth": 2,
+        "concept_difficulty": 1,
+        "sat_strategy_load": 2,
+        "calibrated_base_hours": 0.32
+      },
+      "is_broad_lesson": false,
+      "unit_id": "ENG_INFORMATION_IDEAS",
+      "unit_name": "Information and Ideas",
+      "unit_order": 3,
+      "lesson_order_within_unit": 1
+    },
+    {
+      "lesson_id": "ENG_COMMAND_OF_EVIDENCE",
+      "section": "english",
+      "lesson_name": "Command of Evidence",
+      "reference_base_hours": 0.64,
+      "rubric": {
+        "breadth": 3,
+        "concept_difficulty": 1,
+        "sat_strategy_load": 3,
+        "calibrated_base_hours": 0.64
+      },
+      "is_broad_lesson": true,
+      "unit_id": "ENG_INFORMATION_IDEAS",
+      "unit_name": "Information and Ideas",
+      "unit_order": 3,
+      "lesson_order_within_unit": 2
+    },
+    {
+      "lesson_id": "ENG_INFERENCES",
+      "section": "english",
+      "lesson_name": "Inferences",
+      "reference_base_hours": 0.64,
+      "rubric": {
+        "breadth": 2,
+        "concept_difficulty": 1,
+        "sat_strategy_load": 2,
+        "calibrated_base_hours": 0.64
+      },
+      "is_broad_lesson": true,
+      "unit_id": "ENG_INFORMATION_IDEAS",
+      "unit_name": "Information and Ideas",
+      "unit_order": 3,
+      "lesson_order_within_unit": 3
+    },
+    {
+      "lesson_id": "ENG_STANDARD_ENGLISH_CONVENTIONS",
+      "section": "english",
+      "lesson_name": "Standard English Conventions",
+      "reference_base_hours": 1.28,
+      "rubric": {
+        "breadth": 3,
+        "concept_difficulty": 2,
+        "sat_strategy_load": 3,
+        "calibrated_base_hours": 1.28
+      },
+      "is_broad_lesson": true,
+      "unit_id": "ENG_STANDARD_CONVENTIONS",
+      "unit_name": "Standard English Conventions",
+      "unit_order": 4,
+      "lesson_order_within_unit": 1
+    },
+    {
+      "lesson_id": "MATH_LINEAR_EQ_ONE_VAR",
+      "section": "math",
+      "lesson_name": "Linear Equations in One Variable",
+      "reference_base_hours": 0.32,
+      "rubric": {
+        "breadth": 1,
+        "concept_difficulty": 1,
+        "sat_strategy_load": 1,
+        "calibrated_base_hours": 0.32
+      },
+      "is_broad_lesson": false,
+      "unit_id": "MATH_ALGEBRA",
+      "unit_name": "Algebra",
+      "unit_order": 5,
+      "lesson_order_within_unit": 1
+    },
+    {
+      "lesson_id": "MATH_LINEAR_FUNCTIONS",
+      "section": "math",
+      "lesson_name": "Linear Functions",
+      "reference_base_hours": 0.64,
+      "rubric": {
+        "breadth": 3,
+        "concept_difficulty": 2,
+        "sat_strategy_load": 3,
+        "calibrated_base_hours": 0.64
+      },
+      "is_broad_lesson": true,
+      "unit_id": "MATH_ALGEBRA",
+      "unit_name": "Algebra",
+      "unit_order": 5,
+      "lesson_order_within_unit": 2
+    },
+    {
+      "lesson_id": "MATH_LINEAR_EQ_TWO_VAR",
+      "section": "math",
+      "lesson_name": "Linear Equations in Two Variables",
+      "reference_base_hours": 0.32,
+      "rubric": {
+        "breadth": 1,
+        "concept_difficulty": 2,
+        "sat_strategy_load": 1,
+        "calibrated_base_hours": 0.32
+      },
+      "is_broad_lesson": false,
+      "unit_id": "MATH_ALGEBRA",
+      "unit_name": "Algebra",
+      "unit_order": 5,
+      "lesson_order_within_unit": 3
+    },
+    {
+      "lesson_id": "MATH_SYSTEMS_LINEAR",
+      "section": "math",
+      "lesson_name": "Systems of Two Linear Equations in Two Variables",
+      "reference_base_hours": 0.52,
+      "rubric": {
+        "breadth": 2,
+        "concept_difficulty": 2,
+        "sat_strategy_load": 2,
+        "calibrated_base_hours": 0.52
+      },
+      "is_broad_lesson": true,
+      "unit_id": "MATH_ALGEBRA",
+      "unit_name": "Algebra",
+      "unit_order": 5,
+      "lesson_order_within_unit": 4
+    },
+    {
+      "lesson_id": "MATH_LINEAR_INEQUALITIES",
+      "section": "math",
+      "lesson_name": "Linear Inequalities in One or Two Variables",
+      "reference_base_hours": 0.52,
+      "rubric": {
+        "breadth": 2,
+        "concept_difficulty": 2,
+        "sat_strategy_load": 2,
+        "calibrated_base_hours": 0.52
+      },
+      "is_broad_lesson": false,
+      "unit_id": "MATH_ALGEBRA",
+      "unit_name": "Algebra",
+      "unit_order": 5,
+      "lesson_order_within_unit": 5
+    },
+    {
+      "lesson_id": "MATH_EQUIV_EXPRESSIONS",
+      "section": "math",
+      "lesson_name": "Equivalent Expressions",
+      "reference_base_hours": 0.96,
+      "rubric": {
+        "breadth": 3,
+        "concept_difficulty": 2,
+        "sat_strategy_load": 3,
+        "calibrated_base_hours": 0.96
+      },
+      "is_broad_lesson": true,
+      "unit_id": "MATH_ADVANCED_MATH",
+      "unit_name": "Advanced Math",
+      "unit_order": 6,
+      "lesson_order_within_unit": 1
+    },
+    {
+      "lesson_id": "MATH_NONLINEAR_EQ_SYSTEMS",
+      "section": "math",
+      "lesson_name": "Nonlinear Equations and Systems of Equations",
+      "reference_base_hours": 0.52,
+      "rubric": {
+        "breadth": 3,
+        "concept_difficulty": 3,
+        "sat_strategy_load": 2,
+        "calibrated_base_hours": 0.52
+      },
+      "is_broad_lesson": true,
+      "unit_id": "MATH_ADVANCED_MATH",
+      "unit_name": "Advanced Math",
+      "unit_order": 6,
+      "lesson_order_within_unit": 2
+    },
+    {
+      "lesson_id": "MATH_NONLINEAR_FUNCTIONS",
+      "section": "math",
+      "lesson_name": "Nonlinear Functions",
+      "reference_base_hours": 0.96,
+      "rubric": {
+        "breadth": 2,
+        "concept_difficulty": 2,
+        "sat_strategy_load": 2,
+        "calibrated_base_hours": 0.96
+      },
+      "is_broad_lesson": true,
+      "unit_id": "MATH_ADVANCED_MATH",
+      "unit_name": "Advanced Math",
+      "unit_order": 6,
+      "lesson_order_within_unit": 3
+    },
+    {
+      "lesson_id": "MATH_RATIOS_RATES",
+      "section": "math",
+      "lesson_name": "Ratios, Rates, Proportional Relationships, and Units",
+      "reference_base_hours": 0.32,
+      "rubric": {
+        "breadth": 1,
+        "concept_difficulty": 1,
+        "sat_strategy_load": 2,
+        "calibrated_base_hours": 0.32
+      },
+      "is_broad_lesson": false,
+      "unit_id": "MATH_PROBLEM_SOLVING_DATA",
+      "unit_name": "Problem-Solving and Data Analysis",
+      "unit_order": 7,
+      "lesson_order_within_unit": 1
+    },
+    {
+      "lesson_id": "MATH_PERCENTAGES",
+      "section": "math",
+      "lesson_name": "Percentages",
+      "reference_base_hours": 0.32,
+      "rubric": {
+        "breadth": 1,
+        "concept_difficulty": 1,
+        "sat_strategy_load": 2,
+        "calibrated_base_hours": 0.32
+      },
+      "is_broad_lesson": false,
+      "unit_id": "MATH_PROBLEM_SOLVING_DATA",
+      "unit_name": "Problem-Solving and Data Analysis",
+      "unit_order": 7,
+      "lesson_order_within_unit": 2
+    },
+    {
+      "lesson_id": "MATH_ONE_VAR_DATA",
+      "section": "math",
+      "lesson_name": "One-Variable Data: Distributions and Measures of Center and Spread",
+      "reference_base_hours": 0.64,
+      "rubric": {
+        "breadth": 1,
+        "concept_difficulty": 1,
+        "sat_strategy_load": 2,
+        "calibrated_base_hours": 0.64
+      },
+      "is_broad_lesson": false,
+      "unit_id": "MATH_PROBLEM_SOLVING_DATA",
+      "unit_name": "Problem-Solving and Data Analysis",
+      "unit_order": 7,
+      "lesson_order_within_unit": 3
+    },
+    {
+      "lesson_id": "MATH_TWO_VAR_DATA",
+      "section": "math",
+      "lesson_name": "Two-Variable Data: Models and Scatterplots",
+      "reference_base_hours": 0.32,
+      "rubric": {
+        "breadth": 1,
+        "concept_difficulty": 1,
+        "sat_strategy_load": 2,
+        "calibrated_base_hours": 0.32
+      },
+      "is_broad_lesson": false,
+      "unit_id": "MATH_PROBLEM_SOLVING_DATA",
+      "unit_name": "Problem-Solving and Data Analysis",
+      "unit_order": 7,
+      "lesson_order_within_unit": 4
+    },
+    {
+      "lesson_id": "MATH_PROBABILITY",
+      "section": "math",
+      "lesson_name": "Probability and Conditional Probability",
+      "reference_base_hours": 0.32,
+      "rubric": {
+        "breadth": 1,
+        "concept_difficulty": 2,
+        "sat_strategy_load": 1,
+        "calibrated_base_hours": 0.32
+      },
+      "is_broad_lesson": false,
+      "unit_id": "MATH_PROBLEM_SOLVING_DATA",
+      "unit_name": "Problem-Solving and Data Analysis",
+      "unit_order": 7,
+      "lesson_order_within_unit": 5
+    },
+    {
+      "lesson_id": "MATH_INFERENCE_MOE",
+      "section": "math",
+      "lesson_name": "Inference from Sample Statistics and Margin of Error",
+      "reference_base_hours": 0.16,
+      "rubric": {
+        "breadth": 1,
+        "concept_difficulty": 2,
+        "sat_strategy_load": 1,
+        "calibrated_base_hours": 0.16
+      },
+      "is_broad_lesson": false,
+      "unit_id": "MATH_PROBLEM_SOLVING_DATA",
+      "unit_name": "Problem-Solving and Data Analysis",
+      "unit_order": 7,
+      "lesson_order_within_unit": 6
+    },
+    {
+      "lesson_id": "MATH_STAT_CLAIMS",
+      "section": "math",
+      "lesson_name": "Evaluating Statistical Claims: Observational Studies and Experiments",
+      "reference_base_hours": 0.16,
+      "rubric": {
+        "breadth": 1,
+        "concept_difficulty": 2,
+        "sat_strategy_load": 1,
+        "calibrated_base_hours": 0.16
+      },
+      "is_broad_lesson": false,
+      "unit_id": "MATH_PROBLEM_SOLVING_DATA",
+      "unit_name": "Problem-Solving and Data Analysis",
+      "unit_order": 7,
+      "lesson_order_within_unit": 7
+    },
+    {
+      "lesson_id": "MATH_AREA_VOLUME",
+      "section": "math",
+      "lesson_name": "Area and Volume",
+      "reference_base_hours": 0.64,
+      "rubric": {
+        "breadth": 2,
+        "concept_difficulty": 2,
+        "sat_strategy_load": 2,
+        "calibrated_base_hours": 0.64
+      },
+      "is_broad_lesson": false,
+      "unit_id": "MATH_GEOMETRY_TRIG",
+      "unit_name": "Geometry and Trigonometry",
+      "unit_order": 8,
+      "lesson_order_within_unit": 1
+    },
+    {
+      "lesson_id": "MATH_LINES_ANGLES_TRIANGLES",
+      "section": "math",
+      "lesson_name": "Lines, Angles, and Triangles",
+      "reference_base_hours": 0.32,
+      "rubric": {
+        "breadth": 1,
+        "concept_difficulty": 2,
+        "sat_strategy_load": 1,
+        "calibrated_base_hours": 0.32
+      },
+      "is_broad_lesson": false,
+      "unit_id": "MATH_GEOMETRY_TRIG",
+      "unit_name": "Geometry and Trigonometry",
+      "unit_order": 8,
+      "lesson_order_within_unit": 2
+    },
+    {
+      "lesson_id": "MATH_RIGHT_TRIANGLES_TRIG",
+      "section": "math",
+      "lesson_name": "Right Triangles and Trigonometry",
+      "reference_base_hours": 0.64,
+      "rubric": {
+        "breadth": 2,
+        "concept_difficulty": 2,
+        "sat_strategy_load": 2,
+        "calibrated_base_hours": 0.64
+      },
+      "is_broad_lesson": true,
+      "unit_id": "MATH_GEOMETRY_TRIG",
+      "unit_name": "Geometry and Trigonometry",
+      "unit_order": 8,
+      "lesson_order_within_unit": 3
+    },
+    {
+      "lesson_id": "MATH_CIRCLES",
+      "section": "math",
+      "lesson_name": "Circles",
+      "reference_base_hours": 0.32,
+      "rubric": {
+        "breadth": 1,
+        "concept_difficulty": 2,
+        "sat_strategy_load": 1,
+        "calibrated_base_hours": 0.32
+      },
+      "is_broad_lesson": false,
+      "unit_id": "MATH_GEOMETRY_TRIG",
+      "unit_name": "Geometry and Trigonometry",
+      "unit_order": 8,
+      "lesson_order_within_unit": 4
+    }
+  ],
+  "notes": "Breadth, concept difficulty, and SAT strategy load describe the lesson profile. The lesson-specific calibrated_base_hours value is the executable base-hour result. This removes the former inconsistent universal sum-to-hours conversion and exactly reproduces the approved table. The calibrated value is mirrored in reference_base_hours and validated by the engine.",
+  "base_hour_method": "lesson_specific_calibrated_rubric",
+  "calibrated_base_totals": {
+    "english": 5.16,
+    "math": 8.92,
+    "all_lessons": 14.08
+  },
+  "units": [
+    {
+      "unit_id": "ENG_CRAFT_STRUCTURE",
+      "unit_name": "Craft and Structure",
+      "section": "english",
+      "unit_order": 1,
+      "lesson_ids": [
+        "ENG_CROSS_TEXT_CONNECTIONS",
+        "ENG_TEXT_STRUCTURE_PURPOSE",
+        "ENG_WORDS_IN_CONTEXT"
+      ]
+    },
+    {
+      "unit_id": "ENG_EXPRESSION_IDEAS",
+      "unit_name": "Expression of Ideas",
+      "section": "english",
+      "unit_order": 2,
+      "lesson_ids": [
+        "ENG_RHETORICAL_SYNTHESIS",
+        "ENG_TRANSITIONS"
+      ]
+    },
+    {
+      "unit_id": "ENG_INFORMATION_IDEAS",
+      "unit_name": "Information and Ideas",
+      "section": "english",
+      "unit_order": 3,
+      "lesson_ids": [
+        "ENG_CENTRAL_IDEAS_DETAILS",
+        "ENG_COMMAND_OF_EVIDENCE",
+        "ENG_INFERENCES"
+      ]
+    },
+    {
+      "unit_id": "ENG_STANDARD_CONVENTIONS",
+      "unit_name": "Standard English Conventions",
+      "section": "english",
+      "unit_order": 4,
+      "lesson_ids": [
+        "ENG_STANDARD_ENGLISH_CONVENTIONS"
+      ]
+    },
+    {
+      "unit_id": "MATH_ALGEBRA",
+      "unit_name": "Algebra",
+      "section": "math",
+      "unit_order": 5,
+      "lesson_ids": [
+        "MATH_LINEAR_EQ_ONE_VAR",
+        "MATH_LINEAR_FUNCTIONS",
+        "MATH_LINEAR_EQ_TWO_VAR",
+        "MATH_SYSTEMS_LINEAR",
+        "MATH_LINEAR_INEQUALITIES"
+      ]
+    },
+    {
+      "unit_id": "MATH_ADVANCED_MATH",
+      "unit_name": "Advanced Math",
+      "section": "math",
+      "unit_order": 6,
+      "lesson_ids": [
+        "MATH_EQUIV_EXPRESSIONS",
+        "MATH_NONLINEAR_EQ_SYSTEMS",
+        "MATH_NONLINEAR_FUNCTIONS"
+      ]
+    },
+    {
+      "unit_id": "MATH_PROBLEM_SOLVING_DATA",
+      "unit_name": "Problem-Solving and Data Analysis",
+      "section": "math",
+      "unit_order": 7,
+      "lesson_ids": [
+        "MATH_RATIOS_RATES",
+        "MATH_PERCENTAGES",
+        "MATH_ONE_VAR_DATA",
+        "MATH_TWO_VAR_DATA",
+        "MATH_PROBABILITY",
+        "MATH_INFERENCE_MOE",
+        "MATH_STAT_CLAIMS"
+      ]
+    },
+    {
+      "unit_id": "MATH_GEOMETRY_TRIG",
+      "unit_name": "Geometry and Trigonometry",
+      "section": "math",
+      "unit_order": 8,
+      "lesson_ids": [
+        "MATH_AREA_VOLUME",
+        "MATH_LINES_ANGLES_TRIANGLES",
+        "MATH_RIGHT_TRIANGLES_TRIG",
+        "MATH_CIRCLES"
+      ]
+    }
+  ]
+}

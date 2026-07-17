@@ -1,0 +1,42 @@
+[individual demo pipeline]
+  ok  individual demo calculates without errors
+  ok  all 28 lessons present, none at 0 h
+  ok  final component total within 14-35 h
+  ok  declared major foundational gap governs Nonlinear Eq & Systems
+  ok  view model derives gap from supplied scores
+  ok  curve checkpoints avoid invented score predictions
+  ok  order of attack contains all 8 units exactly once
+  ok  order of attack contains all 28 existing lessons exactly once
+  ok  order of attack adds no synthetic lesson chips
+  ok  individual roadmap: has doctype + closes html
+  ok  individual roadmap: no unresolved template tokens
+  ok  individual roadmap: no leftover Karl content
+  ok  roadmap has exactly 7 page sections
+  ok  individual report: has doctype + closes html
+  ok  individual report: no unresolved template tokens
+  ok  individual report: no leftover Karl content
+  ok  report contains audit example calculations
+  ok  main application does not label the result as clamped
+  ok  generated report does not present an above-35 total as a headline
+[group demo pipeline]
+  ok  group demo calculates without errors
+  ok  3 individual calculations produced first
+  ok  group lessons preserve core minimum and externalize any excess individual need
+  ok  3-student min/max = 16/38
+  ok  group report: has doctype + closes html
+  ok  group report: no unresolved template tokens
+  ok  group report: no leftover Karl content
+  ok  group report shows the corrected minimum
+  ok  group roadmap Rami_Khoury: has doctype + closes html
+  ok  group roadmap Rami_Khoury: no unresolved template tokens
+  ok  group roadmap Rami_Khoury: no leftover Karl content
+  ok  group roadmap Lina_Sarkis: has doctype + closes html
+  ok  group roadmap Lina_Sarkis: no unresolved template tokens
+  ok  group roadmap Lina_Sarkis: no leftover Karl content
+  ok  group roadmap Omar_Fares: has doctype + closes html
+  ok  group roadmap Omar_Fares: no unresolved template tokens
+  ok  group roadmap Omar_Fares: no leftover Karl content
+  ok  Rami (target 1420) gets no high-target addition without distinct advanced evidence
+  ok  Lina and Omar (targets < 1400) receive none
+
+==== 38 passed, 0 failed ====

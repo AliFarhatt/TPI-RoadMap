@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>TestPrep SAT Diagnostic &amp; Course Planner</title>
+<link rel="stylesheet" href="css/app.css">
+<link rel="stylesheet" href="css/batch-workflows.css">
+</head>
+<body>
+<header class="topbar">
+  <div class="topbar-inner">
+    <img src="assets/logo-testprep-white.png" alt="TestPrep" class="logo">
+    <span class="divider"></span>
+    <span class="wordmark">SAT DIAGNOSTIC &amp; COURSE PLANNER</span>
+    <span class="version">v2.4.1 &middot; offline</span>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <!-- START -->
+  <section class="panel" id="panel-start">
+    <div class="panel-head"><span class="ghost">01</span>
+      <div><div class="kicker">START OR LOAD A CASE</div><h2>New case, import, or example</h2></div>
+    </div>
+    <div class="btnrow">
+      <button class="btn primary" id="btn-new-individual">New individual case</button>
+      <button class="btn primary" id="btn-new-group">New group case</button>
+      <button class="btn" id="btn-load-json">Load JSON&hellip;</button>
+      <button class="btn" id="btn-load-csv">Import answers CSV&hellip;</button>
+      <button class="btn" id="btn-load-elmy-pdf">Import Elmy diagnostic PDF&hellip;</button>
+      <button class="btn ghostbtn" id="btn-example-individual">Open individual example</button>
+      <button class="btn ghostbtn" id="btn-example-group">Open group example</button>
+    </div>
+    <input type="file" id="file-json" accept=".json,application/json" hidden>
+    <input type="file" id="file-csv" accept=".csv,text/csv" hidden>
+    <input type="file" id="file-elmy-pdf" accept=".pdf,application/pdf" multiple hidden>
+    <span class="import-progress" id="elmy-import-progress" role="status" aria-live="polite"></span>
+    <div id="import-start-messages" aria-live="polite"></div>
+    <div class="batch-summary hidden" id="individual-batch-summary" aria-live="polite"></div>
+    <p class="hint">Everything runs locally in this browser tab. Nothing is uploaded. Example cases are embedded so they work fully offline.</p>
+  </section>
+
+  <!-- GROUP ROSTER -->
+  <section class="panel hidden" id="panel-group">
+    <div class="panel-head"><span class="ghost">G</span>
+      <div><div class="kicker">GROUP</div><h2>Group roster (2&ndash;20 students)</h2></div>
+    </div>
+    <div class="grid2">
+      <label>Group name<input id="g-name" placeholder="e.g. October 2026 Trio"></label>
+      <label>Group ID<input id="g-id" placeholder="optional"></label>
+    </div>
+    <div id="roster"></div>
+    <div class="btnrow">
+      <button class="btn" id="btn-add-student">+ Add student</button>
+      <button class="btn primary" id="btn-import-pdf-to-group">Import diagnostic PDF to group&hellip;</button>
+    </div>
+    <input type="file" id="file-group-elmy-pdf" accept=".pdf,application/pdf" multiple hidden>
+    <span class="import-progress" id="group-import-progress" role="status" aria-live="polite"></span>
+    <div class="batch-summary hidden" id="group-import-summary" aria-live="polite"></div>
+    <p class="hint">Select a student below to edit details and answers. Group outputs validate each student, pool correct and administered totals across eligible students, and create one shared course.</p>
+  </section>
+
+  <!-- STUDENT INFO -->
+  <section class="panel hidden" id="panel-student">
+    <div class="panel-head"><span class="ghost">02</span>
+      <div><div class="kicker">STUDENT INFORMATION</div><h2 id="student-panel-title">Identity, scores, goal, availability</h2></div>
+    </div>
+    <h3>Identity</h3>
+    <div class="grid3">
+      <label>Student name *<input id="f-name"></label>
+      <label>Student ID<input id="f-id"></label>
+      <label>Grade level<input id="f-grade" type="number" min="6" max="13"></label>
+    </div>
+    <h3>Scaled scores (entered manually; never estimated from raw accuracy)</h3>
+    <div class="grid3">
+      <label>Reading &amp; Writing (200&ndash;800)<input id="f-rw" type="number" min="200" max="800" step="10"></label>
+      <label>Math (200&ndash;800)<input id="f-math" type="number" min="200" max="800" step="10"></label>
+      <label>Total (400&ndash;1600)<input id="f-total" type="number" min="400" max="1600" step="10"></label>
+    </div>
+    <p class="hint">If all three are supplied they must satisfy R&amp;W + Math = Total; a mismatch is reported as an error.</p>
+    <h3>Goal &amp; schedule</h3>
+    <div class="grid3">
+      <label>Target SAT score<input id="f-target" type="number" min="400" max="1600" step="10"></label>
+      <label>Intended test date<input id="f-testdate" type="date"></label>
+      <label>Weeks available<input id="f-weeks" type="number" min="1" max="52"></label>
+    </div>
+    <div class="grid3">
+      <label>Sessions per week<input id="f-spw" type="number" min="1" max="6"></label>
+      <label>Max session length<input id="f-maxsess" placeholder="e.g. 2 hrs"></label>
+      <label>Session format<input id="f-format" placeholder="e.g. Focused blocks"></label>
+    </div>
+    <div class="grid3">
+      <label>Accommodation<select id="f-accom"><option value="">Not provided</option><option>No</option><option>Yes</option></select></label>
+      <label>Diagnostic template<select id="f-template"></select></label>
+      <label>Diagnostic date<input id="f-diagdate" placeholder="e.g. July 6, 2026"></label>
+    </div>
+    <h3>Known foundational gaps (optional, evidence-based)</h3>
+    <div id="gaps"></div>
+    <button class="btn small" id="btn-add-gap">+ Add foundational gap</button>
+  </section>
+
+  <!-- ANSWERS -->
+  <section class="panel hidden" id="panel-answers">
+    <div class="panel-head"><span class="ghost">03</span>
+      <div><div class="kicker">DIAGNOSTIC ANSWERS</div><h2>Question-by-question entry</h2></div>
+    </div>
+    <div class="btnrow">
+      <label class="inline">Section
+        <select id="a-section"><option value="english">Reading &amp; Writing</option><option value="math">Math</option></select>
+      </label>
+      <label class="inline">Module
+        <select id="a-module"><option value="module_1">Module 1</option><option value="module_b">Module B</option></select>
+      </label>
+      <span class="hint" id="a-progress"></span>
+    </div>
+    <div class="tablewrap">
+      <table id="answers-table">
+        <thead><tr><th>#</th><th>Lesson</th><th>Student answer</th><th>Correct answer</th><th>Difficulty</th><th>Time (s)</th><th>Guessed</th><th>Method</th><th>Teacher note</th></tr></thead>
+        <tbody></tbody>
+      </table>
+    </div>
+    <p class="hint">The template stores no answer key, so the correct answer must be supplied per question (or via CSV/JSON import). Difficulty is optional; when blank, only the module weight (Module 1 = 1.00, Module B = 1.20) is applied.</p>
+  </section>
+
+  <!-- CALCULATE -->
+  <section class="panel hidden" id="panel-calc">
+    <div class="panel-head"><span class="ghost">04</span>
+      <div><div class="kicker">CALCULATION</div><h2>Run the planning engine</h2></div>
+    </div>
+    <div class="btnrow">
+      <button class="btn primary big" id="btn-run">Run analysis</button>
+      <button class="btn" id="btn-export-input">Export input JSON</button>
+      <button class="btn primary" id="btn-group-roadmap" disabled aria-disabled="true">Create group roadmap</button>
+      <button class="btn primary" id="btn-three-page-group-report" disabled aria-disabled="true">Create three page group report</button>
+    </div>
+    <div id="messages"></div>
+    <div class="import-review hidden" id="elmy-import-review" aria-live="polite"></div>
+  </section>
+
+  <!-- RESULTS -->
+  <section class="panel hidden" id="panel-results">
+    <div class="panel-head"><span class="ghost">05</span>
+      <div><div class="kicker">RESULTS</div><h2 id="results-title">Diagnostic overview</h2></div>
+    </div>
+    <div id="results-summary"></div>
+    <div class="btnrow" id="results-actions"></div>
+    <div id="results-detail"></div>
+  </section>
+
+</main>
+
+<footer class="foot">TESTPREP &middot; HOUSE OF PREP &middot; All figures are planning estimates derived from diagnostic evidence and may be updated after instruction begins.</footer>
+
+<script src="vendor/pdfjs/pdf.worker.min.js"></script>
+<script src="vendor/pdfjs/pdf.min.js"></script>
+<script src="vendor/jszip/jszip.min.js"></script>
+<script src="js/config-data.js"></script>
+<script src="js/engine.js"></script>
+<script src="js/group-shared.js"></script>
+<script src="js/elmy-importer.js"></script>
+<script src="js/viewmodel.js"></script>
+<script src="js/roadmap.js"></script>
+<script src="js/report.js"></script>
+<script src="js/twopage.js"></script>
+<script src="js/grouproadmap.js"></script>
+<script src="js/groupreport.js"></script>
+<script src="js/examples-data.js"></script>
+<script src="js/app-controller.js"></script>
+<script src="js/group-ui.js"></script>
+<script src="js/batch-utils.js"></script>
+<script src="js/offline-pdf-export.js"></script>
+<script src="js/group-pdf-import.js"></script>
+<script src="js/individual-batch-reports.js"></script>
+</body>
+</html>

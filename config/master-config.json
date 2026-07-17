@@ -1,0 +1,16 @@
+{
+  "schema_version": "2.4",
+  "files": {
+    "lesson_catalog": "lesson-catalog.json",
+    "calculation_rules": "calculation-rules.json",
+    "brand_config": "brand-config.json",
+    "diagnostic_difficulty_maps": [
+      "diagnostic-difficulty-maps/diagnostic-exam-2026.json"
+    ],
+    "diagnostic_templates": [
+      "diagnostic-templates/kaplan-practice-test-2.json"
+    ]
+  },
+  "note": "The offline app loads a generated mirror from app/js/config-data.js. Edit /config JSON and run optional-tools/build-config-js.py.",
+  "package_version": "2.4"
+}

@@ -1,0 +1,31 @@
+TestPrep SAT Roadmap Master v2.4.1 — Multi-PDF automation verification
+Date: 2026-07-17
+
+PASS 20/20  tests/unit/batch-utils.test.js
+PASS 14/14  tests/integration/individual-batch-reports.test.js
+PASS 12/12  tests/integration/multi-pdf-ui.test.js
+PASS 36/36  tests/unit/group-shared.test.js
+PASS 13/13  tests/integration/group-reports.test.js
+PASS 73/73  tests/unit/twopage.test.js
+PASS 58/58  tests/integration/pipeline.test.js
+PASS 35/35  tests/unit/elmy-importer.test.js
+PASS 18/18  tests/integration/elmy-pdf-import.test.mjs (real attached PDF)
+PASS 23/23  tests/integration/elmy-browser-import.test.js (file://, real attached PDF)
+PASS  6/6   live group browser workflow (file://, add/duplicate/stale/remove)
+
+TOTAL: 308/308 new-feature and applicable regression checks passed.
+
+KNOWN BASELINE: tests/unit/engine.test.js = 113 passed / 8 failed. These are the
+same pre-existing maximum-budget bookkeeping assertions documented by the supplied
+v2.4.1 package. The individual calculation engine was not changed.
+
+SCHEMA RUNNER: skipped because the optional development-only Python jsonschema
+package is not installed in the verification environment.
+
+PDF CHECKS:
+- shared group roadmap: 4 pages
+- three-page group report: exactly 3 pages
+- sample individual ZIP: integrity OK, 9 PDFs
+- roadmaps in ZIP: 7 pages each
+- concise individual reports in ZIP: 2 pages each
+- detailed reports in ZIP: 12–13 pages each

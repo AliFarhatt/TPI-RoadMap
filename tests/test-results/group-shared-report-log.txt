@@ -1,0 +1,15 @@
+  ok  report renders exactly three explicit pages
+  ok  page 1 contains overview and similarity
+  ok  page 2 contains module, difficulty, strengths, priorities
+  ok  page 3 contains one shared roadmap
+  ok  student scores are summarized
+  ok  high variation is flagged
+  ok  charts use offline CSS bars
+  ok  all 28 shared lessons appear on report page 3
+  ok  roadmap renders four controlled pages
+  ok  roadmap lesson tables contain each lesson once
+  ok  renderers emit no undefined/null/NaN/Infinity text
+  ok  safe filenames are lowercase hyphenated
+  ok  exact button labels exist in packaging source
+
+==== 13 passed, 0 failed ====

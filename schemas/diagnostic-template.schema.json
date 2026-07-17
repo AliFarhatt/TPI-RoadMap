@@ -1,0 +1,111 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "diagnostic-template.schema.json",
+  "title": "Diagnostic template",
+  "type": "object",
+  "required": [
+    "test_id",
+    "test_name",
+    "questions",
+    "total_questions"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "2.0"
+    },
+    "test_id": {
+      "type": "string",
+      "pattern": "^[a-z0-9_]+$"
+    },
+    "test_name": {
+      "type": "string"
+    },
+    "sections": {
+      "type": "object"
+    },
+    "total_questions": {
+      "type": "integer"
+    },
+    "unassessed_or_underassessed_lessons": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "metadata_notes": {
+      "type": "string"
+    },
+    "questions": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "section",
+          "module",
+          "question_number",
+          "lesson_id"
+        ],
+        "properties": {
+          "section": {
+            "enum": [
+              "english",
+              "math"
+            ]
+          },
+          "module": {
+            "enum": [
+              "module_1",
+              "module_b"
+            ]
+          },
+          "question_number": {
+            "type": "integer"
+          },
+          "lesson_id": {
+            "type": "string"
+          },
+          "subskill_id": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "question_style": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "difficulty": {
+            "enum": [
+              "easy",
+              "medium",
+              "hard",
+              null
+            ]
+          },
+          "expected_time_seconds": {
+            "type": [
+              "object",
+              "null"
+            ],
+            "properties": {
+              "minimum": {
+                "type": "number"
+              },
+              "maximum": {
+                "type": "number"
+              }
+            }
+          },
+          "correct_answer": {
+            "type": [
+              "string",
+              "null"
+            ]
+          }
+        }
+      }
+    }
+  }
+}

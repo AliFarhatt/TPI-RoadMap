@@ -1,0 +1,597 @@
+/* TestPrep seven-page roadmap renderer v2.4
+ * GENERATED from the original prototype (original-reference/TestPrep SAT Roadmap v2.dc.html)
+ * by optional-tools/build-roadmap-js.py. The visual design is frozen; only view-model
+ * values are interpolated. Do not duplicate calculation logic here.
+ */
+(function (root) {
+  "use strict";
+  function e(s) {
+    if (s == null) return "";
+    return String(s).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
+  }
+  function attackDisplayHours(item) {
+    var value = item && item.display_hours != null ? item.display_hours : item && item.hours;
+    var n = Number(value);
+    if (!Number.isFinite(n) || n <= 0) return 0;
+    return Math.ceil(n - 1e-9);
+  }
+  var GEN = {
+    brandCells: function (vm) {
+      return vm.brand.brand_stats.map(function (s, i) {
+        var bl = i === 0 ? "" : " border-left:1px solid rgba(255,255,255,0.1);";
+        return '<div style="padding:20px 14px; text-align:center;' + bl + '">' +
+          '<div style="font-family:\'Inter\',Arial,Helvetica,sans-serif; font-size:32px; font-weight:600; color:#ff963e; line-height:1;">' + e(s.value) + '<span style="font-size:16px; vertical-align:super;">' + e(s.suffix) + '</span></div>' +
+          '<div style="font-family:\'Inter\',Arial,Helvetica,sans-serif; font-size:9px; letter-spacing:0.12em; color:#cdd6e8; margin-top:6px;">' + e(s.label) + '</div></div>';
+      }).join("\n");
+    },
+    gaugeCards: function (vm) {
+      return vm.section_scores.map(function (g) {
+        var accInt = Math.round(g.accuracy);
+        return '<div style="border:1px solid #e4e7ee; border-radius:12px; padding:13px 18px;">' +
+          '<div style="display:flex; justify-content:space-between; align-items:flex-end; margin-bottom:9px;">' +
+          '<span style="font-weight:600; font-size:13px;">' + e(g.name) + '</span>' +
+          '<span><span style="font-family:\'Inter\',Arial,Helvetica,sans-serif; font-size:28px; font-weight:600; color:#1740a9; line-height:0.9;">' + accInt + '</span><span style="font-size:12px; color:#8a93a3;">%</span></span></div>' +
+          '<div style="height:8px; background:#eef0f4; border-radius:4px; position:relative; overflow:hidden;"><div style="position:absolute; inset:0 ' + (100 - accInt) + '% 0 0; background:#1740a9; border-radius:4px;"></div></div>' +
+          '<div style="font-family:\'Inter\',Arial,Helvetica,sans-serif; font-size:9.5px; color:#8a93a3; margin-top:8px;">' + e(g.caption) + '</div></div>';
+      }).join("\n");
+    },
+    bulletItems: function (items) {
+      return items.map(function (it) {
+        return '<li><strong>' + e(it.label) + ':</strong> ' + e(it.detail) + '</li>';
+      }).join("\n          ");
+    },
+    lanes: function (vm) {
+      var maxH = Math.max.apply(null, vm.hour_allocation.map(function (l) { return l.hours; }));
+      var styles = [
+        { bg: "#0c1730", fg: "#fff", note: "#9fb0d6" },
+        { bg: "#2f5bc4", fg: "#fff", note: "#d2ddf4" },
+        { bg: "#ff963e", fg: "#3a1e08", note: "#7a4a16" }];
+      return vm.hour_allocation.map(function (l, i) {
+        var s = styles[Math.min(i, 2)];
+        var w = maxH ? Math.max(28, Math.round(1000 * l.hours / maxH) / 10) : 100;
+        var note = l.note ? '<span style="margin-left:auto; padding-right:18px; font-family:\'Inter\',Arial,Helvetica,sans-serif; font-size:10px; color:' + s.note + ';">' + e(l.note) + '</span>' : "";
+        return '<div style="display:flex; align-items:center; height:46px; background:' + s.bg + '; color:' + s.fg + '; width:' + w + '%; border-radius:10px;">' +
+          '<span style="font-family:\'Inter\',Arial,Helvetica,sans-serif; font-size:26px; font-weight:600; padding-left:18px; width:78px;">' + e(l.hours) + '</span>' +
+          '<span style="font-size:13px; font-weight:600;">' + e(l.name) + '</span>' + note + '</div>';
+      }).join("\n");
+    },
+    attackRows: function (vm) {
+      var pal = [
+        { num: "#c7560a", kick: "#c7560a", chipBg: "#fff4ea", chipFg: "#9a4708", border: "#f2c9aa", kicker: "FIRST" },
+        { num: "#1740a9", kick: "#1740a9", chipBg: "#f0f4fc", chipFg: "#1740a9", border: "#c9d5ef", kicker: "THEN" },
+        { num: "#9aa3b2", kick: "#5a6373", chipBg: "#f6f7f9", chipFg: "#4a5566", border: "#dfe3e9", kicker: "FINALLY" }];
+      return vm.order_of_attack.map(function (ph, i) {
+        var p = pal[Math.min(i, 2)];
+        var last = i === vm.order_of_attack.length - 1 ? " border-bottom:1px solid #e4e7ee;" : "";
+        var content;
+        if (ph.units && ph.units.length) {
+          content = ph.units.map(function (u) {
+            var lessonNames = u.lessons.map(function (l) { return e(l.lesson_name); }).join(" &middot; ");
+            return '<div style="min-width:0; background:' + p.chipBg + '; border:1px solid ' + p.border + '; border-radius:9px; padding:7px 9px;">' +
+              '<div style="display:flex; justify-content:space-between; gap:8px; align-items:baseline;">' +
+              '<span style="font-size:11.5px; line-height:1.2; font-weight:700; color:' + p.chipFg + ';">' + e(u.unit_name) + '</span>' +
+              '<span style="font-size:9px; white-space:nowrap; color:' + p.chipFg + '; opacity:.78;">&asymp; ' + e(attackDisplayHours(u)) + ' h</span></div>' +
+              '<div style="font-size:8.5px; line-height:1.28; color:#5a6373; margin-top:4px;">' + lessonNames + '</div></div>';
+          }).join("\n          ");
+          content = '<div style="display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:7px; padding-top:2px;">' + content + '</div>';
+        } else {
+          var chips = (ph.chips || []).map(function (c) {
+            return '<span style="font-size:12px; background:' + p.chipBg + '; color:' + p.chipFg + '; padding:6px 12px; border-radius:8px;">' + e(c) + '</span>';
+          }).join("\n          ");
+          content = '<div style="display:flex; flex-wrap:wrap; gap:8px; padding-top:4px;">' + chips + '</div>';
+        }
+        return '<div class="keep" style="display:grid; grid-template-columns:46px 118px 1fr; gap:13px; align-items:start; padding:13px 0; border-top:1px solid #e4e7ee;' + last + '">' +
+          '<div style="font-family:\'Inter\',Arial,Helvetica,sans-serif; font-size:31px; font-weight:600; color:' + p.num + '; line-height:0.8;">0' + (i + 1) + '</div>' +
+          '<div><div style="font-family:\'Inter\',Arial,Helvetica,sans-serif; font-size:9px; letter-spacing:0.12em; color:' + p.kick + '; margin-bottom:5px;">' + p.kicker + '</div>' +
+          '<div style="display:flex; align-items:baseline; gap:5px;"><span style="font-family:\'Inter\',Arial,Helvetica,sans-serif; font-size:25px; font-weight:600; color:#14181f; line-height:1;">&asymp; ' + e(attackDisplayHours(ph)) + '</span><span style="font-size:10px; color:#8a93a3;">hrs</span></div>' +
+          '<div style="font-size:10.3px; line-height:1.35; color:#5a6373; margin-top:5px;">' + e(ph.summary) + '</div></div>' + content + '</div>';
+      }).join("\n");
+    }
+  };
+
+  root.TP_RENDER_ROADMAP = function (vm) {
+    var A = vm.asset_base || "";
+    var body = MAIN_TEMPLATE(vm, A, GEN);
+    return '<!DOCTYPE html>\n<html>\n<head>\n<meta charset="utf-8">\n<meta name="viewport" content="width=device-width, initial-scale=1">' +
+      '\n<title>TestPrep SAT Roadmap - ' + e(vm.student_name) + '</title>\n<style>\n' + HEAD_CSS + '\n</style>\n</head>\n<body>\n' + body + '\n</body>\n</html>';
+  };
+
+  var HEAD_CSS = `*{ box-sizing:border-box; }
+  html{ -webkit-print-color-adjust:exact; print-color-adjust:exact; }
+  body{ margin:0; background:#f4f5f8; color:#14181f;
+    font-family:'Inter',Arial,Helvetica,sans-serif; font-size:14px; line-height:1.6;
+    -webkit-font-smoothing:antialiased; text-rendering:optimizeLegibility; }
+  h1,h2,h3{ text-wrap:balance; margin:0; }
+  p{ margin:0; text-wrap:pretty; }
+  .doc{ box-sizing:border-box; max-width:760px; margin:0 auto; background:#fff; }
+  .doc-body{ padding:0 30px; }
+  table{ border-collapse:collapse; width:100%; }
+  @page{ size:A4; margin:10mm 8mm 14mm;
+    @top-left{ content:"TESTPREP \\00B7 HOUSE OF PREP"; font:600 7pt 'Inter',Arial,sans-serif; letter-spacing:0.1em; color:#aab2c0; }
+    @top-right{ content:counter(page) " / " counter(pages); font:600 7pt 'Inter',Arial,sans-serif; letter-spacing:0.1em; color:#aab2c0; }
+  }
+  .page-footer{ display:none; }
+  @media print{
+    html,body{ margin:0; padding:0; background:#fff; }
+    .doc{ max-width:none !important; margin:0 !important; }
+    .keep{ break-inside:avoid; }
+    h2,h3,.sec-head{ break-after:avoid; }
+    tr{ break-inside:avoid; }
+    p,li{ orphans:3; widows:3; }
+    .pagebreak{ break-before:page; padding-top:4px !important; }
+    .page-footer{ display:flex; position:fixed; left:8mm; right:8mm; bottom:5mm; height:9mm; z-index:0;
+      align-items:center; justify-content:center; gap:12px; background:#0c1730; border-radius:9px; }
+    .page-footer img{ width:auto; display:block; }
+  }`;
+
+  function MAIN_TEMPLATE(vm, A, GEN) {
+    return `<main class="doc">
+
+  <!-- ================= PAGE 1 : COVER ================= -->
+  <section class="keep cover-page" data-screen-label="Cover" style="padding:30px 30px 26px; display:flex; flex-direction:column; gap:22px;">
+    <div style="border-radius:18px; overflow:hidden; box-shadow:0 14px 40px rgba(12,23,48,0.16); aspect-ratio:1052/1045; background:#eef0f4;">
+      <img src="${A}assets/cover-hero.png" alt="TestPrep" style="display:block; width:100%; height:100%; object-fit:cover; object-position:center top;">
+    </div>
+
+    <div style="padding:0 4px;">
+      <div style="font-family:'Inter',Arial,Helvetica,sans-serif; font-weight:400; font-size:21px; color:#1740a9; line-height:1; margin-bottom:8px;">${e(vm.season)}</div>
+      <h1 style="font-family:'Inter',Arial,Helvetica,sans-serif; font-weight:600; font-size:44px; line-height:1.04; letter-spacing:-0.01em; color:#0c1730;">The SAT Customized Roadmap</h1>
+      <p style="margin-top:12px; font-size:13.5px; line-height:1.5; color:#5a6373; max-width:54ch;">A diagnostic-built academic strategy, prepared for <span style="color:#14181f; font-weight:600;">${e(vm.student_name)}</span> &middot; ${e(vm.diagnostic_label)} &middot; ${e(vm.diagnostic_date)}.</p>
+    </div>
+
+    <!-- brand stat band -->
+    <div style="margin-top:auto; background:#0c1730; border-radius:16px; overflow:hidden; display:grid; grid-template-columns:repeat(4,1fr);">
+${GEN.brandCells(vm)}
+    </div>
+  </section>
+
+  <!-- ================= PAGE 2 ================= -->
+  <!-- MASTHEAD : simplified -->
+  <section class="keep pagebreak" data-screen-label="Header" style="position:relative; background:#0c1730; color:#eef1f7; overflow:hidden; padding:26px 32px 24px; border-radius:18px; margin:6px 16px 0;">
+    <div style="position:absolute; inset:0; background:radial-gradient(125% 100% at 100% 0%, rgba(23,64,169,0.55) 0%, rgba(12,23,48,0) 60%); pointer-events:none;"></div>
+    <div style="position:absolute; top:0; left:0; width:44%; height:4px; background:#ff963e; border-radius:18px 0 0 0;"></div>
+    <div style="position:absolute; top:0; left:44%; right:0; height:4px; background:#1740a9; border-radius:0 18px 0 0;"></div>
+
+    <div style="position:relative; display:flex; align-items:center; justify-content:flex-start; gap:16px;">
+      <span style="font-family:'Inter',Arial,Helvetica,sans-serif; font-size:9px; letter-spacing:0.2em; color:#ff963e; white-space:nowrap;">PERSONALIZED SAT ROADMAP</span>
+    </div>
+
+    <div style="position:relative; margin-top:20px;">
+      <div style="font-family:'Inter',Arial,Helvetica,sans-serif; font-size:9px; letter-spacing:0.16em; color:#8fa2cb; margin-bottom:10px;">PREPARED FOR ${e(vm.student_name_upper)} &middot; ${e(vm.diagnostic_label_upper)} &middot; ${e(vm.diagnostic_date_upper)}</div>
+      <div style="display:flex; align-items:baseline; gap:16px; flex-wrap:wrap;">
+        <span style="font-family:'Inter',Arial,Helvetica,sans-serif; font-weight:600; font-size:54px; line-height:0.9; color:#fff; letter-spacing:-0.02em;">${e(vm.baseline_display)}</span>
+        <span style="font-family:'Inter',Arial,Helvetica,sans-serif; font-size:26px; color:#ff963e; line-height:1;">&rarr;</span>
+        <span style="font-family:'Inter',Arial,Helvetica,sans-serif; font-weight:600; font-size:54px; line-height:0.9; color:#7ea0e8; letter-spacing:-0.02em;">${e(vm.target_display)}</span>
+        <span style="font-size:12px; color:#8794ad; align-self:flex-end; padding-bottom:6px;">on the 1600 scale</span>
+      </div>
+    </div>
+
+    <!-- GAP JOURNEY BAR : single home for the numbers -->
+    <div style="position:relative; margin-top:22px;">
+      <div style="display:inline-flex; align-items:baseline; gap:8px; background:#ff963e; color:#3a1e08; border-radius:999px; padding:6px 16px; margin-bottom:12px;">
+        <span style="font-family:'Inter',Arial,Helvetica,sans-serif; font-weight:700; font-size:17px; line-height:1;">${e(vm.gap_display)}</span>
+        <span style="font-family:'Inter',Arial,Helvetica,sans-serif; font-size:8.5px; font-weight:600; letter-spacing:0.14em;">POINTS TO GAIN</span>
+      </div>
+      <div style="position:relative; height:14px; background:rgba(255,255,255,0.07); border:1px solid rgba(255,255,255,0.1); border-radius:7px; overflow:hidden;">
+        <div style="position:absolute; left:0; top:0; bottom:0; width:${vm.baseline_pct}%; background:linear-gradient(90deg,#1b3a78,#2f5bc4);"></div>
+        <div style="position:absolute; left:${vm.baseline_pct}%; top:0; bottom:0; width:${vm.gap_pct}%; background:repeating-linear-gradient(45deg,#ff963e,#ff963e 6px,#e87f2a 6px,#e87f2a 12px);"></div>
+      </div>
+    </div>
+
+    <!-- stat chips -->
+    <div style="position:relative; margin-top:22px; padding-top:16px; border-top:1px solid rgba(255,255,255,0.12); display:grid; grid-template-columns:repeat(4,1fr); gap:14px;">
+      <div>
+        <div style="font-family:'Inter',Arial,Helvetica,sans-serif; font-size:8.5px; letter-spacing:0.12em; color:#8fa2cb; margin-bottom:6px;">FOCUSED INSTRUCTION</div>
+        <div style="font-family:'Inter',Arial,Helvetica,sans-serif; font-size:22px; font-weight:600; color:#fff; line-height:1.05;">${e(vm.instruction_hours_label)}</div>
+      </div>
+      <div style="border-left:1px solid rgba(255,255,255,0.1); padding-left:14px;">
+        <div style="font-family:'Inter',Arial,Helvetica,sans-serif; font-size:8.5px; letter-spacing:0.12em; color:#8fa2cb; margin-bottom:6px;">LEARNING ACCOMMODATION</div>
+        <div style="font-family:'Inter',Arial,Helvetica,sans-serif; font-size:22px; font-weight:600; color:#7ea0e8; line-height:1.05;">${e(vm.accommodation)}</div>
+      </div>
+      <div style="border-left:1px solid rgba(255,255,255,0.1); padding-left:14px;">
+        <div style="font-family:'Inter',Arial,Helvetica,sans-serif; font-size:8.5px; letter-spacing:0.12em; color:#8fa2cb; margin-bottom:6px;">MAX SESSION LENGTH</div>
+        <div style="font-family:'Inter',Arial,Helvetica,sans-serif; font-size:22px; font-weight:600; color:#fff; line-height:1.05;">${e(vm.max_session_length)}</div>
+      </div>
+      <div style="border-left:1px solid rgba(255,255,255,0.1); padding-left:14px;">
+        <div style="font-family:'Inter',Arial,Helvetica,sans-serif; font-size:8.5px; letter-spacing:0.12em; color:#8fa2cb; margin-bottom:6px;">SESSION FORMAT</div>
+        <div style="font-family:'Inter',Arial,Helvetica,sans-serif; font-size:14px; font-weight:600; color:#fff; line-height:1.25;">${e(vm.session_format)}</div>
+      </div>
+    </div>
+  </section>
+
+  <div class="doc-body">
+
+  <!-- 01 DIAGNOSTIC -->
+  <section data-screen-label="01 Why this score" style="padding-top:22px;">
+    <div class="sec-head" style="display:flex; gap:18px; align-items:flex-start; border-top:2.5px solid #1740a9; padding-top:14px; margin-bottom:16px;">
+      <span style="font-family:'Inter',Arial,Helvetica,sans-serif; font-weight:600; font-size:42px; line-height:0.8; color:#d6deec; letter-spacing:-0.02em;">01</span>
+      <div style="padding-top:3px;">
+        <div style="font-family:'Inter',Arial,Helvetica,sans-serif; font-size:9.5px; letter-spacing:0.18em; color:#c7560a; margin-bottom:6px;">THE DIAGNOSIS</div>
+        <h2 style="font-family:'Inter',Arial,Helvetica,sans-serif; font-weight:600; font-size:25px; line-height:1.1; color:#14181f;">What your diagnostic actually says</h2>
+      </div>
+    </div>
+
+    <p style="font-size:13.5px; line-height:1.55; color:#2a2f38; max-width:66ch;">${e(vm.diagnosis_lead)}</p>
+
+    <!-- section gauges -->
+    <div class="keep" style="margin-top:13px; display:grid; grid-template-columns:1fr 1fr; gap:14px;">
+${GEN.gaugeCards(vm)}
+    </div>
+
+    <!-- strengths / blockers -->
+    <div class="keep" style="margin-top:12px; display:grid; grid-template-columns:1fr 1fr; gap:0; border:1px solid #e4e7ee; border-radius:12px; overflow:hidden;">
+      <div style="padding:13px 18px; border-right:1px solid #e4e7ee;">
+        <div style="font-family:'Inter',Arial,Helvetica,sans-serif; font-size:9.5px; letter-spacing:0.1em; color:#1f8a5b; margin-bottom:9px;">▲ WHAT&rsquo;S WORKING</div>
+        <ul style="margin:0; padding-left:16px; font-size:12.5px; line-height:1.5; color:#3a414c; display:flex; flex-direction:column; gap:7px;">
+          ${GEN.bulletItems(vm.strengths)}
+        </ul>
+      </div>
+      <div style="padding:13px 18px;">
+        <div style="font-family:'Inter',Arial,Helvetica,sans-serif; font-size:9.5px; letter-spacing:0.1em; color:#c7560a; margin-bottom:9px;">▼ WHAT&rsquo;S HOLDING YOU BACK</div>
+        <ul style="margin:0; padding-left:16px; font-size:12.5px; line-height:1.5; color:#3a414c; display:flex; flex-direction:column; gap:7px;">
+          ${GEN.bulletItems(vm.blockers)}
+        </ul>
+      </div>
+    </div>
+
+    <!-- the pattern : standout panel -->
+    <div class="keep" style="margin-top:12px; position:relative; background:#0c1730; color:#eef1f7; padding:17px 24px; border-radius:14px; overflow:hidden;">
+      <div style="position:absolute; top:0; left:0; bottom:0; width:4px; background:#ff963e;"></div>
+      <div style="font-family:'Inter',Arial,Helvetica,sans-serif; font-size:9px; letter-spacing:0.18em; color:#ff963e; margin-bottom:8px;">THE PATTERN, IN ONE LINE</div>
+      <p style="font-family:'Inter',Arial,Helvetica,sans-serif; font-size:18px; font-weight:500; line-height:1.4; color:#fff; max-width:54ch;">${vm.pattern_statement_html}</p>
+    </div>
+  </section>
+
+  </div>
+
+  <!-- ================= PAGE 3 ================= -->
+  <div class="doc-body pagebreak">
+  <section data-screen-label="02 What it takes" style="padding-top:8px;">
+    <div class="sec-head" style="display:flex; gap:18px; align-items:flex-start; border-top:2.5px solid #1740a9; padding-top:14px; margin-bottom:16px;">
+      <span style="font-family:'Inter',Arial,Helvetica,sans-serif; font-weight:600; font-size:42px; line-height:0.8; color:#d6deec; letter-spacing:-0.02em;">02</span>
+      <div style="padding-top:3px;">
+        <div style="font-family:'Inter',Arial,Helvetica,sans-serif; font-size:9.5px; letter-spacing:0.18em; color:#c7560a; margin-bottom:6px;">THE CLIMB</div>
+        <h2 style="font-family:'Inter',Arial,Helvetica,sans-serif; font-weight:600; font-size:25px; line-height:1.1; color:#14181f;">How instruction closes the gap</h2>
+      </div>
+    </div>
+
+    <p style="font-size:14px; line-height:1.6; color:#2a2f38; max-width:64ch;">The gap doesn&rsquo;t cost a flat amount of effort. Instruction is calibrated to where it converts fastest for you. The planning estimate from your results: <span style="font-weight:600; color:#1740a9;">${vm.hours_int} focused hours</span> toward ${e(vm.target_display)}.</p>
+
+    <!-- ELEVATION CURVE -->
+    <figure class="keep" style="margin:22px 0 0; background:#fbfcfe; border:1px solid #e4e7ee; border-radius:14px; padding:22px 24px 16px;">
+      <figcaption style="display:flex; justify-content:space-between; align-items:baseline; margin-bottom:6px;">
+        <span style="font-family:'Inter',Arial,Helvetica,sans-serif; font-size:9.5px; letter-spacing:0.12em; color:#8a93a3;">YOUR SCORE ELEVATION</span>
+        <span style="font-family:'Inter',Arial,Helvetica,sans-serif; font-size:9.5px; letter-spacing:0.06em; color:#8a93a3;">${e(vm.baseline_display)} &rarr; ${e(vm.target_display)} OVER ${vm.hours_int} HRS</span>
+      </figcaption>
+      <svg viewBox="0 0 720 320" width="100%" style="display:block;" font-family="Inter, Arial, sans-serif">
+        <defs>
+          <linearGradient id="elev" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stop-color="#1740a9" stop-opacity="0.18"/>
+            <stop offset="100%" stop-color="#1740a9" stop-opacity="0"/>
+          </linearGradient>
+        </defs>
+        <g stroke="#edf0f5" stroke-width="1">
+          <line x1="44" y1="60" x2="704" y2="60"/>
+          <line x1="44" y1="130" x2="704" y2="130"/>
+          <line x1="44" y1="200" x2="704" y2="200"/>
+          <line x1="44" y1="270" x2="704" y2="270"/>
+        </g>
+        <path d="M60,270 C150,250 165,228 230,206 C300,182 322,170 392,148 C455,128 482,118 545,100 C610,80 642,68 690,52 L690,290 L60,290 Z" fill="url(#elev)"/>
+        <path d="M60,270 C150,250 165,228 230,206 C300,182 322,170 392,148 C455,128 482,118 545,100 C610,80 642,68 690,52" fill="none" stroke="#1740a9" stroke-width="2.5" stroke-linecap="round"/>
+        <line x1="44" y1="290" x2="704" y2="290" stroke="#c4cad4" stroke-width="1.2"/>
+        <g>
+          <circle cx="60" cy="270" r="5.5" fill="#fff" stroke="#9aa7bd" stroke-width="2.5"/>
+          <circle cx="230" cy="206" r="5.5" fill="#fff" stroke="#1740a9" stroke-width="2.5"/>
+          <circle cx="392" cy="148" r="5.5" fill="#fff" stroke="#1740a9" stroke-width="2.5"/>
+          <circle cx="545" cy="100" r="5.5" fill="#fff" stroke="#1740a9" stroke-width="2.5"/>
+          <circle cx="690" cy="52" r="8" fill="#ff963e" stroke="#fff" stroke-width="2.5"/>
+        </g>
+        <g font-family="Inter, Arial, sans-serif" font-weight="600" text-anchor="middle">
+          <text x="60" y="256" font-size="16" fill="#6a7384">${e(vm.curve_labels[0])}</text>
+          <text x="230" y="192" font-size="14" fill="#1740a9">${e(vm.curve_labels[1])}</text>
+          <text x="392" y="134" font-size="14" fill="#1740a9">${e(vm.curve_labels[2])}</text>
+          <text x="545" y="86" font-size="14" fill="#1740a9">${e(vm.curve_labels[3])}</text>
+          <text x="690" y="36" font-size="19" fill="#c7560a">${e(vm.curve_labels[4])}</text>
+        </g>
+        <g font-family="Inter, Arial, sans-serif" font-size="9.5" text-anchor="middle" fill="#8a93a3">
+          <text x="60" y="308">START</text>
+          <text x="230" y="308">EARLY</text>
+          <text x="392" y="308">CORE</text>
+          <text x="545" y="308">PRECISION</text>
+          <text x="690" y="308">TARGET</text>
+        </g>
+      </svg>
+      <p style="margin-top:12px; padding-top:12px; border-top:1px solid #eef0f4; font-size:12px; line-height:1.55; color:#3a414c;">${e(vm.curve_caption)}</p>
+    </figure>
+
+    <!-- two tracks -->
+    <div class="keep" style="margin-top:16px; display:grid; grid-template-columns:1fr 1fr; gap:14px;">
+      <div style="border:1px solid #e4e7ee; border-left:3px solid #1740a9; border-radius:12px; padding:14px 16px;">
+        <div style="font-family:'Inter',Arial,Helvetica,sans-serif; font-size:9px; letter-spacing:0.1em; color:#1740a9; margin-bottom:6px;">TRACK 1 &middot; INSTRUCTION</div>
+        <div style="font-family:'Inter',Arial,Helvetica,sans-serif; font-size:17px; font-weight:600; margin-bottom:4px;">${vm.hours_int} hrs, guided</div>
+        <p style="font-size:12px; line-height:1.5; color:#3a414c;">Targeted teaching with your instructor, sequenced to your diagnostic. This is the engine that drives the climb.</p>
+      </div>
+      <div style="border:1px solid #e4e7ee; border-left:3px solid #ff963e; border-radius:12px; padding:14px 16px;">
+        <div style="font-family:'Inter',Arial,Helvetica,sans-serif; font-size:9px; letter-spacing:0.1em; color:#c7560a; margin-bottom:6px;">TRACK 2 &middot; YOUR EFFORT</div>
+        <div style="font-family:'Inter',Arial,Helvetica,sans-serif; font-size:17px; font-weight:600; margin-bottom:4px;">Student commitment</div>
+        <p style="font-size:12px; line-height:1.5; color:#3a414c;">A light, consistent habit your instructor sets each week. Because it locks in what was taught, we track the habit itself rather than a daunting hour count.</p>
+      </div>
+    </div>
+    <p style="margin-top:12px; font-size:11.5px; line-height:1.5; color:#5a6373; padding-left:14px; border-left:2px solid #e4e7ee; max-width:64ch;">An evidence-based projection from your diagnostic, refined at every checkpoint. It assumes instruction is paired with that consistent practice.</p>
+  </section>
+  </div>
+
+  <!-- ================= PAGE 4 ================= -->
+  <div class="doc-body pagebreak">
+  <section data-screen-label="03 Your focus" style="padding-top:8px;">
+    <div class="sec-head" style="display:flex; gap:18px; align-items:flex-start; border-top:2.5px solid #1740a9; padding-top:14px; margin-bottom:16px;">
+      <span style="font-family:'Inter',Arial,Helvetica,sans-serif; font-weight:600; font-size:42px; line-height:0.8; color:#d6deec; letter-spacing:-0.02em;">03</span>
+      <div style="padding-top:3px;">
+        <div style="font-family:'Inter',Arial,Helvetica,sans-serif; font-size:9.5px; letter-spacing:0.18em; color:#c7560a; margin-bottom:6px;">THE PLAN OF ATTACK</div>
+        <h2 style="font-family:'Inter',Arial,Helvetica,sans-serif; font-weight:600; font-size:25px; line-height:1.1; color:#14181f;">Where your ${vm.hours_int} hours go</h2>
+      </div>
+    </div>
+
+    <p style="font-size:14px; line-height:1.6; color:#2a2f38; max-width:64ch;">Hours go where they convert and are never spread evenly. Each block is sequenced so it builds on the one before it.</p>
+
+    <!-- WEIGHTED LANES -->
+    <div class="keep" style="margin-top:20px;">
+      <div style="display:flex; justify-content:space-between; align-items:baseline; margin-bottom:10px;">
+        <span style="font-family:'Inter',Arial,Helvetica,sans-serif; font-size:9.5px; letter-spacing:0.14em; color:#8a93a3;">WEIGHTED BY SECTION</span>
+        <span style="font-family:'Inter',Arial,Helvetica,sans-serif; font-size:9.5px; letter-spacing:0.06em; color:#8a93a3;">${vm.hours_int} HRS TOTAL</span>
+      </div>
+      <div style="display:flex; flex-direction:column; gap:8px;">
+${GEN.lanes(vm)}
+      </div>
+    </div>
+
+    <!-- ORDER OF ATTACK : sequenced -->
+    <h3 style="font-family:'Inter',Arial,Helvetica,sans-serif; font-weight:600; font-size:17px; color:#14181f; margin:26px 0 0;">The order of attack</h3>
+    <div style="margin-top:14px; display:flex; flex-direction:column;">
+${GEN.attackRows(vm)}
+    </div>
+    <p style="margin-top:14px; font-size:11.5px; line-height:1.5; color:#5a6373; padding-left:14px; border-left:2px solid #e4e7ee; max-width:64ch;">This is a recommendation rather than a fixed homework calendar. Your instructor sequences it against your live progress.</p>
+  </section>
+  </div>
+
+  <!-- ================= PAGE 5 : PERFORMANCE ENGINE ================= -->
+  <section class="keep pagebreak" data-screen-label="Performance Engine" style="position:relative; background:#0c1730; color:#eef1f7; overflow:hidden; padding:32px 32px 30px; border-radius:18px; margin:6px 16px 0; min-height:262mm;">
+    <div style="position:absolute; inset:0; background:radial-gradient(120% 70% at 0% 0%, rgba(23,64,169,0.42) 0%, rgba(12,23,48,0) 55%); pointer-events:none;"></div>
+    <div style="position:absolute; top:0; left:0; width:40%; height:4px; background:#ff963e; border-radius:18px 0 0 0;"></div>
+    <div style="position:absolute; top:0; left:40%; right:0; height:4px; background:#1740a9; border-radius:0 18px 0 0;"></div>
+
+    <div style="position:relative;">
+      <div style="font-family:'Inter',Arial,Helvetica,sans-serif; font-size:10px; font-weight:600; letter-spacing:0.22em; color:#ff963e; margin-bottom:14px;">HOW IT WORKS</div>
+      <h2 style="font-family:'Inter',Arial,Helvetica,sans-serif; font-weight:700; font-size:38px; line-height:1.06; letter-spacing:-0.02em; color:#fff;">The TestPrep <span style="color:#7ea0e8;">Performance Engine</span></h2>
+      <p style="margin-top:10px; font-family:'Inter',Arial,Helvetica,sans-serif; font-size:14px; color:#8fa2cb;">A seven-step process, the same loop that produced this roadmap.</p>
+    </div>
+
+    <!-- 7-step grid -->
+    <div style="position:relative; margin-top:30px; display:grid; grid-template-columns:1fr 1fr; gap:14px;">
+
+      <!-- 01 -->
+      <div style="background:rgba(255,255,255,0.035); border:1px solid rgba(255,255,255,0.1); border-radius:14px; padding:20px 20px 18px;">
+        <div style="display:flex; align-items:center; justify-content:space-between;">
+          <span style="display:inline-flex; align-items:center; justify-content:center; width:40px; height:40px; border-radius:11px; background:rgba(255,255,255,0.06); border:1px solid rgba(255,255,255,0.08);">
+            <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="#ff963e" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M7 3h7l4 4v6"/><path d="M7 3a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h5"/><circle cx="17" cy="18" r="3"/><path d="m21.5 22.5-2-2"/></svg>
+          </span>
+          <span style="font-family:'Inter',Arial,Helvetica,sans-serif; font-weight:700; font-size:34px; color:#46557a; letter-spacing:-0.02em; line-height:1;">01</span>
+        </div>
+        <div style="font-family:'Inter',Arial,Helvetica,sans-serif; font-weight:600; font-size:15px; color:#fff; margin-top:16px;">Diagnostic Assessment</div>
+        <p style="font-family:'Inter',Arial,Helvetica,sans-serif; font-size:12px; line-height:1.5; color:#8fa2cb; margin-top:6px;">Establish baseline performance and identify hidden weaknesses.</p>
+      </div>
+
+      <!-- 02 -->
+      <div style="background:rgba(255,255,255,0.035); border:1px solid rgba(255,255,255,0.1); border-radius:14px; padding:20px 20px 18px;">
+        <div style="display:flex; align-items:center; justify-content:space-between;">
+          <span style="display:inline-flex; align-items:center; justify-content:center; width:40px; height:40px; border-radius:11px; background:rgba(255,255,255,0.06); border:1px solid rgba(255,255,255,0.08);">
+            <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="#ff963e" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18"/><rect x="5" y="11" width="3.5" height="7" rx="1"/><rect x="10.25" y="7" width="3.5" height="11" rx="1"/><rect x="15.5" y="13" width="3.5" height="5" rx="1"/></svg>
+          </span>
+          <span style="font-family:'Inter',Arial,Helvetica,sans-serif; font-weight:700; font-size:34px; color:#46557a; letter-spacing:-0.02em; line-height:1;">02</span>
+        </div>
+        <div style="font-family:'Inter',Arial,Helvetica,sans-serif; font-weight:600; font-size:15px; color:#fff; margin-top:16px;">Performance Gap Analysis</div>
+        <p style="font-family:'Inter',Arial,Helvetica,sans-serif; font-size:12px; line-height:1.5; color:#8fa2cb; margin-top:6px;">Break down deficiencies by skill, topic, and cognitive process.</p>
+      </div>
+
+      <!-- 03 -->
+      <div style="background:rgba(255,255,255,0.035); border:1px solid rgba(255,255,255,0.1); border-radius:14px; padding:20px 20px 18px;">
+        <div style="display:flex; align-items:center; justify-content:space-between;">
+          <span style="display:inline-flex; align-items:center; justify-content:center; width:40px; height:40px; border-radius:11px; background:rgba(255,255,255,0.06); border:1px solid rgba(255,255,255,0.08);">
+            <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="#ff963e" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 17l5-6 4 3 6-8"/><circle cx="19" cy="6" r="1.6" fill="#ff963e" stroke="none"/></svg>
+          </span>
+          <span style="font-family:'Inter',Arial,Helvetica,sans-serif; font-weight:700; font-size:34px; color:#46557a; letter-spacing:-0.02em; line-height:1;">03</span>
+        </div>
+        <div style="font-family:'Inter',Arial,Helvetica,sans-serif; font-weight:600; font-size:15px; color:#fff; margin-top:16px;">Personalized Learning Plan</div>
+        <p style="font-family:'Inter',Arial,Helvetica,sans-serif; font-size:12px; line-height:1.5; color:#8fa2cb; margin-top:6px;">Design a tailored roadmap aligned with the target score.</p>
+      </div>
+
+      <!-- 04 -->
+      <div style="background:rgba(255,255,255,0.035); border:1px solid rgba(255,255,255,0.1); border-radius:14px; padding:20px 20px 18px;">
+        <div style="display:flex; align-items:center; justify-content:space-between;">
+          <span style="display:inline-flex; align-items:center; justify-content:center; width:40px; height:40px; border-radius:11px; background:rgba(255,255,255,0.06); border:1px solid rgba(255,255,255,0.08);">
+            <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="#ff963e" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8"/><circle cx="12" cy="12" r="4"/><circle cx="12" cy="12" r="1" fill="#ff963e" stroke="none"/></svg>
+          </span>
+          <span style="font-family:'Inter',Arial,Helvetica,sans-serif; font-weight:700; font-size:34px; color:#46557a; letter-spacing:-0.02em; line-height:1;">04</span>
+        </div>
+        <div style="font-family:'Inter',Arial,Helvetica,sans-serif; font-weight:600; font-size:15px; color:#fff; margin-top:16px;">Targeted Instruction</div>
+        <p style="font-family:'Inter',Arial,Helvetica,sans-serif; font-size:12px; line-height:1.5; color:#8fa2cb; margin-top:6px;">Deliver focused lessons on high-impact weaknesses.</p>
+      </div>
+
+      <!-- 05 -->
+      <div style="background:rgba(255,255,255,0.035); border:1px solid rgba(255,255,255,0.1); border-radius:14px; padding:20px 20px 18px;">
+        <div style="display:flex; align-items:center; justify-content:space-between;">
+          <span style="display:inline-flex; align-items:center; justify-content:center; width:40px; height:40px; border-radius:11px; background:rgba(255,255,255,0.06); border:1px solid rgba(255,255,255,0.08);">
+            <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="#ff963e" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6h11"/><path d="M9 12h11"/><path d="M9 18h11"/><path d="M4 6l1 1 1.5-1.5"/><path d="M4 12l1 1 1.5-1.5"/><path d="M4 18l1 1 1.5-1.5"/></svg>
+          </span>
+          <span style="font-family:'Inter',Arial,Helvetica,sans-serif; font-weight:700; font-size:34px; color:#46557a; letter-spacing:-0.02em; line-height:1;">05</span>
+        </div>
+        <div style="font-family:'Inter',Arial,Helvetica,sans-serif; font-weight:600; font-size:15px; color:#fff; margin-top:16px;">Micro-Assessments</div>
+        <p style="font-family:'Inter',Arial,Helvetica,sans-serif; font-size:12px; line-height:1.5; color:#8fa2cb; margin-top:6px;">Measure mastery continuously after each intervention.</p>
+      </div>
+
+      <!-- 06 -->
+      <div style="background:rgba(255,255,255,0.035); border:1px solid rgba(255,255,255,0.1); border-radius:14px; padding:20px 20px 18px;">
+        <div style="display:flex; align-items:center; justify-content:space-between;">
+          <span style="display:inline-flex; align-items:center; justify-content:center; width:40px; height:40px; border-radius:11px; background:rgba(255,255,255,0.06); border:1px solid rgba(255,255,255,0.08);">
+            <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="#ff963e" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a9 9 0 1 1-3-6.7"/><path d="M21 4v4h-4"/></svg>
+          </span>
+          <span style="font-family:'Inter',Arial,Helvetica,sans-serif; font-weight:700; font-size:34px; color:#46557a; letter-spacing:-0.02em; line-height:1;">06</span>
+        </div>
+        <div style="font-family:'Inter',Arial,Helvetica,sans-serif; font-weight:600; font-size:15px; color:#fff; margin-top:16px;">Adaptive Optimization</div>
+        <p style="font-family:'Inter',Arial,Helvetica,sans-serif; font-size:12px; line-height:1.5; color:#8fa2cb; margin-top:6px;">Reallocate instructional effort based on performance data.</p>
+      </div>
+
+      <!-- 07 highlighted, full width -->
+      <div style="grid-column:1 / -1; background:linear-gradient(120deg, rgba(255,150,62,0.16), rgba(255,150,62,0.05)); border:1px solid rgba(255,150,62,0.4); border-radius:14px; padding:20px 22px; display:flex; align-items:center; gap:20px;">
+        <span style="display:inline-flex; align-items:center; justify-content:center; width:44px; height:44px; border-radius:12px; background:rgba(255,150,62,0.18); border:1px solid rgba(255,150,62,0.45); flex:none;">
+          <svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="#ff963e" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.5 2"/></svg>
+        </span>
+        <div style="flex:1;">
+          <div style="font-family:'Inter',Arial,Helvetica,sans-serif; font-weight:600; font-size:15px; color:#fff;">Full-Length Simulation &amp; Iteration</div>
+          <p style="font-family:'Inter',Arial,Helvetica,sans-serif; font-size:12px; line-height:1.5; color:#d8b89a; margin-top:5px;">Validate progress and restart the cycle until goals are achieved.</p>
+        </div>
+        <span style="font-family:'Inter',Arial,Helvetica,sans-serif; font-weight:700; font-size:40px; color:#ff963e; letter-spacing:-0.02em; line-height:1; flex:none;">07</span>
+      </div>
+    </div>
+
+    <p style="position:relative; margin-top:26px; padding-left:14px; border-left:2px solid rgba(255,150,62,0.6); font-family:'Inter',Arial,Helvetica,sans-serif; font-size:12.5px; line-height:1.6; color:#aab6cf; max-width:62ch;">Every page that follows is one turn of this loop. ${e(vm.student_first_name)}&rsquo;s diagnostic (01&ndash;02) set the plan (03), and the schedule ahead runs instruction, measurement, and optimization (04&ndash;07) until ${e(vm.target_display)} is reached.</p>
+  </section>
+
+  <!-- ================= PAGE 6 ================= -->
+  <div class="doc-body pagebreak">
+  <section data-screen-label="04 How we run it" style="padding-top:8px;">
+    <div class="sec-head" style="display:flex; gap:18px; align-items:flex-start; border-top:2.5px solid #1740a9; padding-top:14px; margin-bottom:16px;">
+      <span style="font-family:'Inter',Arial,Helvetica,sans-serif; font-weight:600; font-size:42px; line-height:0.8; color:#d6deec; letter-spacing:-0.02em;">04</span>
+      <div style="padding-top:3px;">
+        <div style="font-family:'Inter',Arial,Helvetica,sans-serif; font-size:9.5px; letter-spacing:0.18em; color:#c7560a; margin-bottom:6px;">TRACKING &amp; ACCOUNTABILITY</div>
+        <h2 style="font-family:'Inter',Arial,Helvetica,sans-serif; font-weight:600; font-size:25px; line-height:1.1; color:#14181f;">When you&rsquo;ll see your progress</h2>
+      </div>
+    </div>
+
+    <p style="font-size:14px; line-height:1.6; color:#2a2f38; max-width:64ch;">Progress is checked on a fixed schedule, so you always know whether the plan is working. Three loops run in parallel:</p>
+
+    <!-- MONITORING TIMELINE -->
+    <div class="keep" style="margin-top:20px; position:relative;">
+      <div style="position:relative; display:grid; grid-template-columns:repeat(3,1fr); gap:16px;">
+        <div>
+          <div style="display:flex; align-items:center; gap:9px; margin-bottom:14px;"><span style="display:inline-flex; align-items:center; justify-content:center; width:26px; height:26px; border-radius:8px; background:#1740a9; color:#fff; font-family:'Inter',Arial,Helvetica,sans-serif; font-weight:700; font-size:12px;">A</span><span style="font-family:'Inter',Arial,Helvetica,sans-serif; font-size:9.5px; font-weight:600; letter-spacing:0.14em; color:#1740a9;">SKILLS LOOP</span></div>
+          <div style="border:1px solid #e4e7ee; border-top:3px solid #1740a9; border-radius:12px; padding:14px 16px;">
+            <div style="font-family:'Inter',Arial,Helvetica,sans-serif; font-size:17px; font-weight:600; margin-bottom:4px;">${e(vm.tracking_loops[0].cadence)}</div>
+            <div style="font-size:12px; font-weight:600; color:#1740a9; margin-bottom:6px;">${e(vm.tracking_loops[0].title)}</div>
+            <p style="font-size:11.5px; line-height:1.5; color:#5a6373;">${e(vm.tracking_loops[0].detail)}</p>
+          </div>
+        </div>
+        <div>
+          <div style="display:flex; align-items:center; gap:9px; margin-bottom:14px;"><span style="display:inline-flex; align-items:center; justify-content:center; width:26px; height:26px; border-radius:8px; background:#2f5bc4; color:#fff; font-family:'Inter',Arial,Helvetica,sans-serif; font-weight:700; font-size:12px;">B</span><span style="font-family:'Inter',Arial,Helvetica,sans-serif; font-size:9.5px; font-weight:600; letter-spacing:0.14em; color:#2f5bc4;">PROGRESS LOOP</span></div>
+          <div style="border:1px solid #e4e7ee; border-top:3px solid #2f5bc4; border-radius:12px; padding:14px 16px;">
+            <div style="font-family:'Inter',Arial,Helvetica,sans-serif; font-size:17px; font-weight:600; margin-bottom:4px;">${e(vm.tracking_loops[1].cadence)}</div>
+            <div style="font-size:12px; font-weight:600; color:#2f5bc4; margin-bottom:6px;">${e(vm.tracking_loops[1].title)}</div>
+            <p style="font-size:11.5px; line-height:1.5; color:#5a6373;">${e(vm.tracking_loops[1].detail)}</p>
+          </div>
+        </div>
+        <div>
+          <div style="display:flex; align-items:center; gap:9px; margin-bottom:14px;"><span style="display:inline-flex; align-items:center; justify-content:center; width:26px; height:26px; border-radius:8px; background:#ff963e; color:#3a1e08; font-family:'Inter',Arial,Helvetica,sans-serif; font-weight:700; font-size:12px;">C</span><span style="font-family:'Inter',Arial,Helvetica,sans-serif; font-size:9.5px; font-weight:600; letter-spacing:0.14em; color:#c7560a;">MILESTONES</span></div>
+          <div style="border:1px solid #e4e7ee; border-top:3px solid #ff963e; border-radius:12px; padding:14px 16px;">
+            <div style="font-family:'Inter',Arial,Helvetica,sans-serif; font-size:17px; font-weight:600; margin-bottom:4px;">${e(vm.tracking_loops[2].cadence)}</div>
+            <div style="font-size:12px; font-weight:600; color:#c7560a; margin-bottom:6px;">${e(vm.tracking_loops[2].title)}</div>
+            <p style="font-size:11.5px; line-height:1.5; color:#5a6373;">${e(vm.tracking_loops[2].detail)}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ELMY platform strip -->
+    <div class="keep" style="margin-top:18px; position:relative; background:#0c1730; color:#cdd6e8; padding:18px 22px; border-radius:14px; display:flex; align-items:center; gap:18px; overflow:hidden;">
+      <div style="position:absolute; top:0; left:0; width:34%; height:3px; background:#ff963e;"></div>
+      <div style="position:absolute; top:0; left:34%; right:0; height:3px; background:#1740a9;"></div>
+      <div style="display:flex; align-items:center; gap:12px; flex:none;">
+        <img src="${A}assets/logo-elmy-white.svg" alt="Elmy" style="height:34px; width:34px;">
+        <span style="font-family:'Inter',Arial,Helvetica,sans-serif; font-weight:700; font-size:22px; color:#fff;">Elmy</span>
+      </div>
+      <div style="width:1px; align-self:stretch; background:rgba(255,255,255,0.16);"></div>
+      <p style="font-size:12.5px; line-height:1.55;"><span style="color:#fff; font-weight:600;">The platform that powers all three loops.</span> Your practice, assignments, and error log live on Elmy, so every check above stays visible to you and your team between sessions.</p>
+    </div>
+
+    <!-- SHARED COMMITMENT -->
+    <div class="keep" style="margin-top:18px; border-top:2.5px solid #14181f; padding-top:16px;">
+      <h3 style="font-family:'Inter',Arial,Helvetica,sans-serif; font-weight:600; font-size:19px; color:#14181f; margin-bottom:7px;">A shared commitment</h3>
+      <p style="font-size:13.5px; line-height:1.6; color:#2a2f38; max-width:66ch;">This is not a guarantee. It is a commitment to the work. We bring the analysis, the instruction, and the checkpoints; you bring the hours between them. Together, that&rsquo;s how ${e(vm.baseline_display)} becomes ${e(vm.target_display)}.</p>
+      <div class="keep" style="margin-top:18px; display:grid; grid-template-columns:1fr 1fr 1fr; gap:26px; align-items:end;">
+        <div><div style="border-bottom:1px solid #c4cad4; height:26px;"></div><div style="font-size:11px; color:#5a6373; margin-top:6px;">Student signature</div></div>
+        <div><div style="border-bottom:1px solid #c4cad4; height:26px;"></div><div style="font-size:11px; color:#5a6373; margin-top:6px;">Date</div></div>
+        <div><div style="border-bottom:1px solid #c4cad4; height:26px;"></div><div style="font-size:11px; color:#5a6373; margin-top:6px;">Target test window</div></div>
+      </div>
+    </div>
+  </section>
+  </div>
+
+  <div class="page-footer" aria-hidden="true">
+    <img src="${A}assets/logo-testprep-white.png" alt="" style="height:16px; width:auto;">
+    <span style="width:1px; height:13px; background:rgba(255,255,255,0.22);"></span>
+    <span style="font-family:'Inter',Arial,Helvetica,sans-serif; font-size:8px; font-weight:600; letter-spacing:0.2em; color:#8794ad;">HOUSE OF PREP</span>
+  </div>
+
+  <!-- ================= PAGE 6 : ECOSYSTEM MAP ================= -->
+  <section class="keep pagebreak" data-screen-label="Ecosystem" style="position:relative; z-index:1; background:#0c1730; color:#eef1f7; overflow:hidden; padding:30px 30px 28px; border-radius:18px; margin:6px 16px 0; min-height:270mm;">
+    <div style="position:absolute; top:0; left:0; width:40%; height:4px; background:#ff963e; border-radius:18px 0 0 0;"></div>
+    <div style="position:absolute; top:0; left:40%; right:0; height:4px; background:#1740a9; border-radius:0 18px 0 0;"></div>
+    <div style="position:absolute; inset:0; background:radial-gradient(120% 80% at 50% 0%, rgba(23,64,169,0.4) 0%, rgba(12,23,48,0) 55%); pointer-events:none;"></div>
+
+    <!-- TESTPREP DELIVERY STATEMENT -->
+    <div style="position:relative; text-align:center; max-width:50ch; margin:8px auto 0;">
+      <div style="font-family:'Inter',Arial,Helvetica,sans-serif; font-size:9.5px; letter-spacing:0.2em; color:#ff963e; margin-bottom:14px;">DELIVERED BY TESTPREP</div>
+      <img src="${A}assets/logo-testprep-white.png" alt="TestPrep" style="height:40px; width:auto; margin:0 auto 18px;">
+      <h2 style="font-family:'Inter',Arial,Helvetica,sans-serif; font-weight:600; font-size:30px; line-height:1.15; color:#fff;">One team, accountable for your result</h2>
+      <p style="margin-top:14px; font-size:13.5px; line-height:1.65; color:#aab6cf;">Every part of this roadmap, from the diagnosis and the plan to the instruction and the progress checks, is delivered by TestPrep. One point of contact, one team, one accountability for getting you from ${e(vm.baseline_display)} to ${e(vm.target_display)}.</p>
+    </div>
+
+    <div style="position:relative; margin:30px auto 0; max-width:54ch; text-align:center;">
+      <p style="font-family:'Inter',Arial,Helvetica,sans-serif; font-size:20px; font-weight:500; line-height:1.45; color:#fff;">Precision in the diagnosis. Intelligence in the plan. Visibility at every step. <span style="color:#ff963e;">That is the TestPrep difference.</span></p>
+    </div>
+
+    <!-- MARKETING STRIP : sister brands -->
+    <div style="position:relative; margin-top:42px; padding-top:24px; border-top:1px solid rgba(255,255,255,0.14);">
+      <div style="text-align:center; margin-bottom:20px;">
+        <div style="font-family:'Inter',Arial,Helvetica,sans-serif; font-size:9px; letter-spacing:0.18em; color:#ff963e; margin-bottom:8px;">DISCOVER THE FAMILY</div>
+        <h3 style="font-family:'Inter',Arial,Helvetica,sans-serif; font-weight:600; font-size:21px; color:#fff; line-height:1.2; margin-bottom:8px;">The same thinking, everywhere you grow</h3>
+        <p style="font-size:12px; line-height:1.55; color:#8794ad; max-width:48ch; margin:0 auto;">The precision that built this plan runs through everything House of Prep makes, with brands shaping how students discover who they are, prepare with intent, and perform when it counts.</p>
+      </div>
+      <div style="display:grid; grid-template-columns:repeat(3,1fr); gap:14px;">
+        <div style="background:rgba(255,255,255,0.03); border:1px solid rgba(255,255,255,0.1); border-radius:12px; padding:16px 14px; text-align:center; opacity:0.92;">
+          <img src="${A}assets/logo-sibling-white.svg" alt="weguide." style="height:16px; width:auto; margin-bottom:9px;">
+          <div style="font-size:10.5px; line-height:1.45; color:#8794ad;">Helps students discover who they are before choosing who they&rsquo;ll become.</div>
+        </div>
+        <div style="background:rgba(255,255,255,0.03); border:1px solid rgba(255,255,255,0.1); border-radius:12px; padding:16px 14px; text-align:center; opacity:0.92;">
+          <img src="${A}assets/logo-prepme-white.png" alt="prep me." style="height:20px; width:auto; margin-bottom:9px;">
+          <div style="font-size:10.5px; line-height:1.45; color:#8794ad;">Guided study and structured prep for every student.</div>
+        </div>
+        <div style="background:rgba(255,255,255,0.03); border:1px solid rgba(255,255,255,0.1); border-radius:12px; padding:16px 14px; text-align:center; opacity:0.92;">
+          <div style="display:flex; align-items:center; justify-content:center; gap:7px; margin-bottom:9px;"><img src="${A}assets/logo-elmy-white.svg" alt="Elmy" style="height:20px; width:20px;"><span style="font-family:'Inter',Arial,Helvetica,sans-serif; font-weight:700; font-size:15px; color:#dfe5f0;">Elmy</span></div>
+          <div style="font-size:10.5px; line-height:1.45; color:#8794ad;">A practice, assignment &amp; progress platform for students.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- INSTAGRAM QR CTA -->
+    <div class="keep" style="position:relative; margin-top:24px; background:rgba(255,255,255,0.04); border:1px solid rgba(255,255,255,0.12); border-radius:16px; padding:20px 24px; display:flex; align-items:center; gap:22px;">
+      <div style="flex:none; width:96px; height:96px; background:#fff; border-radius:14px; padding:8px; display:flex; align-items:center; justify-content:center;">
+        <img src="${A}assets/qr-instagram.png" alt="Scan to follow ${e(vm.brand.instagram_handle)} on Instagram" style="width:100%; height:100%; display:block; object-fit:contain;">
+      </div>
+      <div style="flex:1;">
+        <div style="font-family:'Inter',Arial,Helvetica,sans-serif; font-size:9px; font-weight:600; letter-spacing:0.18em; color:#ff963e; margin-bottom:7px;">SCAN TO FOLLOW</div>
+        <h3 style="font-family:'Inter',Arial,Helvetica,sans-serif; font-weight:600; font-size:18px; color:#fff; line-height:1.2; margin-bottom:6px;">See the community behind the roadmap</h3>
+        <p style="font-family:'Inter',Arial,Helvetica,sans-serif; font-size:11.5px; line-height:1.55; color:#8fa2cb; max-width:46ch;">Scan the code for a look at the TestPrep community, the students, and the wider House of Prep family. Follow <span style="color:#dfe5f0; font-weight:600;">${e(vm.brand.instagram_handle)}</span> on Instagram.</p>
+      </div>
+    </div>
+
+    <div style="position:relative; margin-top:20px; padding-top:16px; border-top:1px solid rgba(255,255,255,0.14); display:flex; justify-content:space-between; align-items:center; font-size:10.5px; color:#6e7a93; flex-wrap:wrap; gap:8px;">
+      <img src="${A}assets/logo-testprep-white.png" alt="TestPrep" style="height:22px; width:auto;">
+      <span>Prepared for ${e(vm.student_name)} &middot; ${e(vm.diagnostic_date)} &middot; &copy; House of Prep</span>
+    </div>
+  </section>
+
+</main>`;
+  }
+
+  if (typeof module !== "undefined" && module.exports) module.exports = { render: root.TP_RENDER_ROADMAP };
+})(typeof globalThis !== "undefined" ? globalThis : this);

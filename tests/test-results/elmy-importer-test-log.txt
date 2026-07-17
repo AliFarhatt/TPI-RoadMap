@@ -1,0 +1,23 @@
+Elmy importer verification — 2026-07-17
+
+Unit: tests/unit/elmy-importer.test.js
+  35 passed, 0 failed
+
+Genuine PDF integration: tests/integration/elmy-pdf-import.test.mjs
+  18 passed, 0 failed
+  46 pages; 98 records; 79 answered; 71 correct
+  54 English / 44 Math; modules 27/27/22/22
+  difficulty 22 easy / 35 medium / 41 hard
+  engine + detailed report + roadmap + two-page report + JSON round-trip passed
+
+Formal schema: tests/integration/elmy-schema-validation.py
+  1 passed, 0 failed
+
+Chromium file:// browser: tests/integration/elmy-browser-import.test.js
+  23 passed, 0 failed
+  no external requests; no page-level JavaScript errors
+  import, review, analysis, all report actions, export, and re-import passed
+
+Importer acceptance total: 77 passed, 0 failed
+
+See docs/test-report.md for the unchanged pre-existing regression discrepancies.

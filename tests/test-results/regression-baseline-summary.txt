@@ -1,0 +1,12 @@
+Existing-suite baseline and final comparison — 2026-07-17
+
+Suite                              Untouched upload     Importer package
+Calculation engine                 113 pass / 8 fail    113 pass / 8 fail
+Two-page report unit                73 pass / 0 fail     73 pass / 0 fail
+Full integration pipeline           58 pass / 0 fail     58 pass / 0 fail
+Full schema suite                     4 pass / 3 fail      5 pass / 3 fail
+Chromium rendering/offline UI        58 pass / 6 fail     58 pass / 6 fail
+
+The new fifth schema pass is the generated Elmy import-ready case. All original
+failures are unchanged and are detailed in docs/test-report.md. Planning math and
+existing report/roadmap renderers were not modified by the importer work.

@@ -1,0 +1,55 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "group-input.schema.json",
+  "title": "TestPrep group case input",
+  "type": "object",
+  "required": [
+    "students"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "2.0"
+    },
+    "course_type": {
+      "type": "string"
+    },
+    "group_name": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "group_id": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "group_test_date": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "shared_schedule": {
+      "type": [
+        "object",
+        "null"
+      ]
+    },
+    "instructor_notes": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "students": {
+      "type": "array",
+      "minItems": 2,
+      "maxItems": 20,
+      "items": {
+        "$ref": "individual-input.schema.json"
+      }
+    }
+  }
+}

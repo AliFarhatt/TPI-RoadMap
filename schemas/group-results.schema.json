@@ -1,0 +1,155 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "group-results.schema.json",
+  "title": "Calculated group results",
+  "type": "object",
+  "required": [
+    "ok",
+    "group",
+    "individual_results",
+    "lesson_analysis",
+    "compatibility",
+    "totals",
+    "validation_checks"
+  ],
+  "properties": {
+    "schema_version": {
+      "enum": [
+        "2.0",
+        "2.1",
+        "2.2",
+        "2.3",
+        "2.4"
+      ]
+    },
+    "lesson_analysis": {
+      "type": "array",
+      "minItems": 28,
+      "maxItems": 28,
+      "items": {
+        "type": "object",
+        "required": [
+          "lesson_id",
+          "max_hours",
+          "minimum_group_hours",
+          "raw_group_hours",
+          "pre_constraint_group_hours",
+          "constraint_adjustment",
+          "group_hours",
+          "supplemental_support_hours",
+          "diversity_classification",
+          "diversity_adjustment",
+          "explanation",
+          "unit_id",
+          "unit_name"
+        ],
+        "properties": {
+          "group_hours": {
+            "type": "number",
+            "minimum": 0.25
+          },
+          "minimum_group_hours": {
+            "type": "number",
+            "minimum": 0.25
+          },
+          "supplemental_support_hours": {
+            "type": "number",
+            "minimum": 0
+          },
+          "constraint_adjustment": {
+            "type": "number"
+          },
+          "diversity_classification": {
+            "enum": [
+              "very_similar",
+              "slightly_different",
+              "significantly_different",
+              "highly_different"
+            ]
+          },
+          "unit_id": {
+            "type": "string"
+          },
+          "unit_name": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "totals": {
+      "type": "object",
+      "required": [
+        "raw_total",
+        "constrained_total",
+        "final_planned_total",
+        "hard_cap_enforced",
+        "raw_lesson_hours",
+        "lesson_hours",
+        "minimum_allowed",
+        "maximum_allowed",
+        "feasible_minimum_total",
+        "constraint_status",
+        "maximum_infeasible",
+        "maximum_overrun",
+        "constraint_allocation",
+        "supplemental_support_hours",
+        "raw_component_total",
+        "final_component_total",
+        "final_rounding_adjustment"
+      ],
+      "properties": {
+        "raw_total": {
+          "type": "number",
+          "minimum": 0
+        },
+        "constrained_total": {
+          "type": "number",
+          "minimum": 0,
+          "multipleOf": 0.25
+        },
+        "final_planned_total": {
+          "type": "number",
+          "minimum": 0,
+          "multipleOf": 0.25
+        },
+        "hard_cap_enforced": {
+          "const": true
+        },
+        "supplemental_support_hours": {
+          "type": "number",
+          "minimum": 0
+        },
+        "maximum_infeasible": {
+          "const": false
+        },
+        "constraint_status": {
+          "enum": [
+            "within_limits",
+            "minimum_budget_applied",
+            "maximum_budget_applied"
+          ]
+        },
+        "maximum_overrun": {
+          "const": 0
+        },
+        "constraint_allocation": {
+          "type": "array"
+        },
+        "raw_component_total": {
+          "type": "number",
+          "minimum": 0
+        },
+        "final_component_total": {
+          "type": "number",
+          "minimum": 0
+        },
+        "final_rounding_adjustment": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 0.25,
+          "description": "Nonnegative difference created by rounding the final total upward to the next quarter hour."
+        }
+      }
+    }
+  }
+}

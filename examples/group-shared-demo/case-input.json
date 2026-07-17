@@ -1,0 +1,3493 @@
+{
+  "schema_version": "2.0",
+  "course_type": "group",
+  "group_name": "October 2026 Shared Course",
+  "group_id": "TP-GRP-SHARED-2026-10",
+  "group_test_date": "2026-10-03",
+  "shared_schedule": {
+    "sessions_per_week": 2,
+    "session_days": [
+      "Tue",
+      "Thu"
+    ]
+  },
+  "instructor_notes": "Program marketed as small-group personalized prep.",
+  "students": [
+    {
+      "schema_version": "2.0",
+      "course_type": "group_member",
+      "season": "Summer 2026",
+      "student": {
+        "student_name": "Rami Khoury",
+        "student_id": "TP-2026-0121",
+        "grade_level": 11,
+        "known_foundational_gaps": []
+      },
+      "scores": {
+        "score_source": "provided",
+        "reading_writing_scaled": 560,
+        "math_scaled": 580,
+        "total_scaled": 1140
+      },
+      "goal": {
+        "target_sat_score": 1420,
+        "intended_test_date": "2026-10-03"
+      },
+      "availability": {
+        "weeks_available": 10,
+        "preferred_sessions_per_week": 2,
+        "max_session_length": "2 hrs",
+        "session_format": "Focused blocks",
+        "accommodation": "No"
+      },
+      "diagnostic": {
+        "template_id": "Diagnostic_Exam_2026",
+        "date": "July 6, 2026",
+        "answers": [
+          {
+            "section": "english",
+            "module": "module_1",
+            "question_number": 1,
+            "student_answer": "C",
+            "correct_answer": "A",
+            "time_seconds": 95,
+            "difficulty": "easy"
+          },
+          {
+            "section": "english",
+            "module": "module_1",
+            "question_number": 2,
+            "student_answer": "C",
+            "correct_answer": "A",
+            "time_seconds": 46,
+            "difficulty": "easy"
+          },
+          {
+            "section": "english",
+            "module": "module_1",
+            "question_number": 3,
+            "student_answer": "D",
+            "correct_answer": "A",
+            "time_seconds": 73,
+            "difficulty": "medium"
+          },
+          {
+            "section": "english",
+            "module": "module_1",
+            "question_number": 4,
+            "student_answer": "B",
+            "correct_answer": "B",
+            "time_seconds": 77,
+            "difficulty": "medium"
+          },
+          {
+            "section": "english",
+            "module": "module_1",
+            "question_number": 5,
+            "student_answer": "D",
+            "correct_answer": "D",
+            "time_seconds": 67,
+            "difficulty": "hard"
+          },
+          {
+            "section": "english",
+            "module": "module_1",
+            "question_number": 6,
+            "student_answer": "D",
+            "correct_answer": "B",
+            "time_seconds": 70,
+            "difficulty": "medium"
+          },
+          {
+            "section": "english",
+            "module": "module_1",
+            "question_number": 7,
+            "student_answer": "A",
+            "correct_answer": "A",
+            "time_seconds": 90,
+            "difficulty": "hard"
+          },
+          {
+            "section": "english",
+            "module": "module_1",
+            "question_number": 8,
+            "student_answer": "B",
+            "correct_answer": "B",
+            "time_seconds": 98,
+            "difficulty": "easy"
+          },
+          {
+            "section": "english",
+            "module": "module_1",
+            "question_number": 9,
+            "student_answer": "A",
+            "correct_answer": "A",
+            "time_seconds": 69,
+            "difficulty": "hard"
+          },
+          {
+            "section": "english",
+            "module": "module_1",
+            "question_number": 10,
+            "student_answer": "A",
+            "correct_answer": "A",
+            "time_seconds": 78,
+            "difficulty": "medium"
+          },
+          {
+            "section": "english",
+            "module": "module_1",
+            "question_number": 11,
+            "student_answer": "D",
+            "correct_answer": "D",
+            "time_seconds": 77,
+            "difficulty": "medium"
+          },
+          {
+            "section": "english",
+            "module": "module_1",
+            "question_number": 12,
+            "student_answer": "D",
+            "correct_answer": "D",
+            "time_seconds": 76,
+            "difficulty": "easy"
+          },
+          {
+            "section": "english",
+            "module": "module_1",
+            "question_number": 13,
+            "student_answer": "B",
+            "correct_answer": "B",
+            "time_seconds": 72,
+            "difficulty": "hard"
+          },
+          {
+            "section": "english",
+            "module": "module_1",
+            "question_number": 14,
+            "student_answer": "C",
+            "correct_answer": "C",
+            "time_seconds": 52,
+            "difficulty": "easy"
+          },
+          {
+            "section": "english",
+            "module": "module_1",
+            "question_number": 15,
+            "student_answer": "D",
+            "correct_answer": "D",
+            "time_seconds": 65,
+            "difficulty": "easy"
+          },
+          {
+            "section": "english",
+            "module": "module_1",
+            "question_number": 16,
+            "student_answer": "D",
+            "correct_answer": "D",
+            "time_seconds": 53,
+            "difficulty": "medium"
+          },
+          {
+            "section": "english",
+            "module": "module_1",
+            "question_number": 17,
+            "student_answer": "D",
+            "correct_answer": "B",
+            "time_seconds": 71,
+            "difficulty": "medium"
+          },
+          {
+            "section": "english",
+            "module": "module_1",
+            "question_number": 18,
+            "student_answer": "A",
+            "correct_answer": "A",
+            "time_seconds": 53,
+            "difficulty": "hard"
+          },
+          {
+            "section": "english",
+            "module": "module_1",
+            "question_number": 19,
+            "student_answer": "A",
+            "correct_answer": "A",
+            "time_seconds": 86,
+            "difficulty": "hard"
+          },
+          {
+            "section": "english",
+            "module": "module_1",
+            "question_number": 20,
+            "student_answer": "A",
+            "correct_answer": "A",
+            "time_seconds": 85,
+            "difficulty": "hard"
+          },
+          {
+            "section": "english",
+            "module": "module_1",
+            "question_number": 21,
+            "student_answer": "D",
+            "correct_answer": "D",
+            "time_seconds": 66,
+            "difficulty": "easy"
+          },
+          {
+            "section": "english",
+            "module": "module_1",
+            "question_number": 22,
+            "student_answer": "A",
+            "correct_answer": "C",
+            "time_seconds": 70,
+            "difficulty": "medium"
+          },
+          {
+            "section": "english",
+            "module": "module_1",
+            "question_number": 23,
+            "student_answer": "A",
+            "correct_answer": "D",
+            "time_seconds": 93,
+            "difficulty": "easy"
+          },
+          {
+            "section": "english",
+            "module": "module_1",
+            "question_number": 24,
+            "student_answer": "A",
+            "correct_answer": "A",
+            "time_seconds": 96,
+            "difficulty": "medium"
+          },
+          {
+            "section": "english",
+            "module": "module_1",
+            "question_number": 25,
+            "student_answer": "C",
+            "correct_answer": "C",
+            "time_seconds": 46,
+            "difficulty": "medium"
+          },
+          {
+            "section": "english",
+            "module": "module_1",
+            "question_number": 26,
+            "student_answer": "A",
+            "correct_answer": "B",
+            "time_seconds": 55,
+            "difficulty": "hard"
+          },
+          {
+            "section": "english",
+            "module": "module_1",
+            "question_number": 27,
+            "student_answer": "A",
+            "correct_answer": "C",
+            "time_seconds": 62,
+            "difficulty": "hard"
+          },
+          {
+            "section": "english",
+            "module": "module_b",
+            "question_number": 1,
+            "student_answer": "B",
+            "correct_answer": "B",
+            "time_seconds": 92,
+            "difficulty": "medium"
+          },
+          {
+            "section": "english",
+            "module": "module_b",
+            "question_number": 2,
+            "student_answer": "A",
+            "correct_answer": "A",
+            "time_seconds": 82,
+            "difficulty": "hard"
+          },
+          {
+            "section": "english",
+            "module": "module_b",
+            "question_number": 3,
+            "student_answer": "B",
+            "correct_answer": "B",
+            "time_seconds": 73,
+            "difficulty": "hard"
+          },
+          {
+            "section": "english",
+            "module": "module_b",
+            "question_number": 4,
+            "student_answer": "B",
+            "correct_answer": "B",
+            "time_seconds": 65,
+            "difficulty": "hard"
+          },
+          {
+            "section": "english",
+            "module": "module_b",
+            "question_number": 5,
+            "student_answer": "B",
+            "correct_answer": "B",
+            "time_seconds": 91,
+            "difficulty": "medium"
+          },
+          {
+            "section": "english",
+            "module": "module_b",
+            "question_number": 6,
+            "student_answer": "D",
+            "correct_answer": "D",
+            "time_seconds": 82,
+            "difficulty": "hard"
+          },
+          {
+            "section": "english",
+            "module": "module_b",
+            "question_number": 7,
+            "student_answer": "C",
+            "correct_answer": "C",
+            "time_seconds": 85,
+            "difficulty": "hard"
+          },
+          {
+            "section": "english",
+            "module": "module_b",
+            "question_number": 8,
+            "student_answer": "D",
+            "correct_answer": "D",
+            "time_seconds": 91,
+            "difficulty": "medium"
+          },
+          {
+            "section": "english",
+            "module": "module_b",
+            "question_number": 9,
+            "student_answer": "A",
+            "correct_answer": "A",
+            "time_seconds": 68,
+            "difficulty": "hard"
+          },
+          {
+            "section": "english",
+            "module": "module_b",
+            "question_number": 10,
+            "student_answer": "A",
+            "correct_answer": "D",
+            "time_seconds": 59,
+            "difficulty": "hard"
+          },
+          {
+            "section": "english",
+            "module": "module_b",
+            "question_number": 11,
+            "student_answer": "D",
+            "correct_answer": "D",
+            "time_seconds": 98,
+            "difficulty": "easy"
+          },
+          {
+            "section": "english",
+            "module": "module_b",
+            "question_number": 12,
+            "student_answer": "D",
+            "correct_answer": "D",
+            "time_seconds": 93,
+            "difficulty": "medium"
+          },
+          {
+            "section": "english",
+            "module": "module_b",
+            "question_number": 13,
+            "student_answer": "B",
+            "correct_answer": "A",
+            "time_seconds": 95,
+            "difficulty": "medium"
+          },
+          {
+            "section": "english",
+            "module": "module_b",
+            "question_number": 14,
+            "student_answer": "D",
+            "correct_answer": "D",
+            "time_seconds": 75,
+            "difficulty": "hard"
+          },
+          {
+            "section": "english",
+            "module": "module_b",
+            "question_number": 15,
+            "student_answer": "B",
+            "correct_answer": "B",
+            "time_seconds": 45,
+            "difficulty": "hard"
+          },
+          {
+            "section": "english",
+            "module": "module_b",
+            "question_number": 16,
+            "student_answer": "A",
+            "correct_answer": "A",
+            "time_seconds": 86,
+            "difficulty": "easy"
+          },
+          {
+            "section": "english",
+            "module": "module_b",
+            "question_number": 17,
+            "student_answer": "A",
+            "correct_answer": "A",
+            "time_seconds": 71,
+            "difficulty": "medium"
+          },
+          {
+            "section": "english",
+            "module": "module_b",
+            "question_number": 18,
+            "student_answer": "D",
+            "correct_answer": "D",
+            "time_seconds": 74,
+            "difficulty": "easy"
+          },
+          {
+            "section": "english",
+            "module": "module_b",
+            "question_number": 19,
+            "student_answer": "C",
+            "correct_answer": "C",
+            "time_seconds": 73,
+            "difficulty": "medium"
+          },
+          {
+            "section": "english",
+            "module": "module_b",
+            "question_number": 20,
+            "student_answer": "A",
+            "correct_answer": "A",
+            "time_seconds": 56,
+            "difficulty": "medium"
+          },
+          {
+            "section": "english",
+            "module": "module_b",
+            "question_number": 21,
+            "student_answer": "B",
+            "correct_answer": "B",
+            "time_seconds": 85,
+            "difficulty": "hard"
+          },
+          {
+            "section": "english",
+            "module": "module_b",
+            "question_number": 22,
+            "student_answer": "C",
+            "correct_answer": "C",
+            "time_seconds": 50,
+            "difficulty": "hard"
+          },
+          {
+            "section": "english",
+            "module": "module_b",
+            "question_number": 23,
+            "student_answer": "D",
+            "correct_answer": "D",
+            "time_seconds": 76,
+            "difficulty": "hard"
+          },
+          {
+            "section": "english",
+            "module": "module_b",
+            "question_number": 24,
+            "student_answer": "C",
+            "correct_answer": "A",
+            "time_seconds": 79,
+            "difficulty": "easy"
+          },
+          {
+            "section": "english",
+            "module": "module_b",
+            "question_number": 25,
+            "student_answer": "B",
+            "correct_answer": "B",
+            "time_seconds": 63,
+            "difficulty": "hard"
+          },
+          {
+            "section": "english",
+            "module": "module_b",
+            "question_number": 26,
+            "student_answer": "C",
+            "correct_answer": "C",
+            "time_seconds": 44,
+            "difficulty": "medium"
+          },
+          {
+            "section": "english",
+            "module": "module_b",
+            "question_number": 27,
+            "student_answer": "D",
+            "correct_answer": "D",
+            "time_seconds": 77,
+            "difficulty": "hard"
+          },
+          {
+            "section": "math",
+            "module": "module_1",
+            "question_number": 1,
+            "student_answer": "D",
+            "correct_answer": "D",
+            "time_seconds": 79,
+            "difficulty": "easy"
+          },
+          {
+            "section": "math",
+            "module": "module_1",
+            "question_number": 2,
+            "student_answer": "D",
+            "correct_answer": "A",
+            "time_seconds": 59,
+            "difficulty": "easy"
+          },
+          {
+            "section": "math",
+            "module": "module_1",
+            "question_number": 3,
+            "student_answer": "B",
+            "correct_answer": "B",
+            "time_seconds": 62,
+            "difficulty": "easy"
+          },
+          {
+            "section": "math",
+            "module": "module_1",
+            "question_number": 4,
+            "student_answer": "A",
+            "correct_answer": "C",
+            "time_seconds": 125,
+            "difficulty": "easy"
+          },
+          {
+            "section": "math",
+            "module": "module_1",
+            "question_number": 5,
+            "student_answer": "B",
+            "correct_answer": "A",
+            "time_seconds": 89,
+            "difficulty": "easy"
+          },
+          {
+            "section": "math",
+            "module": "module_1",
+            "question_number": 6,
+            "student_answer": "D",
+            "correct_answer": "D",
+            "time_seconds": 67,
+            "difficulty": "easy"
+          },
+          {
+            "section": "math",
+            "module": "module_1",
+            "question_number": 7,
+            "student_answer": "D",
+            "correct_answer": "D",
+            "time_seconds": 82,
+            "difficulty": "easy"
+          },
+          {
+            "section": "math",
+            "module": "module_1",
+            "question_number": 8,
+            "student_answer": "A",
+            "correct_answer": "A",
+            "time_seconds": 71,
+            "difficulty": "medium"
+          },
+          {
+            "section": "math",
+            "module": "module_1",
+            "question_number": 9,
+            "student_answer": "A",
+            "correct_answer": "C",
+            "time_seconds": 62,
+            "difficulty": "medium"
+          },
+          {
+            "section": "math",
+            "module": "module_1",
+            "question_number": 10,
+            "student_answer": "D",
+            "correct_answer": "D",
+            "time_seconds": 59,
+            "difficulty": "medium"
+          },
+          {
+            "section": "math",
+            "module": "module_1",
+            "question_number": 11,
+            "student_answer": "C",
+            "correct_answer": "C",
+            "time_seconds": 79,
+            "difficulty": "medium"
+          },
+          {
+            "section": "math",
+            "module": "module_1",
+            "question_number": 12,
+            "student_answer": "B",
+            "correct_answer": "B",
+            "time_seconds": 121,
+            "difficulty": "medium"
+          },
+          {
+            "section": "math",
+            "module": "module_1",
+            "question_number": 13,
+            "student_answer": "D",
+            "correct_answer": "D",
+            "time_seconds": 65,
+            "difficulty": "medium"
+          },
+          {
+            "section": "math",
+            "module": "module_1",
+            "question_number": 14,
+            "student_answer": "A",
+            "correct_answer": "A",
+            "time_seconds": 127,
+            "difficulty": "medium"
+          },
+          {
+            "section": "math",
+            "module": "module_1",
+            "question_number": 15,
+            "student_answer": "B",
+            "correct_answer": "C",
+            "time_seconds": 111,
+            "difficulty": "medium"
+          },
+          {
+            "section": "math",
+            "module": "module_1",
+            "question_number": 16,
+            "student_answer": "A",
+            "correct_answer": "A",
+            "time_seconds": 74,
+            "difficulty": "hard"
+          },
+          {
+            "section": "math",
+            "module": "module_1",
+            "question_number": 17,
+            "student_answer": "C",
+            "correct_answer": "A",
+            "time_seconds": 85,
+            "difficulty": "hard"
+          },
+          {
+            "section": "math",
+            "module": "module_1",
+            "question_number": 18,
+            "student_answer": "B",
+            "correct_answer": "D",
+            "time_seconds": 58,
+            "difficulty": "hard"
+          },
+          {
+            "section": "math",
+            "module": "module_1",
+            "question_number": 19,
+            "student_answer": "A",
+            "correct_answer": "B",
+            "time_seconds": 115,
+            "difficulty": "hard"
+          },
+          {
+            "section": "math",
+            "module": "module_1",
+            "question_number": 20,
+            "student_answer": "C",
+            "correct_answer": "B",
+            "time_seconds": 130,
+            "difficulty": "hard"
+          },
+          {
+            "section": "math",
+            "module": "module_1",
+            "question_number": 21,
+            "student_answer": "A",
+            "correct_answer": "A",
+            "time_seconds": 122,
+            "difficulty": "hard"
+          },
+          {
+            "section": "math",
+            "module": "module_1",
+            "question_number": 22,
+            "student_answer": "B",
+            "correct_answer": "B",
+            "time_seconds": 111,
+            "difficulty": "hard"
+          },
+          {
+            "section": "math",
+            "module": "module_b",
+            "question_number": 1,
+            "student_answer": "D",
+            "correct_answer": "D",
+            "time_seconds": 77,
+            "difficulty": "easy"
+          },
+          {
+            "section": "math",
+            "module": "module_b",
+            "question_number": 2,
+            "student_answer": "B",
+            "correct_answer": "B",
+            "time_seconds": 86,
+            "difficulty": "easy"
+          },
+          {
+            "section": "math",
+            "module": "module_b",
+            "question_number": 3,
+            "student_answer": "A",
+            "correct_answer": "C",
+            "time_seconds": 66,
+            "difficulty": "easy"
+          },
+          {
+            "section": "math",
+            "module": "module_b",
+            "question_number": 4,
+            "student_answer": "C",
+            "correct_answer": "C",
+            "time_seconds": 106,
+            "difficulty": "medium"
+          },
+          {
+            "section": "math",
+            "module": "module_b",
+            "question_number": 5,
+            "student_answer": "D",
+            "correct_answer": "D",
+            "time_seconds": 123,
+            "difficulty": "medium"
+          },
+          {
+            "section": "math",
+            "module": "module_b",
+            "question_number": 6,
+            "student_answer": "D",
+            "correct_answer": "D",
+            "time_seconds": 88,
+            "difficulty": "medium"
+          },
+          {
+            "section": "math",
+            "module": "module_b",
+            "question_number": 7,
+            "student_answer": "B",
+            "correct_answer": "B",
+            "time_seconds": 80,
+            "difficulty": "medium"
+          },
+          {
+            "section": "math",
+            "module": "module_b",
+            "question_number": 8,
+            "student_answer": "B",
+            "correct_answer": "B",
+            "time_seconds": 109,
+            "difficulty": "medium"
+          },
+          {
+            "section": "math",
+            "module": "module_b",
+            "question_number": 9,
+            "student_answer": "D",
+            "correct_answer": "A",
+            "time_seconds": 110,
+            "difficulty": "medium"
+          },
+          {
+            "section": "math",
+            "module": "module_b",
+            "question_number": 10,
+            "student_answer": "A",
+            "correct_answer": "A",
+            "time_seconds": 121,
+            "difficulty": "medium"
+          },
+          {
+            "section": "math",
+            "module": "module_b",
+            "question_number": 11,
+            "student_answer": "A",
+            "correct_answer": "A",
+            "time_seconds": 84,
+            "difficulty": "medium"
+          },
+          {
+            "section": "math",
+            "module": "module_b",
+            "question_number": 12,
+            "student_answer": "B",
+            "correct_answer": "B",
+            "time_seconds": 117,
+            "difficulty": "hard"
+          },
+          {
+            "section": "math",
+            "module": "module_b",
+            "question_number": 13,
+            "student_answer": "B",
+            "correct_answer": "B",
+            "time_seconds": 88,
+            "difficulty": "hard"
+          },
+          {
+            "section": "math",
+            "module": "module_b",
+            "question_number": 14,
+            "student_answer": "B",
+            "correct_answer": "B",
+            "time_seconds": 119,
+            "difficulty": "hard"
+          },
+          {
+            "section": "math",
+            "module": "module_b",
+            "question_number": 15,
+            "student_answer": "B",
+            "correct_answer": "B",
+            "time_seconds": 63,
+            "difficulty": "hard"
+          },
+          {
+            "section": "math",
+            "module": "module_b",
+            "question_number": 16,
+            "student_answer": "C",
+            "correct_answer": "C",
+            "time_seconds": 102,
+            "difficulty": "hard"
+          },
+          {
+            "section": "math",
+            "module": "module_b",
+            "question_number": 17,
+            "student_answer": "A",
+            "correct_answer": "A",
+            "time_seconds": 90,
+            "difficulty": "hard"
+          },
+          {
+            "section": "math",
+            "module": "module_b",
+            "question_number": 18,
+            "student_answer": "A",
+            "correct_answer": "D",
+            "time_seconds": 90,
+            "difficulty": "hard"
+          },
+          {
+            "section": "math",
+            "module": "module_b",
+            "question_number": 19,
+            "student_answer": "A",
+            "correct_answer": "A",
+            "time_seconds": 108,
+            "difficulty": "hard"
+          },
+          {
+            "section": "math",
+            "module": "module_b",
+            "question_number": 20,
+            "student_answer": "C",
+            "correct_answer": "D",
+            "time_seconds": 129,
+            "difficulty": "hard"
+          },
+          {
+            "section": "math",
+            "module": "module_b",
+            "question_number": 21,
+            "student_answer": "D",
+            "correct_answer": "A",
+            "time_seconds": 84,
+            "difficulty": "hard"
+          },
+          {
+            "section": "math",
+            "module": "module_b",
+            "question_number": 22,
+            "student_answer": "A",
+            "correct_answer": "A",
+            "time_seconds": 126,
+            "difficulty": "hard"
+          }
+        ]
+      }
+    },
+    {
+      "schema_version": "2.0",
+      "course_type": "group_member",
+      "season": "Summer 2026",
+      "student": {
+        "student_name": "Lina Sarkis",
+        "student_id": "TP-2026-0122",
+        "grade_level": 11,
+        "known_foundational_gaps": [
+          {
+            "lesson_id": "MATH_LINEAR_FUNCTIONS",
+            "severity": "moderate",
+            "evidence": "Confuses slope and intercept roles; relies on plugging in answer choices (intake worksheet)."
+          }
+        ]
+      },
+      "scores": {
+        "score_source": "provided",
+        "reading_writing_scaled": 450,
+        "math_scaled": 410,
+        "total_scaled": 860
+      },
+      "goal": {
+        "target_sat_score": 1150,
+        "intended_test_date": "2026-10-03"
+      },
+      "availability": {
+        "weeks_available": 10,
+        "preferred_sessions_per_week": 2,
+        "max_session_length": "1.5 hrs",
+        "session_format": "Short focused blocks",
+        "accommodation": "Yes"
+      },
+      "diagnostic": {
+        "template_id": "Diagnostic_Exam_2026",
+        "date": "July 6, 2026",
+        "answers": [
+          {
+            "section": "english",
+            "module": "module_1",
+            "question_number": 1,
+            "student_answer": "A",
+            "correct_answer": "A",
+            "time_seconds": 90,
+            "difficulty": "easy"
+          },
+          {
+            "section": "english",
+            "module": "module_1",
+            "question_number": 2,
+            "student_answer": "B",
+            "correct_answer": "B",
+            "time_seconds": 90,
+            "difficulty": "easy"
+          },
+          {
+            "section": "english",
+            "module": "module_1",
+            "question_number": 3,
+            "student_answer": "C",
+            "correct_answer": "C",
+            "time_seconds": 53,
+            "difficulty": "medium"
+          },
+          {
+            "section": "english",
+            "module": "module_1",
+            "question_number": 4,
+            "student_answer": "C",
+            "correct_answer": "C",
+            "time_seconds": 85,
+            "difficulty": "medium"
+          },
+          {
+            "section": "english",
+            "module": "module_1",
+            "question_number": 5,
+            "student_answer": "C",
+            "correct_answer": "A",
+            "time_seconds": 64,
+            "difficulty": "hard"
+          },
+          {
+            "section": "english",
+            "module": "module_1",
+            "question_number": 6,
+            "student_answer": "D",
+            "correct_answer": "C",
+            "time_seconds": 71,
+            "difficulty": "medium"
+          },
+          {
+            "section": "english",
+            "module": "module_1",
+            "question_number": 7,
+            "student_answer": "C",
+            "correct_answer": "C",
+            "time_seconds": 51,
+            "difficulty": "hard"
+          },
+          {
+            "section": "english",
+            "module": "module_1",
+            "question_number": 8,
+            "student_answer": "C",
+            "correct_answer": "C",
+            "time_seconds": 80,
+            "difficulty": "easy"
+          },
+          {
+            "section": "english",
+            "module": "module_1",
+            "question_number": 9,
+            "student_answer": "B",
+            "correct_answer": "B",
+            "time_seconds": 90,
+            "difficulty": "hard"
+          },
+          {
+            "section": "english",
+            "module": "module_1",
+            "question_number": 10,
+            "student_answer": "C",
+            "correct_answer": "D",
+            "time_seconds": 81,
+            "difficulty": "medium"
+          },
+          {
+            "section": "english",
+            "module": "module_1",
+            "question_number": 11,
+            "student_answer": "A",
+            "correct_answer": "D",
+            "time_seconds": 93,
+            "difficulty": "medium"
+          },
+          {
+            "section": "english",
+            "module": "module_1",
+            "question_number": 12,
+            "student_answer": "D",
+            "correct_answer": "D",
+            "time_seconds": 63,
+            "difficulty": "easy"
+          },
+          {
+            "section": "english",
+            "module": "module_1",
+            "question_number": 13,
+            "student_answer": "B",
+            "correct_answer": "A",
+            "time_seconds": 65,
+            "difficulty": "hard"
+          },
+          {
+            "section": "english",
+            "module": "module_1",
+            "question_number": 14,
+            "student_answer": "C",
+            "correct_answer": "C",
+            "time_seconds": 79,
+            "difficulty": "easy"
+          },
+          {
+            "section": "english",
+            "module": "module_1",
+            "question_number": 15,
+            "student_answer": "D",
+            "correct_answer": "C",
+            "time_seconds": 88,
+            "difficulty": "easy"
+          },
+          {
+            "section": "english",
+            "module": "module_1",
+            "question_number": 16,
+            "student_answer": "C",
+            "correct_answer": "B",
+            "time_seconds": 49,
+            "difficulty": "medium"
+          },
+          {
+            "section": "english",
+            "module": "module_1",
+            "question_number": 17,
+            "student_answer": "C",
+            "correct_answer": "B",
+            "time_seconds": 91,
+            "difficulty": "medium"
+          },
+          {
+            "section": "english",
+            "module": "module_1",
+            "question_number": 18,
+            "student_answer": "C",
+            "correct_answer": "C",
+            "time_seconds": 69,
+            "difficulty": "hard"
+          },
+          {
+            "section": "english",
+            "module": "module_1",
+            "question_number": 19,
+            "student_answer": "A",
+            "correct_answer": "A",
+            "time_seconds": 79,
+            "difficulty": "hard"
+          },
+          {
+            "section": "english",
+            "module": "module_1",
+            "question_number": 20,
+            "student_answer": "D",
+            "correct_answer": "D",
+            "time_seconds": 52,
+            "difficulty": "hard"
+          },
+          {
+            "section": "english",
+            "module": "module_1",
+            "question_number": 21,
+            "student_answer": "B",
+            "correct_answer": "D",
+            "time_seconds": 80,
+            "difficulty": "easy"
+          },
+          {
+            "section": "english",
+            "module": "module_1",
+            "question_number": 22,
+            "student_answer": "C",
+            "correct_answer": "A",
+            "time_seconds": 81,
+            "difficulty": "medium"
+          },
+          {
+            "section": "english",
+            "module": "module_1",
+            "question_number": 23,
+            "student_answer": "A",
+            "correct_answer": "D",
+            "time_seconds": 80,
+            "difficulty": "easy"
+          },
+          {
+            "section": "english",
+            "module": "module_1",
+            "question_number": 24,
+            "student_answer": "B",
+            "correct_answer": "B",
+            "time_seconds": 88,
+            "difficulty": "medium"
+          },
+          {
+            "section": "english",
+            "module": "module_1",
+            "question_number": 25,
+            "student_answer": "B",
+            "correct_answer": "B",
+            "time_seconds": 72,
+            "difficulty": "medium"
+          },
+          {
+            "section": "english",
+            "module": "module_1",
+            "question_number": 26,
+            "student_answer": "B",
+            "correct_answer": "C",
+            "time_seconds": 68,
+            "difficulty": "hard"
+          },
+          {
+            "section": "english",
+            "module": "module_1",
+            "question_number": 27,
+            "student_answer": "D",
+            "correct_answer": "A",
+            "time_seconds": 85,
+            "difficulty": "hard"
+          },
+          {
+            "section": "english",
+            "module": "module_b",
+            "question_number": 1,
+            "student_answer": "B",
+            "correct_answer": "B",
+            "time_seconds": 99,
+            "difficulty": "medium"
+          },
+          {
+            "section": "english",
+            "module": "module_b",
+            "question_number": 2,
+            "student_answer": "C",
+            "correct_answer": "B",
+            "time_seconds": 78,
+            "difficulty": "hard"
+          },
+          {
+            "section": "english",
+            "module": "module_b",
+            "question_number": 3,
+            "student_answer": "C",
+            "correct_answer": "C",
+            "time_seconds": 74,
+            "difficulty": "hard"
+          },
+          {
+            "section": "english",
+            "module": "module_b",
+            "question_number": 4,
+            "student_answer": "B",
+            "correct_answer": "B",
+            "time_seconds": 49,
+            "difficulty": "hard"
+          },
+          {
+            "section": "english",
+            "module": "module_b",
+            "question_number": 5,
+            "student_answer": "C",
+            "correct_answer": "C",
+            "time_seconds": 82,
+            "difficulty": "medium"
+          },
+          {
+            "section": "english",
+            "module": "module_b",
+            "question_number": 6,
+            "student_answer": "A",
+            "correct_answer": "A",
+            "time_seconds": 73,
+            "difficulty": "hard"
+          },
+          {
+            "section": "english",
+            "module": "module_b",
+            "question_number": 7,
+            "student_answer": "C",
+            "correct_answer": "C",
+            "time_seconds": 79,
+            "difficulty": "hard"
+          },
+          {
+            "section": "english",
+            "module": "module_b",
+            "question_number": 8,
+            "student_answer": "D",
+            "correct_answer": "B",
+            "time_seconds": 82,
+            "difficulty": "medium"
+          },
+          {
+            "section": "english",
+            "module": "module_b",
+            "question_number": 9,
+            "student_answer": "C",
+            "correct_answer": "C",
+            "time_seconds": 74,
+            "difficulty": "hard"
+          },
+          {
+            "section": "english",
+            "module": "module_b",
+            "question_number": 10,
+            "student_answer": "A",
+            "correct_answer": "B",
+            "time_seconds": 73,
+            "difficulty": "hard"
+          },
+          {
+            "section": "english",
+            "module": "module_b",
+            "question_number": 11,
+            "student_answer": "B",
+            "correct_answer": "C",
+            "time_seconds": 92,
+            "difficulty": "easy"
+          },
+          {
+            "section": "english",
+            "module": "module_b",
+            "question_number": 12,
+            "student_answer": "D",
+            "correct_answer": "C",
+            "time_seconds": 55,
+            "difficulty": "medium"
+          },
+          {
+            "section": "english",
+            "module": "module_b",
+            "question_number": 13,
+            "student_answer": "A",
+            "correct_answer": "A",
+            "time_seconds": 66,
+            "difficulty": "medium"
+          },
+          {
+            "section": "english",
+            "module": "module_b",
+            "question_number": 14,
+            "student_answer": "C",
+            "correct_answer": "C",
+            "time_seconds": 62,
+            "difficulty": "hard"
+          },
+          {
+            "section": "english",
+            "module": "module_b",
+            "question_number": 15,
+            "student_answer": "B",
+            "correct_answer": "C",
+            "time_seconds": 66,
+            "difficulty": "hard"
+          },
+          {
+            "section": "english",
+            "module": "module_b",
+            "question_number": 16,
+            "student_answer": "C",
+            "correct_answer": "B",
+            "time_seconds": 96,
+            "difficulty": "easy"
+          },
+          {
+            "section": "english",
+            "module": "module_b",
+            "question_number": 17,
+            "student_answer": "D",
+            "correct_answer": "A",
+            "time_seconds": 92,
+            "difficulty": "medium"
+          },
+          {
+            "section": "english",
+            "module": "module_b",
+            "question_number": 18,
+            "student_answer": "B",
+            "correct_answer": "D",
+            "time_seconds": 88,
+            "difficulty": "easy"
+          },
+          {
+            "section": "english",
+            "module": "module_b",
+            "question_number": 19,
+            "student_answer": "C",
+            "correct_answer": "C",
+            "time_seconds": 46,
+            "difficulty": "medium"
+          },
+          {
+            "section": "english",
+            "module": "module_b",
+            "question_number": 20,
+            "student_answer": "B",
+            "correct_answer": "B",
+            "time_seconds": 71,
+            "difficulty": "medium"
+          },
+          {
+            "section": "english",
+            "module": "module_b",
+            "question_number": 21,
+            "student_answer": "A",
+            "correct_answer": "A",
+            "time_seconds": 64,
+            "difficulty": "hard"
+          },
+          {
+            "section": "english",
+            "module": "module_b",
+            "question_number": 22,
+            "student_answer": "C",
+            "correct_answer": "B",
+            "time_seconds": 77,
+            "difficulty": "hard"
+          },
+          {
+            "section": "english",
+            "module": "module_b",
+            "question_number": 23,
+            "student_answer": "D",
+            "correct_answer": "D",
+            "time_seconds": 59,
+            "difficulty": "hard"
+          },
+          {
+            "section": "english",
+            "module": "module_b",
+            "question_number": 24,
+            "student_answer": "A",
+            "correct_answer": "B",
+            "time_seconds": 49,
+            "difficulty": "easy"
+          },
+          {
+            "section": "english",
+            "module": "module_b",
+            "question_number": 25,
+            "student_answer": "B",
+            "correct_answer": "B",
+            "time_seconds": 87,
+            "difficulty": "hard"
+          },
+          {
+            "section": "english",
+            "module": "module_b",
+            "question_number": 26,
+            "student_answer": "A",
+            "correct_answer": "A",
+            "time_seconds": 96,
+            "difficulty": "medium"
+          },
+          {
+            "section": "english",
+            "module": "module_b",
+            "question_number": 27,
+            "student_answer": "B",
+            "correct_answer": "B",
+            "time_seconds": 67,
+            "difficulty": "hard"
+          },
+          {
+            "section": "math",
+            "module": "module_1",
+            "question_number": 1,
+            "student_answer": "C",
+            "correct_answer": "A",
+            "time_seconds": 93,
+            "difficulty": "easy"
+          },
+          {
+            "section": "math",
+            "module": "module_1",
+            "question_number": 2,
+            "student_answer": "B",
+            "correct_answer": "A",
+            "time_seconds": 124,
+            "difficulty": "easy"
+          },
+          {
+            "section": "math",
+            "module": "module_1",
+            "question_number": 3,
+            "student_answer": "C",
+            "correct_answer": "C",
+            "time_seconds": 70,
+            "difficulty": "easy"
+          },
+          {
+            "section": "math",
+            "module": "module_1",
+            "question_number": 4,
+            "student_answer": "C",
+            "correct_answer": "D",
+            "time_seconds": 100,
+            "difficulty": "easy"
+          },
+          {
+            "section": "math",
+            "module": "module_1",
+            "question_number": 5,
+            "student_answer": "D",
+            "correct_answer": "D",
+            "time_seconds": 85,
+            "difficulty": "easy"
+          },
+          {
+            "section": "math",
+            "module": "module_1",
+            "question_number": 6,
+            "student_answer": "A",
+            "correct_answer": "A",
+            "time_seconds": 126,
+            "difficulty": "easy"
+          },
+          {
+            "section": "math",
+            "module": "module_1",
+            "question_number": 7,
+            "student_answer": "B",
+            "correct_answer": "A",
+            "time_seconds": 69,
+            "difficulty": "easy"
+          },
+          {
+            "section": "math",
+            "module": "module_1",
+            "question_number": 8,
+            "student_answer": "D",
+            "correct_answer": "A",
+            "time_seconds": 119,
+            "difficulty": "medium"
+          },
+          {
+            "section": "math",
+            "module": "module_1",
+            "question_number": 9,
+            "student_answer": "D",
+            "correct_answer": "B",
+            "time_seconds": 84,
+            "guessed": true,
+            "difficulty": "medium"
+          },
+          {
+            "section": "math",
+            "module": "module_1",
+            "question_number": 10,
+            "student_answer": "D",
+            "correct_answer": "D",
+            "time_seconds": 114,
+            "difficulty": "medium"
+          },
+          {
+            "section": "math",
+            "module": "module_1",
+            "question_number": 11,
+            "student_answer": "B",
+            "correct_answer": "B",
+            "time_seconds": 129,
+            "difficulty": "medium"
+          },
+          {
+            "section": "math",
+            "module": "module_1",
+            "question_number": 12,
+            "student_answer": "C",
+            "correct_answer": "B",
+            "time_seconds": 64,
+            "difficulty": "medium"
+          },
+          {
+            "section": "math",
+            "module": "module_1",
+            "question_number": 13,
+            "student_answer": "A",
+            "correct_answer": "A",
+            "time_seconds": 112,
+            "difficulty": "medium"
+          },
+          {
+            "section": "math",
+            "module": "module_1",
+            "question_number": 14,
+            "student_answer": "B",
+            "correct_answer": "A",
+            "time_seconds": 100,
+            "difficulty": "medium"
+          },
+          {
+            "section": "math",
+            "module": "module_1",
+            "question_number": 15,
+            "student_answer": "B",
+            "correct_answer": "B",
+            "time_seconds": 112,
+            "difficulty": "medium"
+          },
+          {
+            "section": "math",
+            "module": "module_1",
+            "question_number": 16,
+            "student_answer": "C",
+            "correct_answer": "B",
+            "time_seconds": 131,
+            "difficulty": "hard"
+          },
+          {
+            "section": "math",
+            "module": "module_1",
+            "question_number": 17,
+            "student_answer": "B",
+            "correct_answer": "C",
+            "time_seconds": 93,
+            "difficulty": "hard"
+          },
+          {
+            "section": "math",
+            "module": "module_1",
+            "question_number": 18,
+            "student_answer": "C",
+            "correct_answer": "A",
+            "time_seconds": 62,
+            "difficulty": "hard"
+          },
+          {
+            "section": "math",
+            "module": "module_1",
+            "question_number": 19,
+            "student_answer": "C",
+            "correct_answer": "C",
+            "time_seconds": 84,
+            "difficulty": "hard"
+          },
+          {
+            "section": "math",
+            "module": "module_1",
+            "question_number": 20,
+            "student_answer": "D",
+            "correct_answer": "C",
+            "time_seconds": 91,
+            "difficulty": "hard"
+          },
+          {
+            "section": "math",
+            "module": "module_1",
+            "question_number": 21,
+            "student_answer": "D",
+            "correct_answer": "C",
+            "time_seconds": 62,
+            "difficulty": "hard"
+          },
+          {
+            "section": "math",
+            "module": "module_1",
+            "question_number": 22,
+            "student_answer": "A",
+            "correct_answer": "B",
+            "time_seconds": 75,
+            "difficulty": "hard"
+          },
+          {
+            "section": "math",
+            "module": "module_b",
+            "question_number": 1,
+            "student_answer": "D",
+            "correct_answer": "D",
+            "time_seconds": 81,
+            "difficulty": "easy"
+          },
+          {
+            "section": "math",
+            "module": "module_b",
+            "question_number": 2,
+            "student_answer": "C",
+            "correct_answer": "B",
+            "time_seconds": 59,
+            "difficulty": "easy"
+          },
+          {
+            "section": "math",
+            "module": "module_b",
+            "question_number": 3,
+            "student_answer": "A",
+            "correct_answer": "D",
+            "time_seconds": 108,
+            "difficulty": "easy"
+          },
+          {
+            "section": "math",
+            "module": "module_b",
+            "question_number": 4,
+            "student_answer": "C",
+            "correct_answer": "C",
+            "time_seconds": 67,
+            "difficulty": "medium"
+          },
+          {
+            "section": "math",
+            "module": "module_b",
+            "question_number": 5,
+            "student_answer": "C",
+            "correct_answer": "C",
+            "time_seconds": 86,
+            "guessed": true,
+            "difficulty": "medium"
+          },
+          {
+            "section": "math",
+            "module": "module_b",
+            "question_number": 6,
+            "student_answer": "A",
+            "correct_answer": "A",
+            "time_seconds": 131,
+            "difficulty": "medium"
+          },
+          {
+            "section": "math",
+            "module": "module_b",
+            "question_number": 7,
+            "student_answer": "C",
+            "correct_answer": "B",
+            "time_seconds": 127,
+            "difficulty": "medium"
+          },
+          {
+            "section": "math",
+            "module": "module_b",
+            "question_number": 8,
+            "student_answer": "B",
+            "correct_answer": "D",
+            "time_seconds": 77,
+            "difficulty": "medium"
+          },
+          {
+            "section": "math",
+            "module": "module_b",
+            "question_number": 9,
+            "student_answer": "C",
+            "correct_answer": "C",
+            "time_seconds": 103,
+            "difficulty": "medium"
+          },
+          {
+            "section": "math",
+            "module": "module_b",
+            "question_number": 10,
+            "student_answer": "C",
+            "correct_answer": "C",
+            "time_seconds": 70,
+            "difficulty": "medium"
+          },
+          {
+            "section": "math",
+            "module": "module_b",
+            "question_number": 11,
+            "student_answer": "C",
+            "correct_answer": "A",
+            "time_seconds": 84,
+            "guessed": true,
+            "difficulty": "medium"
+          },
+          {
+            "section": "math",
+            "module": "module_b",
+            "question_number": 12,
+            "student_answer": "C",
+            "correct_answer": "B",
+            "time_seconds": 112,
+            "difficulty": "hard"
+          },
+          {
+            "section": "math",
+            "module": "module_b",
+            "question_number": 13,
+            "student_answer": "C",
+            "correct_answer": "D",
+            "time_seconds": 84,
+            "difficulty": "hard"
+          },
+          {
+            "section": "math",
+            "module": "module_b",
+            "question_number": 14,
+            "student_answer": "A",
+            "correct_answer": "C",
+            "time_seconds": 64,
+            "difficulty": "hard"
+          },
+          {
+            "section": "math",
+            "module": "module_b",
+            "question_number": 15,
+            "student_answer": "B",
+            "correct_answer": "B",
+            "time_seconds": 62,
+            "difficulty": "hard"
+          },
+          {
+            "section": "math",
+            "module": "module_b",
+            "question_number": 16,
+            "student_answer": "C",
+            "correct_answer": "A",
+            "time_seconds": 114,
+            "difficulty": "hard"
+          },
+          {
+            "section": "math",
+            "module": "module_b",
+            "question_number": 17,
+            "student_answer": "A",
+            "correct_answer": "B",
+            "time_seconds": 119,
+            "difficulty": "hard"
+          },
+          {
+            "section": "math",
+            "module": "module_b",
+            "question_number": 18,
+            "student_answer": "D",
+            "correct_answer": "B",
+            "time_seconds": 59,
+            "difficulty": "hard"
+          },
+          {
+            "section": "math",
+            "module": "module_b",
+            "question_number": 19,
+            "student_answer": "B",
+            "correct_answer": "D",
+            "time_seconds": 69,
+            "difficulty": "hard"
+          },
+          {
+            "section": "math",
+            "module": "module_b",
+            "question_number": 20,
+            "student_answer": "C",
+            "correct_answer": "C",
+            "time_seconds": 72,
+            "difficulty": "hard"
+          },
+          {
+            "section": "math",
+            "module": "module_b",
+            "question_number": 21,
+            "student_answer": "B",
+            "correct_answer": "D",
+            "time_seconds": 65,
+            "guessed": true,
+            "difficulty": "hard"
+          },
+          {
+            "section": "math",
+            "module": "module_b",
+            "question_number": 22,
+            "student_answer": "D",
+            "correct_answer": "C",
+            "time_seconds": 99,
+            "difficulty": "hard"
+          }
+        ]
+      }
+    },
+    {
+      "schema_version": "2.0",
+      "course_type": "group_member",
+      "season": "Summer 2026",
+      "student": {
+        "student_name": "Omar Fares",
+        "student_id": "TP-2026-0123",
+        "grade_level": 12,
+        "known_foundational_gaps": []
+      },
+      "scores": {
+        "score_source": "provided",
+        "reading_writing_scaled": 510,
+        "math_scaled": 500,
+        "total_scaled": 1010
+      },
+      "goal": {
+        "target_sat_score": 1300,
+        "intended_test_date": "2026-10-03"
+      },
+      "availability": {
+        "weeks_available": 10,
+        "preferred_sessions_per_week": 2,
+        "max_session_length": "2 hrs",
+        "session_format": "Focused blocks",
+        "accommodation": "No"
+      },
+      "diagnostic": {
+        "template_id": "Diagnostic_Exam_2026",
+        "date": "July 6, 2026",
+        "answers": [
+          {
+            "section": "english",
+            "module": "module_1",
+            "question_number": 1,
+            "student_answer": "A",
+            "correct_answer": "A",
+            "time_seconds": 75,
+            "difficulty": "easy"
+          },
+          {
+            "section": "english",
+            "module": "module_1",
+            "question_number": 2,
+            "student_answer": "B",
+            "correct_answer": "C",
+            "time_seconds": 58,
+            "difficulty": "easy"
+          },
+          {
+            "section": "english",
+            "module": "module_1",
+            "question_number": 3,
+            "student_answer": "C",
+            "correct_answer": "C",
+            "time_seconds": 94,
+            "difficulty": "medium"
+          },
+          {
+            "section": "english",
+            "module": "module_1",
+            "question_number": 4,
+            "student_answer": "A",
+            "correct_answer": "A",
+            "time_seconds": 48,
+            "difficulty": "medium"
+          },
+          {
+            "section": "english",
+            "module": "module_1",
+            "question_number": 5,
+            "student_answer": "D",
+            "correct_answer": "D",
+            "time_seconds": 57,
+            "difficulty": "hard"
+          },
+          {
+            "section": "english",
+            "module": "module_1",
+            "question_number": 6,
+            "student_answer": "B",
+            "correct_answer": "A",
+            "time_seconds": 46,
+            "difficulty": "medium"
+          },
+          {
+            "section": "english",
+            "module": "module_1",
+            "question_number": 7,
+            "student_answer": "B",
+            "correct_answer": "B",
+            "time_seconds": 89,
+            "difficulty": "hard"
+          },
+          {
+            "section": "english",
+            "module": "module_1",
+            "question_number": 8,
+            "student_answer": "B",
+            "correct_answer": "D",
+            "time_seconds": 86,
+            "difficulty": "easy"
+          },
+          {
+            "section": "english",
+            "module": "module_1",
+            "question_number": 9,
+            "student_answer": "B",
+            "correct_answer": "B",
+            "time_seconds": 62,
+            "difficulty": "hard"
+          },
+          {
+            "section": "english",
+            "module": "module_1",
+            "question_number": 10,
+            "student_answer": "D",
+            "correct_answer": "D",
+            "time_seconds": 124,
+            "difficulty": "medium"
+          },
+          {
+            "section": "english",
+            "module": "module_1",
+            "question_number": 11,
+            "student_answer": "B",
+            "correct_answer": "A",
+            "time_seconds": 48,
+            "difficulty": "medium"
+          },
+          {
+            "section": "english",
+            "module": "module_1",
+            "question_number": 12,
+            "student_answer": "D",
+            "correct_answer": "C",
+            "time_seconds": 74,
+            "difficulty": "easy"
+          },
+          {
+            "section": "english",
+            "module": "module_1",
+            "question_number": 13,
+            "student_answer": "A",
+            "correct_answer": "B",
+            "time_seconds": 51,
+            "difficulty": "hard"
+          },
+          {
+            "section": "english",
+            "module": "module_1",
+            "question_number": 14,
+            "student_answer": "A",
+            "correct_answer": "A",
+            "time_seconds": 52,
+            "difficulty": "easy"
+          },
+          {
+            "section": "english",
+            "module": "module_1",
+            "question_number": 15,
+            "student_answer": "C",
+            "correct_answer": "C",
+            "time_seconds": 96,
+            "difficulty": "easy"
+          },
+          {
+            "section": "english",
+            "module": "module_1",
+            "question_number": 16,
+            "student_answer": "A",
+            "correct_answer": "A",
+            "time_seconds": 59,
+            "difficulty": "medium"
+          },
+          {
+            "section": "english",
+            "module": "module_1",
+            "question_number": 17,
+            "student_answer": "A",
+            "correct_answer": "A",
+            "time_seconds": 69,
+            "difficulty": "medium"
+          },
+          {
+            "section": "english",
+            "module": "module_1",
+            "question_number": 18,
+            "student_answer": "A",
+            "correct_answer": "A",
+            "time_seconds": 46,
+            "difficulty": "hard"
+          },
+          {
+            "section": "english",
+            "module": "module_1",
+            "question_number": 19,
+            "student_answer": "C",
+            "correct_answer": "C",
+            "time_seconds": 45,
+            "difficulty": "hard"
+          },
+          {
+            "section": "english",
+            "module": "module_1",
+            "question_number": 20,
+            "student_answer": "D",
+            "correct_answer": "D",
+            "time_seconds": 99,
+            "difficulty": "hard"
+          },
+          {
+            "section": "english",
+            "module": "module_1",
+            "question_number": 21,
+            "student_answer": "A",
+            "correct_answer": "A",
+            "time_seconds": 75,
+            "difficulty": "easy"
+          },
+          {
+            "section": "english",
+            "module": "module_1",
+            "question_number": 22,
+            "student_answer": "D",
+            "correct_answer": "B",
+            "time_seconds": 77,
+            "difficulty": "medium"
+          },
+          {
+            "section": "english",
+            "module": "module_1",
+            "question_number": 23,
+            "student_answer": "A",
+            "correct_answer": "C",
+            "time_seconds": 97,
+            "difficulty": "easy"
+          },
+          {
+            "section": "english",
+            "module": "module_1",
+            "question_number": 24,
+            "student_answer": "C",
+            "correct_answer": "A",
+            "time_seconds": 61,
+            "difficulty": "medium"
+          },
+          {
+            "section": "english",
+            "module": "module_1",
+            "question_number": 25,
+            "student_answer": "A",
+            "correct_answer": "B",
+            "time_seconds": 58,
+            "difficulty": "medium"
+          },
+          {
+            "section": "english",
+            "module": "module_1",
+            "question_number": 26,
+            "student_answer": "C",
+            "correct_answer": "C",
+            "time_seconds": 50,
+            "difficulty": "hard"
+          },
+          {
+            "section": "english",
+            "module": "module_1",
+            "question_number": 27,
+            "student_answer": "A",
+            "correct_answer": "A",
+            "time_seconds": 94,
+            "difficulty": "hard"
+          },
+          {
+            "section": "english",
+            "module": "module_b",
+            "question_number": 1,
+            "student_answer": "C",
+            "correct_answer": "A",
+            "time_seconds": 90,
+            "difficulty": "medium"
+          },
+          {
+            "section": "english",
+            "module": "module_b",
+            "question_number": 2,
+            "student_answer": "D",
+            "correct_answer": "C",
+            "time_seconds": 94,
+            "difficulty": "hard"
+          },
+          {
+            "section": "english",
+            "module": "module_b",
+            "question_number": 3,
+            "student_answer": "B",
+            "correct_answer": "A",
+            "time_seconds": 70,
+            "difficulty": "hard"
+          },
+          {
+            "section": "english",
+            "module": "module_b",
+            "question_number": 4,
+            "student_answer": "C",
+            "correct_answer": "C",
+            "time_seconds": 66,
+            "difficulty": "hard"
+          },
+          {
+            "section": "english",
+            "module": "module_b",
+            "question_number": 5,
+            "student_answer": "C",
+            "correct_answer": "C",
+            "time_seconds": 56,
+            "difficulty": "medium"
+          },
+          {
+            "section": "english",
+            "module": "module_b",
+            "question_number": 6,
+            "student_answer": "B",
+            "correct_answer": "B",
+            "time_seconds": 73,
+            "difficulty": "hard"
+          },
+          {
+            "section": "english",
+            "module": "module_b",
+            "question_number": 7,
+            "student_answer": "B",
+            "correct_answer": "D",
+            "time_seconds": 79,
+            "difficulty": "hard"
+          },
+          {
+            "section": "english",
+            "module": "module_b",
+            "question_number": 8,
+            "student_answer": "C",
+            "correct_answer": "C",
+            "time_seconds": 91,
+            "difficulty": "medium"
+          },
+          {
+            "section": "english",
+            "module": "module_b",
+            "question_number": 9,
+            "student_answer": "B",
+            "correct_answer": "B",
+            "time_seconds": 88,
+            "difficulty": "hard"
+          },
+          {
+            "section": "english",
+            "module": "module_b",
+            "question_number": 10,
+            "student_answer": "B",
+            "correct_answer": "B",
+            "time_seconds": 76,
+            "difficulty": "hard"
+          },
+          {
+            "section": "english",
+            "module": "module_b",
+            "question_number": 11,
+            "student_answer": "D",
+            "correct_answer": "A",
+            "time_seconds": 96,
+            "difficulty": "easy"
+          },
+          {
+            "section": "english",
+            "module": "module_b",
+            "question_number": 12,
+            "student_answer": "D",
+            "correct_answer": "D",
+            "time_seconds": 146,
+            "difficulty": "medium"
+          },
+          {
+            "section": "english",
+            "module": "module_b",
+            "question_number": 13,
+            "student_answer": "B",
+            "correct_answer": "B",
+            "time_seconds": 132,
+            "difficulty": "medium"
+          },
+          {
+            "section": "english",
+            "module": "module_b",
+            "question_number": 14,
+            "student_answer": "C",
+            "correct_answer": "D",
+            "time_seconds": 74,
+            "difficulty": "hard"
+          },
+          {
+            "section": "english",
+            "module": "module_b",
+            "question_number": 15,
+            "student_answer": "A",
+            "correct_answer": "A",
+            "time_seconds": 124,
+            "difficulty": "hard"
+          },
+          {
+            "section": "english",
+            "module": "module_b",
+            "question_number": 16,
+            "student_answer": "B",
+            "correct_answer": "B",
+            "time_seconds": 48,
+            "difficulty": "easy"
+          },
+          {
+            "section": "english",
+            "module": "module_b",
+            "question_number": 17,
+            "student_answer": "C",
+            "correct_answer": "C",
+            "time_seconds": 60,
+            "difficulty": "medium"
+          },
+          {
+            "section": "english",
+            "module": "module_b",
+            "question_number": 18,
+            "student_answer": "A",
+            "correct_answer": "C",
+            "time_seconds": 57,
+            "difficulty": "easy"
+          },
+          {
+            "section": "english",
+            "module": "module_b",
+            "question_number": 19,
+            "student_answer": "A",
+            "correct_answer": "D",
+            "time_seconds": 46,
+            "difficulty": "medium"
+          },
+          {
+            "section": "english",
+            "module": "module_b",
+            "question_number": 20,
+            "student_answer": "C",
+            "correct_answer": "C",
+            "time_seconds": 64,
+            "difficulty": "medium"
+          },
+          {
+            "section": "english",
+            "module": "module_b",
+            "question_number": 21,
+            "student_answer": "C",
+            "correct_answer": "C",
+            "time_seconds": 99,
+            "difficulty": "hard"
+          },
+          {
+            "section": "english",
+            "module": "module_b",
+            "question_number": 22,
+            "student_answer": "A",
+            "correct_answer": "A",
+            "time_seconds": 91,
+            "difficulty": "hard"
+          },
+          {
+            "section": "english",
+            "module": "module_b",
+            "question_number": 23,
+            "student_answer": "C",
+            "correct_answer": "C",
+            "time_seconds": 77,
+            "difficulty": "hard"
+          },
+          {
+            "section": "english",
+            "module": "module_b",
+            "question_number": 24,
+            "student_answer": "D",
+            "correct_answer": "D",
+            "time_seconds": 61,
+            "difficulty": "easy"
+          },
+          {
+            "section": "english",
+            "module": "module_b",
+            "question_number": 25,
+            "student_answer": "D",
+            "correct_answer": "A",
+            "time_seconds": 70,
+            "difficulty": "hard"
+          },
+          {
+            "section": "english",
+            "module": "module_b",
+            "question_number": 26,
+            "student_answer": "D",
+            "correct_answer": "D",
+            "time_seconds": 47,
+            "difficulty": "medium"
+          },
+          {
+            "section": "english",
+            "module": "module_b",
+            "question_number": 27,
+            "student_answer": "A",
+            "correct_answer": "B",
+            "time_seconds": 96,
+            "difficulty": "hard"
+          },
+          {
+            "section": "math",
+            "module": "module_1",
+            "question_number": 1,
+            "student_answer": "A",
+            "correct_answer": "D",
+            "time_seconds": 105,
+            "difficulty": "easy"
+          },
+          {
+            "section": "math",
+            "module": "module_1",
+            "question_number": 2,
+            "student_answer": "C",
+            "correct_answer": "A",
+            "time_seconds": 116,
+            "difficulty": "easy"
+          },
+          {
+            "section": "math",
+            "module": "module_1",
+            "question_number": 3,
+            "student_answer": "D",
+            "correct_answer": "B",
+            "time_seconds": 110,
+            "difficulty": "easy"
+          },
+          {
+            "section": "math",
+            "module": "module_1",
+            "question_number": 4,
+            "student_answer": "A",
+            "correct_answer": "A",
+            "time_seconds": 86,
+            "difficulty": "easy"
+          },
+          {
+            "section": "math",
+            "module": "module_1",
+            "question_number": 5,
+            "student_answer": "D",
+            "correct_answer": "D",
+            "time_seconds": 80,
+            "difficulty": "easy"
+          },
+          {
+            "section": "math",
+            "module": "module_1",
+            "question_number": 6,
+            "student_answer": "A",
+            "correct_answer": "A",
+            "time_seconds": 111,
+            "difficulty": "easy"
+          },
+          {
+            "section": "math",
+            "module": "module_1",
+            "question_number": 7,
+            "student_answer": "A",
+            "correct_answer": "A",
+            "time_seconds": 63,
+            "difficulty": "easy"
+          },
+          {
+            "section": "math",
+            "module": "module_1",
+            "question_number": 8,
+            "student_answer": "A",
+            "correct_answer": "A",
+            "time_seconds": 83,
+            "difficulty": "medium"
+          },
+          {
+            "section": "math",
+            "module": "module_1",
+            "question_number": 9,
+            "student_answer": "A",
+            "correct_answer": "A",
+            "time_seconds": 107,
+            "difficulty": "medium"
+          },
+          {
+            "section": "math",
+            "module": "module_1",
+            "question_number": 10,
+            "student_answer": "B",
+            "correct_answer": "B",
+            "time_seconds": 73,
+            "difficulty": "medium"
+          },
+          {
+            "section": "math",
+            "module": "module_1",
+            "question_number": 11,
+            "student_answer": "C",
+            "correct_answer": "C",
+            "time_seconds": 84,
+            "difficulty": "medium"
+          },
+          {
+            "section": "math",
+            "module": "module_1",
+            "question_number": 12,
+            "student_answer": "A",
+            "correct_answer": "A",
+            "time_seconds": 79,
+            "difficulty": "medium"
+          },
+          {
+            "section": "math",
+            "module": "module_1",
+            "question_number": 13,
+            "student_answer": "D",
+            "correct_answer": "C",
+            "time_seconds": 85,
+            "difficulty": "medium"
+          },
+          {
+            "section": "math",
+            "module": "module_1",
+            "question_number": 14,
+            "student_answer": "B",
+            "correct_answer": "A",
+            "time_seconds": 78,
+            "difficulty": "medium"
+          },
+          {
+            "section": "math",
+            "module": "module_1",
+            "question_number": 15,
+            "student_answer": "B",
+            "correct_answer": "A",
+            "time_seconds": 91,
+            "difficulty": "medium"
+          },
+          {
+            "section": "math",
+            "module": "module_1",
+            "question_number": 16,
+            "student_answer": "D",
+            "correct_answer": "D",
+            "time_seconds": 58,
+            "difficulty": "hard"
+          },
+          {
+            "section": "math",
+            "module": "module_1",
+            "question_number": 17,
+            "student_answer": "A",
+            "correct_answer": "D",
+            "time_seconds": 88,
+            "difficulty": "hard"
+          },
+          {
+            "section": "math",
+            "module": "module_1",
+            "question_number": 18,
+            "student_answer": "C",
+            "correct_answer": "D",
+            "time_seconds": 60,
+            "difficulty": "hard"
+          },
+          {
+            "section": "math",
+            "module": "module_1",
+            "question_number": 19,
+            "student_answer": "C",
+            "correct_answer": "D",
+            "time_seconds": 68,
+            "difficulty": "hard"
+          },
+          {
+            "section": "math",
+            "module": "module_1",
+            "question_number": 20,
+            "student_answer": "B",
+            "correct_answer": "B",
+            "time_seconds": 104,
+            "difficulty": "hard"
+          },
+          {
+            "section": "math",
+            "module": "module_1",
+            "question_number": 21,
+            "student_answer": "C",
+            "correct_answer": "C",
+            "time_seconds": 58,
+            "difficulty": "hard"
+          },
+          {
+            "section": "math",
+            "module": "module_1",
+            "question_number": 22,
+            "student_answer": "B",
+            "correct_answer": "C",
+            "time_seconds": 61,
+            "difficulty": "hard"
+          },
+          {
+            "section": "math",
+            "module": "module_b",
+            "question_number": 1,
+            "student_answer": "D",
+            "correct_answer": "A",
+            "time_seconds": 119,
+            "difficulty": "easy"
+          },
+          {
+            "section": "math",
+            "module": "module_b",
+            "question_number": 2,
+            "student_answer": "A",
+            "correct_answer": "A",
+            "time_seconds": 121,
+            "difficulty": "easy"
+          },
+          {
+            "section": "math",
+            "module": "module_b",
+            "question_number": 3,
+            "student_answer": "A",
+            "correct_answer": "C",
+            "time_seconds": 60,
+            "difficulty": "easy"
+          },
+          {
+            "section": "math",
+            "module": "module_b",
+            "question_number": 4,
+            "student_answer": "A",
+            "correct_answer": "A",
+            "time_seconds": 106,
+            "difficulty": "medium"
+          },
+          {
+            "section": "math",
+            "module": "module_b",
+            "question_number": 5,
+            "student_answer": "C",
+            "correct_answer": "C",
+            "time_seconds": 79,
+            "difficulty": "medium"
+          },
+          {
+            "section": "math",
+            "module": "module_b",
+            "question_number": 6,
+            "student_answer": "B",
+            "correct_answer": "B",
+            "time_seconds": 118,
+            "difficulty": "medium"
+          },
+          {
+            "section": "math",
+            "module": "module_b",
+            "question_number": 7,
+            "student_answer": "D",
+            "correct_answer": "C",
+            "time_seconds": 116,
+            "difficulty": "medium"
+          },
+          {
+            "section": "math",
+            "module": "module_b",
+            "question_number": 8,
+            "student_answer": "A",
+            "correct_answer": "A",
+            "time_seconds": 70,
+            "difficulty": "medium"
+          },
+          {
+            "section": "math",
+            "module": "module_b",
+            "question_number": 9,
+            "student_answer": "B",
+            "correct_answer": "B",
+            "time_seconds": 108,
+            "difficulty": "medium"
+          },
+          {
+            "section": "math",
+            "module": "module_b",
+            "question_number": 10,
+            "student_answer": "C",
+            "correct_answer": "A",
+            "time_seconds": 106,
+            "difficulty": "medium"
+          },
+          {
+            "section": "math",
+            "module": "module_b",
+            "question_number": 11,
+            "student_answer": "A",
+            "correct_answer": "A",
+            "time_seconds": 117,
+            "difficulty": "medium"
+          },
+          {
+            "section": "math",
+            "module": "module_b",
+            "question_number": 12,
+            "student_answer": "C",
+            "correct_answer": "C",
+            "time_seconds": 77,
+            "difficulty": "hard"
+          },
+          {
+            "section": "math",
+            "module": "module_b",
+            "question_number": 13,
+            "student_answer": "D",
+            "correct_answer": "B",
+            "time_seconds": 75,
+            "difficulty": "hard"
+          },
+          {
+            "section": "math",
+            "module": "module_b",
+            "question_number": 14,
+            "student_answer": "B",
+            "correct_answer": "D",
+            "time_seconds": 69,
+            "difficulty": "hard"
+          },
+          {
+            "section": "math",
+            "module": "module_b",
+            "question_number": 15,
+            "student_answer": "A",
+            "correct_answer": "D",
+            "time_seconds": 114,
+            "difficulty": "hard"
+          },
+          {
+            "section": "math",
+            "module": "module_b",
+            "question_number": 16,
+            "student_answer": "D",
+            "correct_answer": "D",
+            "time_seconds": 106,
+            "difficulty": "hard"
+          },
+          {
+            "section": "math",
+            "module": "module_b",
+            "question_number": 17,
+            "student_answer": "C",
+            "correct_answer": "C",
+            "time_seconds": 69,
+            "difficulty": "hard"
+          },
+          {
+            "section": "math",
+            "module": "module_b",
+            "question_number": 18,
+            "student_answer": "A",
+            "correct_answer": "B",
+            "time_seconds": 106,
+            "difficulty": "hard"
+          },
+          {
+            "section": "math",
+            "module": "module_b",
+            "question_number": 19,
+            "student_answer": "C",
+            "correct_answer": "C",
+            "time_seconds": 57,
+            "difficulty": "hard"
+          },
+          {
+            "section": "math",
+            "module": "module_b",
+            "question_number": 20,
+            "student_answer": "D",
+            "correct_answer": "D",
+            "time_seconds": 67,
+            "difficulty": "hard"
+          },
+          {
+            "section": "math",
+            "module": "module_b",
+            "question_number": 21,
+            "student_answer": "B",
+            "correct_answer": "B",
+            "time_seconds": 71,
+            "difficulty": "hard"
+          },
+          {
+            "section": "math",
+            "module": "module_b",
+            "question_number": 22,
+            "student_answer": "B",
+            "correct_answer": "A",
+            "time_seconds": 92,
+            "difficulty": "hard"
+          }
+        ]
+      }
+    },
+    {
+      "schema_version": "2.0",
+      "course_type": "group_member",
+      "season": "Summer 2026",
+      "student": {
+        "student_name": "Noor Verification",
+        "student_id": "TP-EXCLUDED-DEMO",
+        "grade_level": 11,
+        "known_foundational_gaps": []
+      },
+      "scores": {
+        "score_source": "provided",
+        "reading_writing_scaled": 560,
+        "math_scaled": 580,
+        "total_scaled": 1140
+      },
+      "goal": {
+        "target_sat_score": 1420,
+        "intended_test_date": "2026-10-03"
+      },
+      "availability": {
+        "weeks_available": 10,
+        "preferred_sessions_per_week": 2,
+        "max_session_length": "2 hrs",
+        "session_format": "Focused blocks",
+        "accommodation": "No"
+      },
+      "diagnostic": {
+        "template_id": "Diagnostic_Exam_2026",
+        "date": "July 6, 2026",
+        "answers": [
+          {
+            "section": "english",
+            "module": "module_1",
+            "question_number": 1,
+            "student_answer": "C",
+            "correct_answer": "A",
+            "time_seconds": 95,
+            "difficulty": "easy"
+          },
+          {
+            "section": "english",
+            "module": "module_1",
+            "question_number": 2,
+            "student_answer": "C",
+            "correct_answer": "A",
+            "time_seconds": 46,
+            "difficulty": "easy"
+          },
+          {
+            "section": "english",
+            "module": "module_1",
+            "question_number": 3,
+            "student_answer": "D",
+            "correct_answer": "A",
+            "time_seconds": 73,
+            "difficulty": "medium"
+          },
+          {
+            "section": "english",
+            "module": "module_1",
+            "question_number": 4,
+            "student_answer": "B",
+            "correct_answer": "B",
+            "time_seconds": 77,
+            "difficulty": "medium"
+          },
+          {
+            "section": "english",
+            "module": "module_1",
+            "question_number": 5,
+            "student_answer": "D",
+            "correct_answer": "D",
+            "time_seconds": 67,
+            "difficulty": "hard"
+          },
+          {
+            "section": "english",
+            "module": "module_1",
+            "question_number": 6,
+            "student_answer": "D",
+            "correct_answer": "B",
+            "time_seconds": 70,
+            "difficulty": "medium"
+          },
+          {
+            "section": "english",
+            "module": "module_1",
+            "question_number": 7,
+            "student_answer": "A",
+            "correct_answer": "A",
+            "time_seconds": 90,
+            "difficulty": "hard"
+          },
+          {
+            "section": "english",
+            "module": "module_1",
+            "question_number": 8,
+            "student_answer": "B",
+            "correct_answer": "B",
+            "time_seconds": 98,
+            "difficulty": "easy"
+          },
+          {
+            "section": "english",
+            "module": "module_1",
+            "question_number": 9,
+            "student_answer": "A",
+            "correct_answer": "A",
+            "time_seconds": 69,
+            "difficulty": "hard"
+          },
+          {
+            "section": "english",
+            "module": "module_1",
+            "question_number": 10,
+            "student_answer": "A",
+            "correct_answer": "A",
+            "time_seconds": 78,
+            "difficulty": "medium"
+          },
+          {
+            "section": "english",
+            "module": "module_1",
+            "question_number": 11,
+            "student_answer": "D",
+            "correct_answer": "D",
+            "time_seconds": 77,
+            "difficulty": "medium"
+          },
+          {
+            "section": "english",
+            "module": "module_1",
+            "question_number": 12,
+            "student_answer": "D",
+            "correct_answer": "D",
+            "time_seconds": 76,
+            "difficulty": "easy"
+          },
+          {
+            "section": "english",
+            "module": "module_1",
+            "question_number": 13,
+            "student_answer": "B",
+            "correct_answer": "B",
+            "time_seconds": 72,
+            "difficulty": "hard"
+          },
+          {
+            "section": "english",
+            "module": "module_1",
+            "question_number": 14,
+            "student_answer": "C",
+            "correct_answer": "C",
+            "time_seconds": 52,
+            "difficulty": "easy"
+          },
+          {
+            "section": "english",
+            "module": "module_1",
+            "question_number": 15,
+            "student_answer": "D",
+            "correct_answer": "D",
+            "time_seconds": 65,
+            "difficulty": "easy"
+          },
+          {
+            "section": "english",
+            "module": "module_1",
+            "question_number": 16,
+            "student_answer": "D",
+            "correct_answer": "D",
+            "time_seconds": 53,
+            "difficulty": "medium"
+          },
+          {
+            "section": "english",
+            "module": "module_1",
+            "question_number": 17,
+            "student_answer": "D",
+            "correct_answer": "B",
+            "time_seconds": 71,
+            "difficulty": "medium"
+          },
+          {
+            "section": "english",
+            "module": "module_1",
+            "question_number": 18,
+            "student_answer": "A",
+            "correct_answer": "A",
+            "time_seconds": 53,
+            "difficulty": "hard"
+          },
+          {
+            "section": "english",
+            "module": "module_1",
+            "question_number": 19,
+            "student_answer": "A",
+            "correct_answer": "A",
+            "time_seconds": 86,
+            "difficulty": "hard"
+          },
+          {
+            "section": "english",
+            "module": "module_1",
+            "question_number": 20,
+            "student_answer": "A",
+            "correct_answer": "A",
+            "time_seconds": 85,
+            "difficulty": "hard"
+          },
+          {
+            "section": "english",
+            "module": "module_1",
+            "question_number": 21,
+            "student_answer": "D",
+            "correct_answer": "D",
+            "time_seconds": 66,
+            "difficulty": "easy"
+          },
+          {
+            "section": "english",
+            "module": "module_1",
+            "question_number": 22,
+            "student_answer": "A",
+            "correct_answer": "C",
+            "time_seconds": 70,
+            "difficulty": "medium"
+          },
+          {
+            "section": "english",
+            "module": "module_1",
+            "question_number": 23,
+            "student_answer": "A",
+            "correct_answer": "D",
+            "time_seconds": 93,
+            "difficulty": "easy"
+          },
+          {
+            "section": "english",
+            "module": "module_1",
+            "question_number": 24,
+            "student_answer": "A",
+            "correct_answer": "A",
+            "time_seconds": 96,
+            "difficulty": "medium"
+          },
+          {
+            "section": "english",
+            "module": "module_1",
+            "question_number": 25,
+            "student_answer": "C",
+            "correct_answer": "C",
+            "time_seconds": 46,
+            "difficulty": "medium"
+          },
+          {
+            "section": "english",
+            "module": "module_1",
+            "question_number": 26,
+            "student_answer": "A",
+            "correct_answer": "B",
+            "time_seconds": 55,
+            "difficulty": "hard"
+          },
+          {
+            "section": "english",
+            "module": "module_1",
+            "question_number": 27,
+            "student_answer": "A",
+            "correct_answer": "C",
+            "time_seconds": 62,
+            "difficulty": "hard"
+          },
+          {
+            "section": "english",
+            "module": "module_b",
+            "question_number": 1,
+            "student_answer": "B",
+            "correct_answer": "B",
+            "time_seconds": 92,
+            "difficulty": "medium"
+          },
+          {
+            "section": "english",
+            "module": "module_b",
+            "question_number": 2,
+            "student_answer": "A",
+            "correct_answer": "A",
+            "time_seconds": 82,
+            "difficulty": "hard"
+          },
+          {
+            "section": "english",
+            "module": "module_b",
+            "question_number": 3,
+            "student_answer": "B",
+            "correct_answer": "B",
+            "time_seconds": 73,
+            "difficulty": "hard"
+          },
+          {
+            "section": "english",
+            "module": "module_b",
+            "question_number": 4,
+            "student_answer": "B",
+            "correct_answer": "B",
+            "time_seconds": 65,
+            "difficulty": "hard"
+          },
+          {
+            "section": "english",
+            "module": "module_b",
+            "question_number": 5,
+            "student_answer": "B",
+            "correct_answer": "B",
+            "time_seconds": 91,
+            "difficulty": "medium"
+          },
+          {
+            "section": "english",
+            "module": "module_b",
+            "question_number": 6,
+            "student_answer": "D",
+            "correct_answer": "D",
+            "time_seconds": 82,
+            "difficulty": "hard"
+          },
+          {
+            "section": "english",
+            "module": "module_b",
+            "question_number": 7,
+            "student_answer": "C",
+            "correct_answer": "C",
+            "time_seconds": 85,
+            "difficulty": "hard"
+          },
+          {
+            "section": "english",
+            "module": "module_b",
+            "question_number": 8,
+            "student_answer": "D",
+            "correct_answer": "D",
+            "time_seconds": 91,
+            "difficulty": "medium"
+          },
+          {
+            "section": "english",
+            "module": "module_b",
+            "question_number": 9,
+            "student_answer": "A",
+            "correct_answer": "A",
+            "time_seconds": 68,
+            "difficulty": "hard"
+          },
+          {
+            "section": "english",
+            "module": "module_b",
+            "question_number": 10,
+            "student_answer": "A",
+            "correct_answer": "D",
+            "time_seconds": 59,
+            "difficulty": "hard"
+          },
+          {
+            "section": "english",
+            "module": "module_b",
+            "question_number": 11,
+            "student_answer": "D",
+            "correct_answer": "D",
+            "time_seconds": 98,
+            "difficulty": "easy"
+          },
+          {
+            "section": "english",
+            "module": "module_b",
+            "question_number": 12,
+            "student_answer": "D",
+            "correct_answer": "D",
+            "time_seconds": 93,
+            "difficulty": "medium"
+          },
+          {
+            "section": "english",
+            "module": "module_b",
+            "question_number": 13,
+            "student_answer": "B",
+            "correct_answer": "A",
+            "time_seconds": 95,
+            "difficulty": "medium"
+          },
+          {
+            "section": "english",
+            "module": "module_b",
+            "question_number": 14,
+            "student_answer": "D",
+            "correct_answer": "D",
+            "time_seconds": 75,
+            "difficulty": "hard"
+          },
+          {
+            "section": "english",
+            "module": "module_b",
+            "question_number": 15,
+            "student_answer": "B",
+            "correct_answer": "B",
+            "time_seconds": 45,
+            "difficulty": "hard"
+          },
+          {
+            "section": "english",
+            "module": "module_b",
+            "question_number": 16,
+            "student_answer": "A",
+            "correct_answer": "A",
+            "time_seconds": 86,
+            "difficulty": "easy"
+          },
+          {
+            "section": "english",
+            "module": "module_b",
+            "question_number": 17,
+            "student_answer": "A",
+            "correct_answer": "A",
+            "time_seconds": 71,
+            "difficulty": "medium"
+          },
+          {
+            "section": "english",
+            "module": "module_b",
+            "question_number": 18,
+            "student_answer": "D",
+            "correct_answer": "D",
+            "time_seconds": 74,
+            "difficulty": "easy"
+          },
+          {
+            "section": "english",
+            "module": "module_b",
+            "question_number": 19,
+            "student_answer": "C",
+            "correct_answer": "C",
+            "time_seconds": 73,
+            "difficulty": "medium"
+          },
+          {
+            "section": "english",
+            "module": "module_b",
+            "question_number": 20,
+            "student_answer": "A",
+            "correct_answer": "A",
+            "time_seconds": 56,
+            "difficulty": "medium"
+          },
+          {
+            "section": "english",
+            "module": "module_b",
+            "question_number": 21,
+            "student_answer": "B",
+            "correct_answer": "B",
+            "time_seconds": 85,
+            "difficulty": "hard"
+          },
+          {
+            "section": "english",
+            "module": "module_b",
+            "question_number": 22,
+            "student_answer": "C",
+            "correct_answer": "C",
+            "time_seconds": 50,
+            "difficulty": "hard"
+          },
+          {
+            "section": "english",
+            "module": "module_b",
+            "question_number": 23,
+            "student_answer": "D",
+            "correct_answer": "D",
+            "time_seconds": 76,
+            "difficulty": "hard"
+          },
+          {
+            "section": "english",
+            "module": "module_b",
+            "question_number": 24,
+            "student_answer": "C",
+            "correct_answer": "A",
+            "time_seconds": 79,
+            "difficulty": "easy"
+          },
+          {
+            "section": "english",
+            "module": "module_b",
+            "question_number": 25,
+            "student_answer": "B",
+            "correct_answer": "B",
+            "time_seconds": 63,
+            "difficulty": "hard"
+          },
+          {
+            "section": "english",
+            "module": "module_b",
+            "question_number": 26,
+            "student_answer": "C",
+            "correct_answer": "C",
+            "time_seconds": 44,
+            "difficulty": "medium"
+          },
+          {
+            "section": "english",
+            "module": "module_b",
+            "question_number": 27,
+            "student_answer": "D",
+            "correct_answer": "D",
+            "time_seconds": 77,
+            "difficulty": "hard"
+          },
+          {
+            "section": "math",
+            "module": "module_1",
+            "question_number": 1,
+            "student_answer": "D",
+            "correct_answer": "D",
+            "time_seconds": 79,
+            "difficulty": "easy"
+          },
+          {
+            "section": "math",
+            "module": "module_1",
+            "question_number": 2,
+            "student_answer": "D",
+            "correct_answer": "A",
+            "time_seconds": 59,
+            "difficulty": "easy"
+          },
+          {
+            "section": "math",
+            "module": "module_1",
+            "question_number": 3,
+            "student_answer": "B",
+            "correct_answer": "B",
+            "time_seconds": 62,
+            "difficulty": "easy"
+          },
+          {
+            "section": "math",
+            "module": "module_1",
+            "question_number": 4,
+            "student_answer": "A",
+            "correct_answer": "C",
+            "time_seconds": 125,
+            "difficulty": "easy"
+          },
+          {
+            "section": "math",
+            "module": "module_1",
+            "question_number": 5,
+            "student_answer": "B",
+            "correct_answer": "A",
+            "time_seconds": 89,
+            "difficulty": "easy"
+          },
+          {
+            "section": "math",
+            "module": "module_1",
+            "question_number": 6,
+            "student_answer": "D",
+            "correct_answer": "D",
+            "time_seconds": 67,
+            "difficulty": "easy"
+          },
+          {
+            "section": "math",
+            "module": "module_1",
+            "question_number": 7,
+            "student_answer": "D",
+            "correct_answer": "D",
+            "time_seconds": 82,
+            "difficulty": "easy"
+          },
+          {
+            "section": "math",
+            "module": "module_1",
+            "question_number": 8,
+            "student_answer": "A",
+            "correct_answer": "A",
+            "time_seconds": 71,
+            "difficulty": "medium"
+          },
+          {
+            "section": "math",
+            "module": "module_1",
+            "question_number": 9,
+            "student_answer": "A",
+            "correct_answer": "C",
+            "time_seconds": 62,
+            "difficulty": "medium"
+          },
+          {
+            "section": "math",
+            "module": "module_1",
+            "question_number": 10,
+            "student_answer": "D",
+            "correct_answer": "D",
+            "time_seconds": 59,
+            "difficulty": "medium"
+          },
+          {
+            "section": "math",
+            "module": "module_1",
+            "question_number": 11,
+            "student_answer": "C",
+            "correct_answer": "C",
+            "time_seconds": 79,
+            "difficulty": "medium"
+          },
+          {
+            "section": "math",
+            "module": "module_1",
+            "question_number": 12,
+            "student_answer": "B",
+            "correct_answer": "B",
+            "time_seconds": 121,
+            "difficulty": "medium"
+          },
+          {
+            "section": "math",
+            "module": "module_1",
+            "question_number": 13,
+            "student_answer": "D",
+            "correct_answer": "D",
+            "time_seconds": 65,
+            "difficulty": "medium"
+          },
+          {
+            "section": "math",
+            "module": "module_1",
+            "question_number": 14,
+            "student_answer": "A",
+            "correct_answer": "A",
+            "time_seconds": 127,
+            "difficulty": "medium"
+          },
+          {
+            "section": "math",
+            "module": "module_1",
+            "question_number": 15,
+            "student_answer": "B",
+            "correct_answer": "C",
+            "time_seconds": 111,
+            "difficulty": "medium"
+          },
+          {
+            "section": "math",
+            "module": "module_1",
+            "question_number": 16,
+            "student_answer": "A",
+            "correct_answer": "A",
+            "time_seconds": 74,
+            "difficulty": "hard"
+          },
+          {
+            "section": "math",
+            "module": "module_1",
+            "question_number": 17,
+            "student_answer": "C",
+            "correct_answer": "A",
+            "time_seconds": 85,
+            "difficulty": "hard"
+          },
+          {
+            "section": "math",
+            "module": "module_1",
+            "question_number": 18,
+            "student_answer": "B",
+            "correct_answer": "D",
+            "time_seconds": 58,
+            "difficulty": "hard"
+          },
+          {
+            "section": "math",
+            "module": "module_1",
+            "question_number": 19,
+            "student_answer": "A",
+            "correct_answer": "B",
+            "time_seconds": 115,
+            "difficulty": "hard"
+          },
+          {
+            "section": "math",
+            "module": "module_1",
+            "question_number": 20,
+            "student_answer": "C",
+            "correct_answer": "B",
+            "time_seconds": 130,
+            "difficulty": "hard"
+          },
+          {
+            "section": "math",
+            "module": "module_1",
+            "question_number": 21,
+            "student_answer": "A",
+            "correct_answer": "A",
+            "time_seconds": 122,
+            "difficulty": "hard"
+          },
+          {
+            "section": "math",
+            "module": "module_1",
+            "question_number": 22,
+            "student_answer": "B",
+            "correct_answer": "B",
+            "time_seconds": 111,
+            "difficulty": "hard"
+          }
+        ]
+      }
+    }
+  ]
+}

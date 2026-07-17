@@ -1,0 +1,66 @@
+  ok  individual roadmap: no JS errors
+  ok  individual roadmap: no failed local assets
+  ok  individual roadmap: no broken images
+  ok  individual roadmap: no overflow / invalid geometry
+  ok  individual roadmap: PDF written and non-trivial
+  ok  individual roadmap: PDF starts with %PDF and ends with EOF
+  FAIL individual roadmap: exactly 7 PDF pages :: 8
+  ok  individual report: no JS errors
+  ok  individual report: no failed local assets
+  ok  individual report: no broken images
+  FAIL individual report: no overflow / invalid geometry :: ['overflow: TABLE 1028', 'overflow: TBODY 1028', 'overflow: TR 1028', 'overflow: TR 1028']
+  ok  individual report: PDF written and non-trivial
+  ok  individual report: PDF starts with %PDF and ends with EOF
+  ok  group report: no JS errors
+  ok  group report: no failed local assets
+  ok  group report: no broken images
+  ok  group report: no overflow / invalid geometry
+  ok  group report: PDF written and non-trivial
+  ok  group report: PDF starts with %PDF and ends with EOF
+  ok  roadmap student-1-Rami_Khoury: no JS errors
+  ok  roadmap student-1-Rami_Khoury: no failed local assets
+  ok  roadmap student-1-Rami_Khoury: no broken images
+  ok  roadmap student-1-Rami_Khoury: no overflow / invalid geometry
+  ok  roadmap student-1-Rami_Khoury: PDF written and non-trivial
+  ok  roadmap student-1-Rami_Khoury: PDF starts with %PDF and ends with EOF
+  FAIL roadmap student-1-Rami_Khoury: exactly 7 PDF pages :: 8
+  ok  roadmap student-2-Lina_Sarkis: no JS errors
+  ok  roadmap student-2-Lina_Sarkis: no failed local assets
+  ok  roadmap student-2-Lina_Sarkis: no broken images
+  ok  roadmap student-2-Lina_Sarkis: no overflow / invalid geometry
+  ok  roadmap student-2-Lina_Sarkis: PDF written and non-trivial
+  ok  roadmap student-2-Lina_Sarkis: PDF starts with %PDF and ends with EOF
+  FAIL roadmap student-2-Lina_Sarkis: exactly 7 PDF pages :: 8
+  ok  roadmap student-3-Omar_Fares: no JS errors
+  ok  roadmap student-3-Omar_Fares: no failed local assets
+  ok  roadmap student-3-Omar_Fares: no broken images
+  ok  roadmap student-3-Omar_Fares: no overflow / invalid geometry
+  ok  roadmap student-3-Omar_Fares: PDF written and non-trivial
+  ok  roadmap student-3-Omar_Fares: PDF starts with %PDF and ends with EOF
+  FAIL roadmap student-3-Omar_Fares: exactly 7 PDF pages :: 8
+  ok  legacy Karl roadmap: no JS errors
+  ok  legacy Karl roadmap: no failed local assets
+  ok  legacy Karl roadmap: no broken images
+  ok  legacy Karl roadmap: no overflow / invalid geometry
+  ok  legacy Karl roadmap: PDF written and non-trivial
+  ok  legacy Karl roadmap: PDF starts with %PDF and ends with EOF
+  FAIL legacy Karl roadmap: exactly 7 PDF pages :: 8
+  ok  app loads offline without JS errors
+  ok  styles applied (topbar navy)
+  ok  config data loaded
+  ok  individual example loads into the form
+  ok  answer table renders 27 rows for English Module 1
+  ok  analysis runs and shows results
+  ok  no JS errors after calculation
+  ok  final total displayed within limits
+  ok  main results do not show a clamped/pre-constraint headline
+  ok  scaled-score mismatch blocks calculation with a visible error
+  ok  corrected manual case calculates
+  ok  group example loads a 3-student roster
+  ok  add student grows the roster to 4
+  ok  remove student shrinks the roster to 3
+  ok  group analysis runs offline
+  ok  group results show min/max validation
+  ok  no JS errors across the whole UI session
+
+==== 58 passed, 6 failed ====

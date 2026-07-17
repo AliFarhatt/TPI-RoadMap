@@ -1,0 +1,70 @@
+{
+  "schema_version": "2.0",
+  "frozen": true,
+  "brand_name": "TestPrep",
+  "parent_brand": "House of Prep",
+  "instagram_handle": "@testprep.lb",
+  "brand_stats": [
+    {
+      "value": "20K",
+      "suffix": "+",
+      "label": "STUDENTS"
+    },
+    {
+      "value": "40",
+      "suffix": "+",
+      "label": "PARTNERS"
+    },
+    {
+      "value": "12",
+      "suffix": "+",
+      "label": "YEARS"
+    },
+    {
+      "value": "5",
+      "suffix": "+",
+      "label": "COUNTRIES"
+    }
+  ],
+  "assets": {
+    "cover_hero": "assets/cover-hero.png",
+    "logo_testprep": "assets/logo-testprep-white.png",
+    "logo_elmy": "assets/logo-elmy-white.svg",
+    "logo_prepme": "assets/logo-prepme-white.png",
+    "logo_weguide": "assets/logo-sibling-white.svg",
+    "qr_instagram": "assets/qr-instagram.png"
+  },
+  "colors": {
+    "navy_ink": "#0c1730",
+    "primary_blue": "#1740a9",
+    "mid_blue": "#2f5bc4",
+    "accent_blue_text": "#7ea0e8",
+    "accent_orange": "#ff963e",
+    "orange_deep": "#e87f2a",
+    "orange_text_on_light": "#c7560a"
+  },
+  "font_stack": "Inter, Arial, Helvetica, sans-serif",
+  "sister_brands": [
+    {
+      "name": "weguide.",
+      "logo": "assets/logo-sibling-white.svg",
+      "blurb": "Helps students discover who they are before choosing who they'll become."
+    },
+    {
+      "name": "prep me.",
+      "logo": "assets/logo-prepme-white.png",
+      "blurb": "Guided study and structured prep for every student."
+    },
+    {
+      "name": "Elmy",
+      "logo": "assets/logo-elmy-white.svg",
+      "blurb": "A practice, assignment & progress platform for students."
+    }
+  ],
+  "editorial_rules": [
+    "No em-dashes or dash-as-pause.",
+    "Never frame the target as guaranteed.",
+    "TestPrep is the sole deliverer; sister brands are marketing only.",
+    "Tie every number back to a real diagnostic pattern."
+  ]
+}

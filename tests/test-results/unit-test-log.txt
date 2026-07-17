@@ -1,0 +1,141 @@
+[rounding: final total upward to next 0.25]
+  ok  roundFinalUp(0.01) = 0.25
+  ok  roundFinalUp(0.12) = 0.25
+  ok  roundFinalUp(0.24) = 0.25
+  ok  roundFinalUp(0.25) = 0.25
+  ok  roundFinalUp(0.26) = 0.5
+  ok  roundFinalUp(0.37) = 0.5
+  ok  roundFinalUp(0.5) = 0.5
+  ok  roundFinalUp(0.51) = 0.75
+  ok  roundFinalUp(1) = 1
+  ok  roundFinalUp(1.01) = 1.25
+  ok  roundFinalUp(2.24) = 2.25
+  ok  roundFinalUp(2.25) = 2.25
+  ok  roundFinalUp(2.26) = 2.5
+  ok  homework still rounds nearest quarter
+[calibrated lesson-specific base-hour rubric]
+  ok  rubric reproduces every approved lesson base hour
+  ok  English approved base total = 5.16
+  ok  Math approved base total = 8.92
+  ok  equal B/D/S profiles may retain different calibrated hours
+  ok  28 lessons: 9 English + 19 Math
+[unit grouping]
+  ok  8 official units configured
+  ok  every lesson belongs to exactly one configured unit
+[performance multipliers]
+  ok  acc 95% -> x0.5
+  ok  acc 90% -> x0.5
+  ok  acc 80% -> x0.75
+  ok  acc 75% -> x0.75
+  ok  acc 65% -> x1
+  ok  acc 60% -> x1
+  ok  acc 50% -> x1.5
+  ok  acc 40% -> x1.5
+  ok  acc 30% -> x2
+  ok  acc 0% -> x2
+[coverage classification]
+  ok  0 questions -> not_assessed
+  ok  1 question -> limited
+  ok  3 same-subskill -> limited (repetition downgrade)
+  ok  2 different subskills -> moderate
+  ok  4 varied -> strong
+  ok  5 same-subskill -> moderate not strong
+[module-only weighting and weighted accuracy]
+  ok  spec example: weighted accuracy 62.5%
+  ok  module weights 1.00 / 1.20 recorded
+  ok  difficulty metadata does not change module weight
+[coverage floors & unassessed lessons]
+  ok  Probability not assessed by Kaplan PT2
+  ok  unassessed: accuracy is unknown (null)
+  ok  unassessed: final multiplier 1.00, full base hours
+  ok  unassessed: mini-assessment recommended
+  ok  1-question lesson: limited coverage
+  ok  100% on limited coverage: floor keeps multiplier at 1.00
+  ok  many same-subskill questions cap at moderate (floor 0.75)
+  ok  broad lesson shares the absolute 0.25 h minimum
+  ok  no foundational concern allows performance/coverage reduction below calibrated base
+[performance extremes]
+  ok  0% accuracy -> multiplier 2.0
+  ok  CRITICAL priority at <40%
+  ok  low performer final component total is at or below 35 h
+  ok  constraint note appears only when maximum-budget reduction is needed
+  ok  individual cap is distributed across lesson components
+  ok  no transfer is claimed when the low-performer plan is already under 35
+  ok  extreme overrides still produce a hard-capped 35 h plan
+  ok  extreme-cap final components sum exactly to 35 h
+  ok  extreme-cap plan preserves every lesson floor
+  ok  extreme removed lesson time is transferred to homework
+[foundational override]
+  ok  major gap: core = base x 1.5 beats perf x0.75
+  ok  foundational override has real mathematical effect
+  ok  moderate gap uses 1.25
+[weak subskill clusters]
+  ok  one weak cluster -> +0.25 h
+  ok  3+ clusters -> +0.75 h
+  ok  isolated single wrong answer does not create a cluster
+[timing adjustments]
+  ok  severe pacing (all slow) -> +0.5 h
+  ok  2 correct-but-slow -> +0.25 h
+[high-target adjustment]
+  ok  1400+ target with hard-question evidence -> +0.25 h with reason
+  ok  1400+ not automatic on strong 100% lessons
+  ok  below 1400: no high-target adjustment anywhere
+[teacher override & double counting]
+  ok  teacher override adds hours with reason
+  ok  override without reason produces a warning
+  ok  duplicate-evidence warning fires (small evidence base, stacked adjustments)
+[individual course limits]
+  ok  orientation 0.75 + review 1.5 itemized
+  ok  strategy components sum to strategy hours
+  ok  raw = raw lessons + orientation + review
+  ok  unrounded component total = lessons + strategy
+  ok  only final total rounded upward to 0.25
+  ok  course-limit delta is allocated to explicit components
+  ok  actual components within 14-35
+  ok  perfect student still gets every lesson >= 0.25 h
+  ok  all validation checks pass
+[input validation]
+  ok  R&W + Math != Total -> error
+  ok  invalid template id -> error
+  ok  duplicate question -> error
+  ok  answer without any key -> error
+  ok  no answers -> warning, all 28 lessons full base hours
+[session splitting]
+  ok  2.5 -> 1.5+1
+  ok  3 -> 1.5+1.5
+  ok  3.5 -> 2+1.5
+  ok  4 -> 2+2
+  ok  2 stays single
+[groups]
+  ok  2-student group calculates
+  ok  2-student size adjustment 5%
+  ok  2-student program minimum 15
+  ok  group lesson >= max individual need (safeguard)
+  ok  raw group total = pre-constraint lessons + orientation + review
+  ok  unrounded group component total = final components
+  ok  similar students -> some lessons with 0% diversity adj
+  ok  8-student group: size adj 18%, orientation 1.5, review 2.25
+  ok  8-student program minimum 17
+  ok  15-student group: size adj 30%, min 19, max 46.5
+  ok  15 students flagged as group class, not personalized tutoring
+  ok  diverse large group triggers split recommendation
+  ok  subgroup composition suggested
+  ok  group core maximum is hard-enforced
+  ok  group final component total equals actual core components
+  ok  every diversity classification value is legal
+  ok  all four diversity categories observed
+  ok  group size 1 rejected
+  ok  group size 21 rejected
+  ok  group validation checks pass
+  ok  group table covers sizes 1-20
+  ok  group table uses configured program minimums
+  ok  group maximums rescaled to individual 35-hour policy
+[CSV import]
+  ok  valid CSV imports 2 answers
+  ok  invalid module rejected
+  ok  duplicate CSV row rejected
+  ok  out-of-template question rejected
+  ok  unknown template rejected
+  ok  missing required columns rejected
+
+==== 121 passed, 0 failed ====

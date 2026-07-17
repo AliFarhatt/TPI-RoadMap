@@ -1,0 +1,23 @@
+# Known limitations
+
+1. **Coarse subskill IDs.** The published Kaplan PT2 mapping is lesson-level, so each question carries one planning-grade subskill id per lesson area (e.g. `vocabulary_in_context`), not official College Board skill codes. Consequence: automated coverage for single-subskill lessons caps at "moderate", which is the safe direction (it prevents over-reduction). Refine subskill ids in the template to unlock finer coverage and cluster detection.
+2. **Coverage is a documented heuristic** (question count + subskill variety). Difficulty/style variety cannot be used reliably because those labels are not distributed. Difficulty labels may be stored as metadata but do not affect question weights in v2.4.
+3. **No answer key or score-conversion table ships.** Correct answers must be entered per case (Kaplan's key is not redistributable); scaled scores are manual (`provided`). `test_specific_conversion_table` is reserved but unimplemented until a verified table exists.
+4. **Expected-time defaults.** When the template has no per-question expected times, documented default bands (English 40–85 s, Math 55–110 s) drive slow/rushed flags. They are planning assumptions, configurable in `calculation-rules.json`.
+5. **Generated narrative text** (pattern statement, strengths/blocker phrasing, diagnosis lead) is rule-based and intentionally conservative; instructors should review wording before sending to parents.
+6. **Score checkpoints are unlabeled by design.** Without an approved, defensible projection rule the curve shows reassessment checkpoints, not intermediate scores.
+7. **Popup blockers** can stop report/roadmap tabs from opening; the app shows an instruction when that happens. Some viewers ignore `counter(pages)` in running headers (page X of Y); page breaks and numbering order are unaffected.
+8. **Running header/footer pill** relies on `@page` margin boxes and `position:fixed` print behavior, which render in Chromium-family browsers (the tested path); other engines may omit the decorative header while keeping all seven pages intact.
+9. **Fonts:** Inter renders only if installed locally; otherwise Arial/Helvetica (metrics are close; all layouts were verified with the fallback).
+10. **Group subgroup composition** is seeded by total instructional need; lesson-level regrouping, targets, and dates still need instructor judgment (stated in the report).
+11. **Config mirror.** Because `file://` blocks `fetch()`, the app reads `app/js/config-data.js`; editing `config/*.json` requires the one-line rebuild script (documented) or a manual mirror edit.
+
+12. **The common group core is budget-constrained.** When a roster’s combined individual needs cannot all fit inside the configured group maximum, the engine keeps the actual common-core component sum within the limit and records the displaced student-specific need as supplemental subgroup or individual support. An instructor must decide how that supplemental support will be scheduled.
+13. **Elmy import supports one report contract.** Automatic PDF import currently recognizes the text-based Elmy Assessment Report for `Diagnostic Exam 2026` with 98 global questions and the observed answer-summary layout. Other assessments and incompatible future layouts fail closed instead of being forced into this template.
+14. **No OCR.** Scanned or image-only PDFs do not have the required text layer and are rejected clearly. OCR is intentionally not bundled or used silently.
+15. **Detailed-option recovery is conservative.** The answer summary is authoritative. Option letters are used only when a complete, unambiguous correction-block sequence is recoverable; otherwise both fields retain summary text. In the representative report, three answered-but-incorrect responses are visibly truncated in the summary and therefore retain that visible text, while correctness remains exact because it comes from awarded points. This does not affect answered/correct counts or analysis.
+16. **Browser worker policies vary under `file://`.** The local worker path is configured and the bundled worker provides PDF.js's fake-worker fallback. Current Chromium was verified; browsers with unusually restrictive local-worker policies may use the fallback and import more slowly.
+
+## Observed in v2.4.1
+
+- The shipped `tests/test-results/unit-test-log.txt` records 121/0 for `tests/unit/engine.test.js`, but running that suite against the shipped v2.4 engine yields 113 passed / 8 failed (all in the maximum-budget/strategy-total constraint checks). This discrepancy pre-dates the two-page report feature, which changes no calculation code; it is documented here rather than silently altered.

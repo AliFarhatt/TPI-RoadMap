@@ -1,0 +1,9 @@
+OK   config/calculation-rules.json against schemas/planning-rules.schema.json
+OK   config/diagnostic-templates/kaplan-practice-test-2.json against schemas/diagnostic-template.schema.json
+OK   examples/individual-demo/case-input.json against schemas/individual-input.schema.json
+OK   examples/individual-demo/calculated-results.json against schemas/individual-results.schema.json
+OK   examples/individual-demo/roadmap-view-model.json against schemas/roadmap-view-model.schema.json
+OK   examples/group-demo/case-input.json against schemas/group-input.schema.json
+OK   examples/group-demo/group-results.json against schemas/group-results.schema.json
+
+==== 7 passed, 0 failed ====

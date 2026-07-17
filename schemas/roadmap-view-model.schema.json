@@ -1,0 +1,113 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "roadmap-view-model.schema.json",
+  "title": "Roadmap view model v2.4",
+  "type": "object",
+  "required": [
+    "student_name",
+    "season",
+    "section_scores",
+    "strengths",
+    "blockers",
+    "hour_allocation",
+    "order_of_attack",
+    "tracking_loops",
+    "curve_labels",
+    "hours_int",
+    "disclaimer",
+    "brand"
+  ],
+  "properties": {
+    "hours_int": {
+      "type": "number",
+      "minimum": 0,
+      "multipleOf": 0.25,
+      "description": "Legacy field name retained for compatibility; final totals are quarter-hour values rounded upward at the end."
+    },
+    "section_scores": {
+      "type": "array",
+      "minItems": 2,
+      "maxItems": 2
+    },
+    "hour_allocation": {
+      "type": "array",
+      "minItems": 3
+    },
+    "order_of_attack": {
+      "type": "array",
+      "minItems": 1,
+      "maxItems": 3,
+      "items": {
+        "type": "object",
+        "required": [
+          "hours",
+          "summary",
+          "units"
+        ],
+        "properties": {
+          "hours": {
+            "type": "number",
+            "minimum": 0
+          },
+          "summary": {
+            "type": "string"
+          },
+          "units": {
+            "type": "array",
+            "minItems": 1,
+            "items": {
+              "type": "object",
+              "required": [
+                "unit_id",
+                "unit_name",
+                "hours",
+                "lessons"
+              ],
+              "properties": {
+                "unit_id": {
+                  "type": "string"
+                },
+                "unit_name": {
+                  "type": "string"
+                },
+                "hours": {
+                  "type": "number",
+                  "minimum": 0
+                },
+                "lessons": {
+                  "type": "array",
+                  "minItems": 1,
+                  "items": {
+                    "type": "object",
+                    "required": [
+                      "lesson_id",
+                      "lesson_name"
+                    ],
+                    "properties": {
+                      "lesson_id": {
+                        "type": "string"
+                      },
+                      "lesson_name": {
+                        "type": "string"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "tracking_loops": {
+      "type": "array",
+      "minItems": 3,
+      "maxItems": 3
+    },
+    "curve_labels": {
+      "type": "array",
+      "minItems": 5,
+      "maxItems": 5
+    }
+  }
+}

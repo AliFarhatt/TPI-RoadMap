@@ -1,0 +1,63 @@
+/* Multi-PDF status surfaces, matched to the offline planner brand system. */
+.batch-summary {
+  margin-top: 12px;
+  border: 1px solid #cdd9ef;
+  border-radius: 12px;
+  background: #f7f9fe;
+  padding: 14px 16px;
+}
+.batch-summary.hidden { display: none; }
+.batch-summary h3 { margin: 0 0 10px; color: var(--blue); }
+.batch-counts {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(108px, 1fr));
+  gap: 8px;
+  margin-bottom: 12px;
+}
+.batch-count {
+  min-width: 0;
+  border: 1px solid var(--border);
+  border-radius: 9px;
+  background: #fff;
+  padding: 8px 10px;
+}
+.batch-count strong {
+  display: block;
+  color: var(--blue);
+  font-size: 20px;
+  line-height: 1;
+}
+.batch-count span {
+  display: block;
+  margin-top: 4px;
+  color: var(--faint);
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+}
+.batch-results { display: grid; gap: 7px; }
+.batch-result {
+  display: grid;
+  grid-template-columns: minmax(160px, 1.2fr) minmax(180px, 1.6fr) minmax(180px, 1fr);
+  gap: 10px;
+  align-items: center;
+  border: 1px solid var(--border);
+  border-left-width: 4px;
+  border-radius: 9px;
+  background: #fff;
+  padding: 9px 11px;
+  font-size: 11px;
+}
+.batch-result.status-ok { border-left-color: #1f8a5b; }
+.batch-result.status-warn { border-left-color: var(--orange); }
+.batch-result.status-err { border-left-color: #c0392b; }
+.batch-result .file { color: var(--ink); font-weight: 600; overflow-wrap: anywhere; }
+.batch-result .student { color: var(--muted); }
+.batch-result .status { display: flex; flex-direction: column; gap: 2px; }
+.batch-result .status strong { color: var(--ink); text-transform: capitalize; }
+.batch-result .status span { color: var(--muted); overflow-wrap: anywhere; }
+
+@media (max-width: 760px) {
+  .batch-result { grid-template-columns: 1fr; gap: 4px; }
+}

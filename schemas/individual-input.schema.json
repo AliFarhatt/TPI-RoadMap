@@ -1,0 +1,455 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "individual-input.schema.json",
+  "title": "TestPrep individual case input",
+  "type": "object",
+  "required": [
+    "student",
+    "diagnostic"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "2.0"
+    },
+    "course_type": {
+      "type": "string"
+    },
+    "season": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "student": {
+      "type": "object",
+      "required": [
+        "student_name"
+      ],
+      "properties": {
+        "student_name": {
+          "type": "string",
+          "minLength": 1
+        },
+        "student_id": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "grade_level": {
+          "type": [
+            "integer",
+            "number",
+            "null"
+          ]
+        },
+        "known_foundational_gaps": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": [
+              "lesson_id",
+              "severity"
+            ],
+            "properties": {
+              "lesson_id": {
+                "type": "string"
+              },
+              "severity": {
+                "enum": [
+                  "moderate",
+                  "major"
+                ]
+              },
+              "evidence": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              }
+            }
+          }
+        },
+        "teacher_overrides": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": [
+              "lesson_id"
+            ],
+            "properties": {
+              "lesson_id": {
+                "type": "string"
+              },
+              "additional_hours": {
+                "type": "number"
+              },
+              "reason": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+              "confirms_mastery": {
+                "type": [
+                  "boolean",
+                  "null"
+                ]
+              },
+              "evidence_overlaps": {
+                "type": [
+                  "boolean",
+                  "null"
+                ]
+              }
+            }
+          }
+        },
+        "teacher_flagged_weak_subskills": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": [
+              "lesson_id",
+              "subskill_id"
+            ],
+            "properties": {
+              "lesson_id": {
+                "type": "string"
+              },
+              "subskill_id": {
+                "type": "string"
+              }
+            }
+          }
+        },
+        "school_curriculum": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "previous_sat_results": {
+          "type": [
+            "array",
+            "null"
+          ]
+        }
+      }
+    },
+    "scores": {
+      "type": "object",
+      "properties": {
+        "score_source": {
+          "enum": [
+            "provided",
+            "test_specific_conversion_table"
+          ]
+        },
+        "reading_writing_scaled": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "minimum": 200,
+          "maximum": 800
+        },
+        "math_scaled": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "minimum": 200,
+          "maximum": 800
+        },
+        "total_scaled": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "minimum": 400,
+          "maximum": 1600
+        }
+      }
+    },
+    "goal": {
+      "type": "object",
+      "properties": {
+        "target_sat_score": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "minimum": 400,
+          "maximum": 1600
+        },
+        "intended_test_date": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      }
+    },
+    "availability": {
+      "type": "object",
+      "properties": {
+        "weeks_available": {
+          "type": [
+            "number",
+            "null"
+          ]
+        },
+        "preferred_sessions_per_week": {
+          "type": [
+            "number",
+            "null"
+          ]
+        },
+        "max_session_length": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "session_format": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "accommodation": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "max_available_teaching_hours": {
+          "type": [
+            "number",
+            "null"
+          ]
+        }
+      }
+    },
+    "diagnostic": {
+      "type": "object",
+      "required": [
+        "template_id"
+      ],
+      "properties": {
+        "template_id": {
+          "type": "string"
+        },
+        "date": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "attempt_number": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "minimum": 1
+        },
+        "assessment_title": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "reported_summary": {
+          "type": "object",
+          "properties": {
+            "answered_questions": { "type": ["integer", "null"], "minimum": 0 },
+            "correct_answers": { "type": ["integer", "null"], "minimum": 0 },
+            "total_questions": { "type": "integer", "minimum": 1 }
+          }
+        },
+        "answers": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": [
+              "section",
+              "module",
+              "question_number"
+            ],
+            "properties": {
+              "section": {
+                "enum": [
+                  "english",
+                  "math"
+                ]
+              },
+              "module": {
+                "enum": [
+                  "module_1",
+                  "module_b"
+                ]
+              },
+              "question_number": {
+                "type": "integer",
+                "minimum": 1
+              },
+              "student_answer": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+              "correct_answer": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+              "correct": {
+                "type": "boolean"
+              },
+              "difficulty": {
+                "enum": [
+                  "easy",
+                  "medium",
+                  "hard",
+                  null
+                ]
+              },
+              "time_seconds": {
+                "type": [
+                  "number",
+                  "null"
+                ],
+                "minimum": 0
+              },
+              "confidence": {
+                "type": [
+                  "string",
+                  "number",
+                  "null"
+                ]
+              },
+              "guessed": {
+                "type": [
+                  "boolean",
+                  "null"
+                ]
+              },
+              "method": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+              "teacher_note": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+              "error_type": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              }
+            },
+            "additionalProperties": true
+          }
+        }
+      }
+    },
+    "source_validation": {
+      "type": "object",
+      "properties": {
+        "source_type": { "type": "string" },
+        "parser_version": { "type": "string" },
+        "global_numbering_converted": { "type": "boolean" },
+        "correct_boolean_included": { "type": "boolean" },
+        "expected_answer_records": { "type": "integer", "minimum": 0 },
+        "actual_answer_records": { "type": "integer", "minimum": 0 },
+        "calculated_answered_questions": { "type": ["integer", "null"], "minimum": 0 },
+        "reported_answered_questions": { "type": ["integer", "null"], "minimum": 0 },
+        "calculated_correct_answers": { "type": ["integer", "null"], "minimum": 0 },
+        "reported_correct_answers": { "type": ["integer", "null"], "minimum": 0 },
+        "scores_sum_correctly": { "type": ["boolean", "null"] },
+        "question_distribution_valid": { "type": "boolean" },
+        "duplicate_questions_found": { "type": "boolean" },
+        "missing_questions_found": { "type": "boolean" },
+        "difficulty_source": { "type": "string" },
+        "difficulty_mapping_valid": { "type": "boolean" },
+        "warnings": {
+          "type": "array",
+          "items": { "type": "string" }
+        }
+      }
+    }
+  },
+  "not": {
+    "anyOf": [
+      {
+        "required": [
+          "score_gap"
+        ]
+      },
+      {
+        "required": [
+          "overall_accuracy"
+        ]
+      },
+      {
+        "required": [
+          "weighted_accuracy"
+        ]
+      },
+      {
+        "required": [
+          "instruction_hours"
+        ]
+      },
+      {
+        "required": [
+          "strengths"
+        ]
+      },
+      {
+        "required": [
+          "weaknesses"
+        ]
+      },
+      {
+        "required": [
+          "blockers"
+        ]
+      },
+      {
+        "required": [
+          "pattern_statement"
+        ]
+      },
+      {
+        "required": [
+          "hour_allocation"
+        ]
+      },
+      {
+        "required": [
+          "homework_hours"
+        ]
+      },
+      {
+        "required": [
+          "course_phases"
+        ]
+      },
+      {
+        "required": [
+          "lesson_priorities"
+        ]
+      }
+    ]
+  },
+  "description": "Calculated fields (score gap, accuracy, hours, strengths, blockers, pattern statement, priorities, homework, phases, diversity) are prohibited as inputs; they are generated by the planning engine."
+}

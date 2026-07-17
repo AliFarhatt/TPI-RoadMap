@@ -1,0 +1,176 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "individual-results.schema.json",
+  "title": "Calculated individual results",
+  "type": "object",
+  "required": [
+    "ok",
+    "lesson_analysis",
+    "question_analysis",
+    "section_summaries",
+    "totals",
+    "validation_checks",
+    "homework",
+    "schedule"
+  ],
+  "properties": {
+    "ok": {
+      "type": "boolean"
+    },
+    "schema_version": {
+      "enum": [
+        "2.0",
+        "2.1",
+        "2.2",
+        "2.3",
+        "2.4"
+      ]
+    },
+    "lesson_analysis": {
+      "type": "array",
+      "minItems": 28,
+      "maxItems": 28,
+      "items": {
+        "type": "object",
+        "required": [
+          "lesson_id",
+          "lesson_name",
+          "section",
+          "coverage_level",
+          "base_hours",
+          "final_multiplier",
+          "pre_constraint_hours",
+          "constraint_adjustment",
+          "final_hours",
+          "priority",
+          "explanation",
+          "unit_id",
+          "unit_name"
+        ],
+        "properties": {
+          "pre_constraint_hours": {
+            "type": "number",
+            "minimum": 0.25
+          },
+          "constraint_adjustment": {
+            "type": "number"
+          },
+          "live_hours_transferred_to_homework": {
+            "type": "number",
+            "minimum": 0
+          },
+          "final_hours": {
+            "type": "number",
+            "minimum": 0.25
+          },
+          "weighted_accuracy": {
+            "type": [
+              "number",
+              "null"
+            ]
+          },
+          "coverage_level": {
+            "enum": [
+              "not_assessed",
+              "limited",
+              "moderate",
+              "strong"
+            ]
+          },
+          "priority": {
+            "enum": [
+              "CRITICAL",
+              "HIGH",
+              "MEDIUM",
+              "ESSENTIAL_REVIEW"
+            ]
+          },
+          "unit_id": {
+            "type": "string"
+          },
+          "unit_name": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "totals": {
+      "type": "object",
+      "required": [
+        "raw_total",
+        "constrained_total",
+        "final_planned_total",
+        "hard_cap_enforced",
+        "raw_lesson_hours",
+        "lesson_hours",
+        "orientation_hours",
+        "final_review_hours",
+        "strategy_hours",
+        "constraint_status",
+        "maximum_infeasible",
+        "constraint_allocation",
+        "homework_transfer_hours",
+        "homework_total",
+        "raw_component_total",
+        "final_component_total",
+        "final_rounding_adjustment"
+      ],
+      "properties": {
+        "raw_total": {
+          "type": "number"
+        },
+        "constrained_total": {
+          "type": "number",
+          "minimum": 14,
+          "maximum": 35,
+          "multipleOf": 0.25
+        },
+        "initial_need_total": {
+          "type": "number",
+          "minimum": 0
+        },
+        "final_planned_total": {
+          "type": "number",
+          "minimum": 14,
+          "maximum": 35,
+          "multipleOf": 0.25
+        },
+        "hard_cap_enforced": {
+          "const": true
+        },
+        "maximum_infeasible": {
+          "const": false
+        },
+        "constraint_status": {
+          "enum": [
+            "within_limits",
+            "minimum_budget_applied",
+            "maximum_budget_applied"
+          ]
+        },
+        "constraint_allocation": {
+          "type": "array"
+        },
+        "homework_transfer_hours": {
+          "type": "number",
+          "minimum": 0
+        },
+        "raw_component_total": {
+          "type": "number",
+          "minimum": 0
+        },
+        "final_component_total": {
+          "type": "number",
+          "minimum": 14,
+          "maximum": 35
+        },
+        "final_rounding_adjustment": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 0.25,
+          "description": "Nonnegative difference created by rounding the final total upward to the next quarter hour."
+        }
+      }
+    }
+  }
+}

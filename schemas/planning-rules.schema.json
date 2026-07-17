@@ -1,0 +1,121 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "planning-rules.schema.json",
+  "title": "Planning-engine rules v2.4 (calculation-rules.json)",
+  "type": "object",
+  "required": [
+    "module_weights",
+    "performance_multipliers",
+    "coverage_floor_multipliers",
+    "foundational_multipliers",
+    "rounding",
+    "minimum_lesson_hours",
+    "individual_course_limits",
+    "group_size_table",
+    "group_diversity",
+    "course_constraint_allocation",
+    "base_hour_method"
+  ],
+  "properties": {
+    "module_weights": {
+      "type": "object",
+      "required": [
+        "module_1",
+        "module_b"
+      ]
+    },
+    "difficulty_weights": {
+      "type": "object",
+      "required": [
+        "easy",
+        "medium",
+        "hard"
+      ]
+    },
+    "coverage_floor_multipliers": {
+      "type": "object",
+      "required": [
+        "not_assessed",
+        "limited",
+        "moderate",
+        "strong"
+      ]
+    },
+    "individual_course_limits": {
+      "type": "object",
+      "required": [
+        "minimum_hours",
+        "maximum_hours"
+      ],
+      "properties": {
+        "minimum_hours": {
+          "const": 14
+        },
+        "maximum_hours": {
+          "const": 35
+        }
+      }
+    },
+    "group_size_table": {
+      "type": "array",
+      "minItems": 20,
+      "maxItems": 20,
+      "items": {
+        "type": "object",
+        "required": [
+          "group_size",
+          "size_adjustment",
+          "final_minimum",
+          "maximum",
+          "corrected_mathematical_minimum"
+        ]
+      }
+    },
+    "course_constraint_allocation": {
+      "type": "object",
+      "required": [
+        "increment_hours",
+        "removed_live_time_policy",
+        "infeasible_maximum_policy"
+      ]
+    },
+    "base_hour_method": {
+      "type": "object",
+      "required": [
+        "type",
+        "formula",
+        "validation"
+      ],
+      "properties": {
+        "type": {
+          "const": "lesson_specific_calibrated_rubric"
+        }
+      }
+    },
+    "rounding": {
+      "type": "object",
+      "required": [
+        "method",
+        "formula",
+        "lesson_rounding"
+      ],
+      "properties": {
+        "method": {
+          "const": "final_total_ceiling_to_next_0.25"
+        },
+        "formula": {
+          "type": "string"
+        },
+        "lesson_rounding": {
+          "type": "string"
+        },
+        "group_lesson_rounding": {
+          "type": "string"
+        },
+        "homework_rounding": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

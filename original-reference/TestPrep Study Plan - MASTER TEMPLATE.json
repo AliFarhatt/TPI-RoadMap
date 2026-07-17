@@ -1,0 +1,241 @@
+{
+  "$schema_purpose": "Master generation prompt for the TestPrep 'SAT Customized Roadmap'. Feed this ENTIRE object to the designer/model for every student. Edit ONLY the 'student_inputs' block per case; never edit 'design_system', 'page_structure', 'component_library', 'asset_manifest', or 'editorial_rules' — those are frozen so every output is visually identical.",
+
+  "role": "You are a senior editorial designer producing a premium A4 PDF study plan for TestPrep (a House of Prep brand). Reproduce the locked design system EXACTLY. The only variation between documents is the student data in 'student_inputs'. Do not redesign, restyle, re-order, or 'improve' anything outside that block.",
+
+  "output_format": {
+    "medium": "Single Design Component HTML file (.dc.html), inline styles only.",
+    "page_size": "A4 portrait, 210x297mm",
+    "page_margin": "10mm 8mm 14mm",
+    "page_count": 7,
+    "file_name": "TestPrep_SAT_Roadmap_{{student_inputs.student_name_slug}}.pdf",
+    "fixed_running_header": "@top-left 'TESTPREP · HOUSE OF PREP', @top-right 'page / total', 7pt Inter, letter-spacing 0.1em, color #aab2c0",
+    "per_page_footer": "Inset rounded navy pill (radius 9px, left/right 8mm, bottom 5mm, height 9mm): TestPrep wordmark + 1px divider + 'HOUSE OF PREP'. Suppressed on the final page (closing card extends over it)."
+  },
+
+  "design_system": {
+    "frozen": true,
+    "typography": {
+      "family": "Inter (Google Fonts), weights 400/500/600/700/800. NO other typeface anywhere, including SVG chart text.",
+      "scale": {
+        "hero_numeral": "54px / 700, letter-spacing -0.02em",
+        "page_title_h1_cover": "44px / 600",
+        "section_title_h2": "25px / 600 (dark-page h2: 30-38px / 600-700)",
+        "section_number_ghost": "42px / 600, color #d6deec",
+        "kicker_label": "9-10px / 600, letter-spacing 0.16-0.22em",
+        "card_title": "15-19px / 600",
+        "body": "12.5-14px / 400, line-height 1.5-1.6",
+        "caption_note": "11.5-12px / 400, color #5a6373",
+        "mono_data_label": "8.5-9.5px / 500-600, letter-spacing 0.12-0.18em (rendered in Inter, NOT a mono font)"
+      }
+    },
+    "color_tokens": {
+      "navy_ink": "#0c1730",
+      "primary_blue": "#1740a9",
+      "mid_blue": "#2f5bc4",
+      "accent_blue_text": "#7ea0e8",
+      "accent_orange": "#ff963e",
+      "orange_deep": "#e87f2a",
+      "orange_text_on_light": "#c7560a",
+      "orange_text_darker": "#9a4708",
+      "positive_green": "#1f8a5b",
+      "text_primary": "#14181f",
+      "text_body": "#2a2f38",
+      "text_secondary": "#3a414c",
+      "text_muted": "#5a6373",
+      "text_faint": "#8a93a3",
+      "ghost_number": "#46557a",
+      "border": "#e4e7ee",
+      "hairline": "#eef0f4",
+      "surface_tint": "#fbfcfe",
+      "page_backdrop": "#f4f5f8",
+      "dark_text_hi": "#eef1f7",
+      "dark_text_mid": "#aab6cf",
+      "dark_text_lo": "#8fa2cb",
+      "dark_text_faint": "#6e7a93"
+    },
+    "color_usage_rules": [
+      "Navy #0c1730 is the authority color: masthead band, insight panels, Performance Engine page, closing page, Elmy strip, footer pill.",
+      "Primary blue #1740a9 for section accents, data fills, section numbers.",
+      "Orange #ff963e used SPARINGLY: the gap/target, step 07, the single highlighted milestone, kickers. Never as a large fill on light pages.",
+      "Green #1f8a5b only for the 'what is working' strengths label.",
+      "Light pages stay clean and white; dark pages are deliberate narrative moments only."
+    ],
+    "border_radius_scale": {
+      "section_band": "18px",
+      "feature_card": "16px",
+      "figure_panel": "14px",
+      "standard_card": "12px",
+      "icon_tile": "10-11px",
+      "lane_bar": "10px",
+      "chip_badge": "8px",
+      "pill": "999px"
+    },
+    "rule_no_sharp_corners": "Every surface, card, tile, bar, chip and image uses the radius scale above. No square corners anywhere.",
+    "top_accent_bar": "Dark sections carry a 4px top bar split ~44/56: orange (#ff963e) on the left segment, blue (#1740a9) on the right, corners rounded to match the band.",
+    "gridding": "Single centered column, max content width ~760px / inner padding 30px. Dark full-bleed sections use margin 6px 16px 0 and their own internal padding."
+  },
+
+  "page_structure": {
+    "frozen": true,
+    "page_1_cover": {
+      "elements": [
+        "Rounded hero image (asset: cover-hero.png) at radius 18px with soft shadow, aspect ~1:1.",
+        "Eyebrow: '{{season_year}}' in primary blue serif-weight Inter 21px.",
+        "H1 title: 'The SAT Customized Roadmap'.",
+        "Subtitle: 'A diagnostic-built academic strategy, prepared for {{student_name}} · {{diagnostic_label}} · {{diagnostic_date}}.'",
+        "Brand stat band (navy, radius 16px, 4 columns): {{brand_stats}} (e.g. 20K+ Students / 40+ Partners / 12+ Years / 5+ Countries)."
+      ]
+    },
+    "page_2_masthead_and_diagnosis": {
+      "masthead": [
+        "Navy band, top accent bar, kicker 'PERSONALIZED SAT ROADMAP'.",
+        "Line: 'PREPARED FOR {{student_name_upper}} · {{diagnostic_label_upper}} · {{diagnostic_date_upper}}'.",
+        "Hero: '{{baseline}}  →  {{target}}' + 'on the 1600 scale'.",
+        "Orange pill badge: '+{{gap}}  POINTS TO GAIN' above a rounded progress bar (navy fill to baseline%, orange hatch from baseline% to target%).",
+        "Stat row (4 cols, divided): FOCUSED INSTRUCTION {{instruction_hours}} · LEARNING ACCOMMODATION {{accommodation}} · MAX SESSION LENGTH {{max_session_length}} · SESSION FORMAT {{session_format}}."
+      ],
+      "section_01_diagnosis": [
+        "Section head: ghost '01' + kicker 'THE DIAGNOSIS' + h2 'What your diagnostic actually says'.",
+        "Lead paragraph (uses {{overall_accuracy}}).",
+        "Two section gauges (R&W and Math): {{section_scores}} with % big numeral, progress bar, and 'score / 800 · X of Y correct'.",
+        "Two-column panel: 'WHAT'S WORKING' (green, list of {{strengths}}) and 'WHAT'S HOLDING YOU BACK' (orange, list of {{blockers}}). List items use a bold label + colon, never a dash.",
+        "Navy insight panel, kicker 'THE PATTERN, IN ONE LINE': '{{pattern_statement}}'."
+      ]
+    },
+    "page_3_the_climb": [
+      "Section head: ghost '02' + 'THE CLIMB' + h2 'How instruction closes the gap'.",
+      "Lead paragraph referencing {{instruction_hours}}.",
+      "Elevation curve figure (radius 14px, surface tint): SVG line from {{baseline}} through {{milestones}} to {{target}}, dotted nodes, final node orange. Stage labels START/EARLY/CORE/PRECISION/TARGET. Caption explains the steep-start / flattening-top logic.",
+      "Two tracks (2 cards): TRACK 1 · INSTRUCTION ('{{instruction_hours}}, guided') and TRACK 2 · YOUR EFFORT ('Student commitment').",
+      "Footnote: evidence-based-projection caveat."
+    ],
+    "page_4_plan_of_attack": [
+      "Section head: ghost '03' + 'THE PLAN OF ATTACK' + h2 'Where your {{instruction_hours_int}} hours go'.",
+      "Weighted lanes (3 stacked bars sized to proportion): {{hour_allocation}} (e.g. Math 18 / Reading & Writing 15 / Strategy 3). Widest = navy, mid = blue, smallest = orange.",
+      "'The order of attack': 3 sequenced rows (01 FIRST / 02 THEN / 03 FINALLY) each with hours + colored skill chips from {{order_of_attack}}.",
+      "Footnote: recommendation-not-fixed-calendar caveat."
+    ],
+    "page_5_performance_engine": [
+      "Dark page. Kicker 'HOW IT WORKS' + h2 'The TestPrep Performance Engine' (second word in accent blue) + 'A seven-step process, the same loop that produced this roadmap.'",
+      "FROZEN 7-step grid (2 cols; step 07 full-width highlighted orange): 01 Diagnostic Assessment, 02 Performance Gap Analysis, 03 Personalized Learning Plan, 04 Targeted Instruction, 05 Micro-Assessments, 06 Adaptive Optimization, 07 Full-Length Simulation & Iteration. Each: rounded icon tile + ghost numeral + title + one-line description. THIS CONTENT IS FIXED for every student.",
+      "Closing note tying the loop to the student (uses {{student_name}}, {{target}})."
+    ],
+    "page_6_tracking": [
+      "Section head: ghost '04' + 'TRACKING & ACCOUNTABILITY' + h2 'When you'll see your progress'.",
+      "Three monitoring loops (3 cards), each headed by a solid rounded letter badge: A = SKILLS LOOP (blue), B = PROGRESS LOOP (mid-blue), C = MILESTONES (orange). Cadence from {{tracking_loops}}.",
+      "Elmy platform strip (navy, radius 14px): asset logo-elmy-white.svg + 'Elmy' + 'The platform that powers all three loops.'",
+      "'A shared commitment' block + 3 signature lines (Student signature / Date / Target test window)."
+    ],
+    "page_7_closing": [
+      "Dark page. Kicker 'DELIVERED BY TESTPREP' + centered TestPrep logo + h2 'One team, accountable for your result' + delivery paragraph (uses {{baseline}}, {{target}}).",
+      "Statement line: 'Precision in the diagnosis. Intelligence in the plan. Visibility at every step. That is the TestPrep difference.'",
+      "Marketing strip 'DISCOVER THE FAMILY' / 'The same thinking, everywhere you grow' + 3 sister-brand cards (weguide. / prep me. / Elmy). Framed as marketing only, NOT co-deliverers.",
+      "Instagram QR CTA card (asset: qr-instagram.png on a white rounded tile): 'SCAN TO FOLLOW' / 'See the community behind the roadmap' / handle {{instagram_handle}}.",
+      "Footer row: TestPrep logo + 'Prepared for {{student_name}} · {{diagnostic_date}} · © House of Prep'."
+    ]
+  },
+
+  "component_library": {
+    "frozen": true,
+    "section_head": "ghost numeral (42px #d6deec) + 2.5px top border in primary blue + mono-style kicker (orange #c7560a) + serif-weight Inter h2.",
+    "stat_chip": "tiny uppercase label (#8fa2cb) above a 22px value; on navy use white/accent-blue values; 1px left divider between chips.",
+    "gauge_card": "bordered radius-12 card: title + big % numeral (primary blue) + thin progress bar (radius 4) + mono caption.",
+    "insight_panel": "navy radius-14 card with a 4px orange left edge, orange kicker, white serif-weight statement.",
+    "weighted_lane": "rounded-10 horizontal bar, width = proportion of total hours, big white hours numeral + label inside.",
+    "skill_chip": "radius-8 pill: orange-tint (#fbe6d4/#9a4708) for FIRST, blue-tint (#dfe7f6/#1740a9) for THEN, grey (#eef0f4/#4a5566) for FINALLY.",
+    "loop_badge": "26px solid rounded-8 letter tile (A blue / B mid-blue / C orange) + colored uppercase label.",
+    "dark_feature_card": "rgba(255,255,255,0.035) fill, 1px rgba(255,255,255,0.1) border, radius 14.",
+    "qr_cta": "dark feature card with a white rounded-14 tile holding the QR PNG, orange kicker, white headline, muted body."
+  },
+
+  "asset_manifest": {
+    "note": "These shared files live in /assets and MUST be reused verbatim in every document so the look is identical. Do not regenerate or restyle them.",
+    "cover-hero.png": "Page 1 cover photograph (TestPrep dashboard scene). Reused for all students unless a student-specific approved image is supplied.",
+    "logo-testprep-white.png": "TestPrep wordmark (white) — masthead context, footers, closing, family strip.",
+    "logo-elmy-white.svg": "Elmy mark — tracking strip + family card.",
+    "logo-prepme-white.png": "prep me. mark — family card.",
+    "logo-sibling-white.svg": "weguide. mark — family card.",
+    "qr-instagram.png": "Instagram QR for @testprep.lb — closing CTA. Replace only if the account changes."
+  },
+
+  "editorial_rules": {
+    "frozen": true,
+    "source_of_truth": "The student's diagnostic report is the only factual source. Never invent scores, names, dates, services, or partnerships.",
+    "preserve": "All verified data, names, dates, figures, service descriptions, and required caveats.",
+    "allowed": "Condensing repetition, sharpening headings, converting data into the locked visual modules, fixing minor grammar.",
+    "tone": "Authoritative, data-driven, strategic, human, premium but accessible. Speak to the student and parent.",
+    "punctuation": "NO em-dashes or dash-as-pause ('—' / ' - '). Use full sentences, colons for label lists, and structured transitions. Hyphens are allowed ONLY inside genuine compound words (rule-based, grid-ins, high-impact).",
+    "no_overpromise": "Frame the target as earned and credible, never guaranteed.",
+    "evidence_bridge": "Tie every number (hour weighting, milestones, priorities) back to a real pattern in the student's diagnostic so the plan reads as derived, not arbitrary."
+  },
+
+  "student_inputs": {
+    "$comment": "==== THE ONLY BLOCK YOU EDIT PER STUDENT. Everything above stays frozen. ====",
+    "student_name": "Karl Naddaf",
+    "student_name_upper": "KARL NADDAF",
+    "student_name_slug": "Karl_Naddaf",
+    "season_year": "Summer 2026",
+    "diagnostic_label": "Practice Test 1",
+    "diagnostic_date": "June 22, 2026",
+    "instagram_handle": "@testprep.lb",
+
+    "baseline": 840,
+    "target": 1300,
+    "gap": 460,
+    "overall_accuracy": "near 37%",
+
+    "instruction_hours": "~36 hrs",
+    "instruction_hours_int": 36,
+    "accommodation": "Yes",
+    "max_session_length": "1 hr",
+    "session_format": "Short focused blocks",
+
+    "brand_stats": [
+      {"value": "20K+", "label": "STUDENTS"},
+      {"value": "40+", "label": "PARTNERS"},
+      {"value": "12+", "label": "YEARS"},
+      {"value": "5+", "label": "COUNTRIES"}
+    ],
+
+    "section_scores": [
+      {"name": "Reading & Writing", "score": 440, "accuracy_pct": 36, "correct": 24, "total": 66},
+      {"name": "Math", "score": 400, "accuracy_pct": 38, "correct": 20, "total": 53}
+    ],
+
+    "strengths": [
+      {"label": "Rule-based grammar", "detail": "transitions (67%) and punctuation (56%)"},
+      {"label": "Math mechanics", "detail": "algebra and geometry basics are intact"},
+      {"label": "Engagement", "detail": "you used 97.6% of the time, so effort isn't the issue"}
+    ],
+    "blockers": [
+      {"label": "Reasoning", "detail": "inference (0/6) and command of evidence form the biggest R&W pool"},
+      {"label": "Advanced Math", "detail": "exponentials, factoring, and nonlinear form the deepest gap"},
+      {"label": "Seven blank grid-ins", "detail": "skipped with time to spare"}
+    ],
+    "pattern_statement": "You apply rules well, but reasoning is the gap. The more a question rewards interpretation, the more it costs you. That's exactly what stands between 840 and 1300, and it's teachable.",
+
+    "milestones": [
+      {"score": 980, "stage": "EARLY"},
+      {"score": "~1100", "stage": "CORE"},
+      {"score": "~1200", "stage": "PRECISION"}
+    ],
+
+    "hour_allocation": [
+      {"section": "Math", "hours": 18, "pct": 50, "note": "deepest gaps"},
+      {"section": "Reading & Writing", "hours": 15, "pct": 42},
+      {"section": "Strategy", "hours": 3}
+    ],
+    "order_of_attack": [
+      {"order": "FIRST", "hours": 16, "summary": "Your deepest gaps, up front.", "tags": ["Advanced Math rebuild", "Inference & command of evidence", "Grid-in technique"]},
+      {"order": "THEN", "hours": 12, "summary": "Core reasoning & mid-band skills.", "tags": ["Words in context", "Problem-solving & data", "Grammar consolidation", "Text structure & purpose"]},
+      {"order": "FINALLY", "hours": 8, "summary": "Precision, timing & rehearsal.", "tags": ["Algebra precision", "Geometry & trigonometry", "Strategy & timing", "Full-test reviews"]}
+    ],
+
+    "tracking_loops": [
+      {"badge": "A", "name": "SKILLS LOOP", "cadence": "Every 2 weeks", "title": "Short skills check", "detail": "Are the taught skills sticking?"},
+      {"badge": "B", "name": "PROGRESS LOOP", "cadence": "Every ~4 weeks", "title": "Full practice section", "detail": "Cumulative gain and timing, with a progress note."},
+      {"badge": "C", "name": "MILESTONES", "cadence": "At each step", "title": "980 → 1100 → 1200 → 1300", "detail": "Re-measure, confirm the curve, re-prioritize."}
+    ]
+  }
+}

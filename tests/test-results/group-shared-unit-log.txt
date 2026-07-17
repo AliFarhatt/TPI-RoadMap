@@ -1,0 +1,44 @@
+[pooled aggregation]
+  ok  8/10 and 1/2 pool to 9/12
+  ok  pooled accuracy is 75%, not mean 65%
+  ok  pooled helper handles unequal denominators
+  ok  students with no category records are absent from that denominator
+[population standard deviation]
+  ok  identical values produce SD 0
+  ok  population formula divides by N
+  ok  fewer than two comparable values has no SD
+  ok  shared group calculates
+  ok  one shared roadmap has 28 unique lessons
+  ok  pooled overall equals summed student counts
+  ok  pooled section totals reconcile
+  ok  all four module totals reconcile
+  ok  difficulty labels are normalized descriptively
+  ok  lesson pooled counts reconcile to overall
+[similarity and score statistics]
+  ok  score means use provided arithmetic values
+  ok  population score SD is used
+  ok  major high threshold classifies high variation
+  ok  missing total score does not exclude a diagnostically valid student
+  ok  missing score is excluded only from the corresponding statistic
+  ok  lesson variation does not itself set major similarity
+[fixed 2.0 multiplier and roadmap constraints]
+  ok  documented raw example: 1.4 h becomes 2.8 h before rounding
+  ok  every shared raw lesson is exactly 2× individual-equivalent raw need
+  ok  strategy raw time receives 2× treatment
+  ok  existing whole-hour category rounding remains active
+  ok  final total reconciles
+  ok  group maximum remains enforced
+  ok  sequence keeps configured order within each unit
+  ok  no individual lesson lists are added together
+[eligibility and exclusions]
+  ok  invalid student is excluded while valid group continues
+  ok  exclusion warning names student and reason
+  ok  excluded student affects no pooled denominator
+  ok  excluded student affects no score statistic
+  ok  only one valid student blocks group generation
+  ok  no valid students blocks group generation
+[individual regression]
+  ok  individual total is unchanged by shared-group analysis
+  ok  all individual lesson hours remain unchanged
+
+==== 36 passed, 0 failed ====

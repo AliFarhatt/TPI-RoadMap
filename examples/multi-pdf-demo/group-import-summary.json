@@ -1,0 +1,67 @@
+{
+  "workflow": "group_multi_pdf_import",
+  "generated_at": "2026-07-17T00:00:00.000Z",
+  "source_note": "Verification fixture using five independently processed diagnostic case inputs.",
+  "counts": {
+    "files_selected": 5,
+    "students_added": 3,
+    "students_replaced": 0,
+    "duplicates_skipped": 1,
+    "older_attempts_skipped": 0,
+    "invalid_files": 0,
+    "incompatible_diagnostics": 1
+  },
+  "analysis_stale": true,
+  "results": [
+    {
+      "filename": "rami-khoury-attempt-1.pdf",
+      "student_name": "Rami Khoury",
+      "attempt_number": 1,
+      "total_score": 1140,
+      "answered_questions": 98,
+      "correct_questions": 0,
+      "status": "Added",
+      "reason": "Student added to the current group."
+    },
+    {
+      "filename": "lina-sarkis-attempt-1.pdf",
+      "student_name": "Lina Sarkis",
+      "attempt_number": 1,
+      "total_score": 860,
+      "answered_questions": 98,
+      "correct_questions": 0,
+      "status": "Added",
+      "reason": "Student added to the current group."
+    },
+    {
+      "filename": "omar-fares-attempt-1.pdf",
+      "student_name": "Omar Fares",
+      "attempt_number": 1,
+      "total_score": 1010,
+      "answered_questions": 98,
+      "correct_questions": 0,
+      "status": "Added",
+      "reason": "Student added to the current group."
+    },
+    {
+      "filename": "rami-khoury-attempt-1-copy.pdf",
+      "student_name": "Rami Khoury",
+      "attempt_number": 1,
+      "total_score": 1140,
+      "answered_questions": 98,
+      "correct_questions": 0,
+      "status": "Duplicate skipped",
+      "reason": "The same student and attempt are already in the group."
+    },
+    {
+      "filename": "unsupported-diagnostic.pdf",
+      "student_name": "Incompatible Demo",
+      "attempt_number": 1,
+      "total_score": 1010,
+      "answered_questions": 98,
+      "correct_questions": 0,
+      "status": "Incompatible diagnostic",
+      "reason": "This student was not added because the diagnostic template does not match the current group."
+    }
+  ]
+}
